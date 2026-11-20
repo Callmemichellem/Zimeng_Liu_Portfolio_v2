@@ -14,6 +14,11 @@ function renderProjectsPage(language = getPortfolioLanguage()) {
 function renderProjectTree(container, language) {
     container.innerHTML = "";
 
+    container.style.setProperty(
+        "--tree-cols",
+        PORTFOLIO_DATA.projectCategories.length
+    );
+
     PORTFOLIO_DATA.projectCategories.forEach(category => {
 
         const projects = PORTFOLIO_DATA.projects.filter(
@@ -193,14 +198,25 @@ function renderProjectTimeline(container, language) {
                             ${project.organisation[language]}
                         </p>
 
-                        <p class="experience-location">
+                        ${project.location ? `<p class="experience-location">
                             ${project.location[language]}
-                        </p>
+                        </p>` : ""}
 
                     </div>
 
                 </div>
 
+
+                ${
+                    project.recognition
+                        ? `
+                            <div class="recognition-badge is-compact">
+                                <span class="recognition-icon" aria-hidden="true">★</span>
+                                ${project.recognition[language]}
+                            </div>
+                        `
+                        : ""
+                }
 
                 <ul class="experience-bullets">
                     ${bullets}

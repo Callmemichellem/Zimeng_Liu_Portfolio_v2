@@ -13,6 +13,11 @@ function renderExperiencePage(language = getPortfolioLanguage()) {
 function renderExperienceTree(container, language) {
     container.innerHTML = "";
 
+    container.style.setProperty(
+        "--tree-cols",
+        PORTFOLIO_DATA.experienceCategories.length
+    );
+
     PORTFOLIO_DATA.experienceCategories.forEach(category => {
         const experiences = PORTFOLIO_DATA.experiences.filter(
             experience => experience.category === category.id

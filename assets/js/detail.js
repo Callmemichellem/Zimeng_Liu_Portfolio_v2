@@ -34,7 +34,7 @@ function renderExperienceDetail(language = getPortfolioLanguage()) {
     }
 
     document.title =
-        `${experience.company[language]} | Experience | Michelle Liu`;
+        `${experience.company[language]} | Experience | Zimeng Liu`;
 
     const logoMarkup = experience.logo
         ? `
@@ -58,7 +58,7 @@ function renderExperienceDetail(language = getPortfolioLanguage()) {
         .map(tag => `<span class="tag">${tag}</span>`)
         .join("");
 
-    const detailSections = experience.details[language]
+    const detailSections = (experience.details?.[language] || [])
         .map(section => {
             const bullets = section.bullets
                 .map(item => `<li>${item}</li>`)
@@ -138,6 +138,9 @@ function renderExperienceDetail(language = getPortfolioLanguage()) {
         </section>
 
 
+        ${renderLiveEmbed(experience, language)}
+
+
         <section class="section section-tight">
 
             <div class="container detail-layout">
@@ -148,7 +151,7 @@ function renderExperienceDetail(language = getPortfolioLanguage()) {
 
                         <span class="eyebrow">
                             ${language === "zh"
-                                ? "Experience"
+                                ? "实习经历"
                                 : "Experience"}
                         </span>
 
@@ -205,6 +208,8 @@ function renderExperienceDetail(language = getPortfolioLanguage()) {
 
                 <div class="detail-content">
 
+                    ${renderBackground(experience, language)}
+
                     <section class="detail-summary">
 
                         <span class="eyebrow">
@@ -241,6 +246,8 @@ function renderExperienceDetail(language = getPortfolioLanguage()) {
                     ${renderMetrics(experience, language)}
 
                     ${renderVisuals(experience, language)}
+
+                    ${renderCodeSamples(experience, language)}
 
                 </div>
 
@@ -305,15 +312,42 @@ function renderVisuals(experience, language) {
 
             if (visual.type === "bars") {
 
-                const maxValue = Math.max(
+                const isPercentage = visual.items.every(
+                    item => (item.suffix || "").trim() === "%"
+                );
+
+                const largestValue = Math.max(
                     ...visual.items.map(item => item.value)
                 );
+
+                // Percentages are drawn on a 0–100 scale unless every
+                // value is small (e.g. 6.0% vs 6.4% returns).
+                const maxValue = isPercentage && largestValue >= 50
+                    ? 100
+                    : largestValue;
+
+                const decimals = Math.max(
+                    ...visual.items.map(item =>
+                        (String(item.value).split(".")[1] || "").length
+                    )
+                );
+
+                const hasHighlight = visual.items.some(item => item.highlight);
 
                 const bars = visual.items
                     .map(item => {
 
                         const width =
                             (item.value / maxValue) * 100;
+
+                        const fillClass = hasHighlight && !item.highlight
+                            ? "portfolio-bar-fill is-muted"
+                            : "portfolio-bar-fill";
+
+                        const formatted = item.value.toLocaleString("en-US", {
+                            minimumFractionDigits: decimals,
+                            maximumFractionDigits: decimals
+                        });
 
                         return `
                             <div class="portfolio-bar-row">
@@ -325,7 +359,7 @@ function renderVisuals(experience, language) {
                                     </span>
 
                                     <strong>
-                                        ${item.value}${item.suffix || ""}
+                                        ${formatted}${item.suffix || ""}
                                     </strong>
 
                                 </div>
@@ -333,7 +367,7 @@ function renderVisuals(experience, language) {
                                 <div class="portfolio-bar-track">
 
                                     <div
-                                        class="portfolio-bar-fill"
+                                        class="${fillClass}"
                                         style="width: ${width}%"
                                     ></div>
 
@@ -347,9 +381,12 @@ function renderVisuals(experience, language) {
                 return `
                     <section class="detail-visual">
 
-                        <h2>
-                            ${visual.title[language]}
-                        </h2>
+                        <div class="detail-visual-head">
+                            <h2>
+                                ${visual.title[language]}
+                            </h2>
+                            ${visual.source ? `<span class="detail-visual-source">${visual.source[language]}</span>` : ""}
+                        </div>
 
                         <div class="portfolio-bar-chart">
                             ${bars}
@@ -385,17 +422,75 @@ function renderVisuals(experience, language) {
                 return `
                     <section class="detail-visual">
 
-                        <h2>
-                            ${visual.title[language]}
-                        </h2>
+                        <div class="detail-visual-head">
+                            <h2>
+                                ${visual.title[language]}
+                            </h2>
+                            ${visual.source ? `<span class="detail-visual-source">${visual.source[language]}</span>` : ""}
+                        </div>
 
-                        <div class="process-flow">
+                        <div
+                            class="process-flow"
+                            style="--cols: ${getProcessColumns(visual.steps[language].length)}"
+                        >
                             ${steps}
                         </div>
 
                         <p class="detail-visual-caption">
                             ${visual.caption[language]}
                         </p>
+
+                    </section>
+                `;
+            }
+
+
+            if (visual.type === "table") {
+                return renderTableVisual(visual, language);
+            }
+
+
+            if (visual.type === "gallery") {
+                return renderGalleryVisual(visual, language);
+            }
+
+
+            if (visual.type === "image") {
+
+                const sourceLabel = visual.source
+                    ? `<span class="detail-visual-source">${visual.source[language]}</span>`
+                    : "";
+
+                return `
+                    <section class="detail-visual detail-visual-image">
+
+                        <div class="detail-visual-head">
+                            <h2>
+                                ${visual.title[language]}
+                            </h2>
+                            ${sourceLabel}
+                        </div>
+
+                        <a
+                            class="detail-figure-link"
+                            href="${visual.src}"
+                            target="_blank"
+                            rel="noopener"
+                            title="${language === "zh" ? "点击查看原图" : "Open full-size image"}"
+                        >
+                            <img
+                                class="detail-figure"
+                                src="${visual.src}"
+                                alt="${visual.alt ? visual.alt[language] : visual.title[language]}"
+                                loading="lazy"
+                            >
+                        </a>
+
+                        ${
+                            visual.caption
+                                ? `<p class="detail-visual-caption">${visual.caption[language]}</p>`
+                                : ""
+                        }
 
                     </section>
                 `;
@@ -429,142 +524,384 @@ function renderVisuals(experience, language) {
         </section>
     `;
 }
-function renderVisuals(experience, language) {
+/* =========================================================
+   CASE BACKGROUND, CODE SAMPLES & SYNTAX HIGHLIGHTING
+   Optional fields, usable by any experience or project:
+     background: { title?, paragraphs: {en, zh}, pointsTitle?, points?: {en, zh} }
+     code: [{ title, language, source?, caption?, code }]
+   ========================================================= */
 
-    if (!experience.visuals || experience.visuals.length === 0) {
+function renderBackground(item, language) {
+    const background = item.background;
+
+    if (!background) {
         return "";
     }
 
-    const visuals = experience.visuals
-        .map(visual => {
+    const title = background.title
+        ? background.title[language]
+        : (language === "zh" ? "案例背景" : "Case Background");
 
-            if (visual.type === "bars") {
-
-                const maxValue = Math.max(
-                    ...visual.items.map(item => item.value)
-                );
-
-                const bars = visual.items
-                    .map(item => {
-
-                        const width =
-                            (item.value / maxValue) * 100;
-
-                        return `
-                            <div class="portfolio-bar-row">
-
-                                <div class="portfolio-bar-label">
-
-                                    <span>
-                                        ${item.label[language]}
-                                    </span>
-
-                                    <strong>
-                                        ${item.value}${item.suffix || ""}
-                                    </strong>
-
-                                </div>
-
-                                <div class="portfolio-bar-track">
-
-                                    <div
-                                        class="portfolio-bar-fill"
-                                        style="width: ${width}%"
-                                    >
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        `;
-                    })
-                    .join("");
-
-                return `
-                    <section class="detail-visual">
-
-                        <h2>
-                            ${visual.title[language]}
-                        </h2>
-
-                        <div class="portfolio-bar-chart">
-                            ${bars}
-                        </div>
-
-                        <p class="detail-visual-caption">
-                            ${visual.caption[language]}
-                        </p>
-
-                    </section>
-                `;
-            }
-
-
-            if (visual.type === "process") {
-
-                const steps = visual.steps[language]
-                    .map((step, index) => `
-                        <div class="process-step">
-
-                            <span>
-                                ${String(index + 1).padStart(2, "0")}
-                            </span>
-
-                            <strong>
-                                ${step}
-                            </strong>
-
-                        </div>
-                    `)
-                    .join("");
-
-                return `
-                    <section class="detail-visual">
-
-                        <h2>
-                            ${visual.title[language]}
-                        </h2>
-
-                        <div class="process-flow">
-                            ${steps}
-                        </div>
-
-                        <p class="detail-visual-caption">
-                            ${visual.caption[language]}
-                        </p>
-
-                    </section>
-                `;
-            }
-
-            return "";
-        })
+    const paragraphs = (background.paragraphs?.[language] || [])
+        .map(text => `<p>${text}</p>`)
         .join("");
 
+    const points = background.points?.[language] || [];
+
+    const pointsTitle = background.pointsTitle
+        ? background.pointsTitle[language]
+        : (language === "zh" ? "任务要求" : "The brief");
+
+    const pointsMarkup = points.length
+        ? `
+            <h3>${pointsTitle}</h3>
+            <ol class="detail-background-points">
+                ${points.map(point => `<li>${point}</li>`).join("")}
+            </ol>
+        `
+        : "";
+
     return `
-        <section class="detail-visuals-section">
+        <section class="detail-background">
 
-            <div class="detail-section-heading">
+            <span class="eyebrow">
+                ${language === "zh" ? "背景" : "Context"}
+            </span>
 
-                <span class="eyebrow">
-                    Visual Evidence
-                </span>
+            <h2>${title}</h2>
 
-                <h2>
-                    ${
-                        language === "zh"
-                            ? "分析与可视化"
-                            : "Analysis & Visualisations"
-                    }
-                </h2>
+            ${paragraphs}
 
-            </div>
-
-            ${visuals}
+            ${pointsMarkup}
 
         </section>
     `;
 }
+
+
+function escapeCode(text) {
+    return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+}
+
+
+// Lightweight Python highlighter: comments, strings, keywords,
+// numbers and function calls. Other languages are shown as plain text.
+const PYTHON_TOKENS = /(#[^\n]*)|("""[\s\S]*?"""|'''[\s\S]*?'''|[rfb]?"(?:\\.|[^"\\\n])*"|[rfb]?'(?:\\.|[^'\\\n])*')|\b(def|return|import|from|as|for|in|if|elif|else|while|with|lambda|class|try|except|raise|and|or|not|is|None|True|False|yield|pass|break|continue)\b|\b(\d+(?:\.\d+)?(?:e-?\d+)?)\b|\b([A-Za-z_]\w*)(?=\()/g;
+
+
+function highlightCode(code, language) {
+    const escaped = escapeCode(code);
+
+    if (!/python/i.test(language || "")) {
+        return escaped;
+    }
+
+    return escaped.replace(
+        PYTHON_TOKENS,
+        (match, comment, string, keyword, number, call) => {
+            if (comment) return `<span class="tok-comment">${comment}</span>`;
+            if (string) return `<span class="tok-string">${string}</span>`;
+            if (keyword) return `<span class="tok-keyword">${keyword}</span>`;
+            if (number) return `<span class="tok-number">${number}</span>`;
+            if (call) return `<span class="tok-call">${call}</span>`;
+            return match;
+        }
+    );
+}
+
+
+function renderCodeSamples(item, language) {
+    const samples = item.code || [];
+
+    if (!samples.length) {
+        return "";
+    }
+
+    const blocks = samples
+        .map((sample, index) => `
+            <details class="code-sample"${index === 0 ? " open" : ""}>
+
+                <summary>
+                    <span class="code-sample-title">${sample.title[language]}</span>
+                    <span class="code-sample-meta">
+                        ${sample.source ? `<span class="code-sample-source">${sample.source[language]}</span>` : ""}
+                        <span class="code-sample-language">${sample.language || ""}</span>
+                    </span>
+                </summary>
+
+                ${
+                    sample.caption
+                        ? `<p class="code-sample-caption">${sample.caption[language]}</p>`
+                        : ""
+                }
+
+                <pre class="code-sample-body"><code>${highlightCode(sample.code, sample.language)}</code></pre>
+
+            </details>
+        `)
+        .join("");
+
+    return `
+        <section class="detail-code-section">
+
+            <div class="detail-section-heading">
+
+                <span class="eyebrow">
+                    ${language === "zh" ? "代码" : "Code"}
+                </span>
+
+                <h2>
+                    ${language === "zh" ? "代码示例" : "Code Samples"}
+                </h2>
+
+                <p class="detail-code-note">
+                    ${
+                        language === "zh"
+                            ? "节选自课程代码，为便于阅读做了压缩排版；点击标题可展开或收起。"
+                            : "Excerpts from the coursework code, condensed for readability. Click a title to expand or collapse it."
+                    }
+                </p>
+
+            </div>
+
+            ${blocks}
+
+        </section>
+    `;
+}
+
+
+/* =========================================================
+   TABLES & LIVE EMBEDS
+     visuals: { type: "table", title, columns: {en, zh}, rows: [[...]],
+                highlightRow?, source?, caption? }
+     liveEmbed: { provider: "tableau", url, title, caption?, height? }
+       (rendered full width above the detail layout; hidden until url is set)
+   ========================================================= */
+
+/* =========================================================
+   GALLERY
+     visuals: { type: "gallery", title, source?, caption?,
+                images: [{ src, title, caption?, alt? }] }
+     A compact two-column grid for supporting figures; each
+     thumbnail opens the full-size image in a new tab.
+   ========================================================= */
+
+function renderGalleryVisual(visual, language) {
+    const openText = language === "zh" ? "点击查看原图" : "Open full-size image";
+
+    const items = visual.images
+        .map(image => `
+            <figure class="detail-gallery-item">
+                <a
+                    class="detail-gallery-link"
+                    href="${image.src}"
+                    target="_blank"
+                    rel="noopener"
+                    title="${openText}"
+                >
+                    <img
+                        src="${image.src}"
+                        alt="${image.alt ? image.alt[language] : image.title[language]}"
+                        loading="lazy"
+                    >
+                </a>
+                <figcaption>
+                    <strong>${image.title[language]}</strong>
+                    ${image.caption ? `<span>${image.caption[language]}</span>` : ""}
+                </figcaption>
+            </figure>
+        `)
+        .join("");
+
+    const sourceLabel = visual.source
+        ? `<span class="detail-visual-source">${visual.source[language]}</span>`
+        : "";
+
+    return `
+        <section class="detail-visual detail-visual-gallery">
+
+            <div class="detail-visual-head">
+                <h2>${visual.title[language]}</h2>
+                ${sourceLabel}
+            </div>
+
+            ${
+                visual.caption
+                    ? `<p class="detail-visual-caption detail-gallery-intro">${visual.caption[language]}</p>`
+                    : ""
+            }
+
+            <div class="detail-gallery">
+                ${items}
+            </div>
+
+        </section>
+    `;
+}
+
+
+function renderTableVisual(visual, language) {
+    const columns = visual.columns[language] || visual.columns.en;
+
+    const cellText = cell =>
+        typeof cell === "object" && cell !== null
+            ? (cell[language] || cell.en)
+            : (typeof cell === "number" ? cell.toLocaleString("en-US") : String(cell));
+
+    const isNumeric = value =>
+        /^[−\-+]?[\d,.]+\s?(%|days|天)?$/.test(String(value).trim());
+
+    const isBlank = value => ["", "–", "-"].includes(String(value).trim());
+
+    // A column is right-aligned only when every non-blank cell in it is numeric.
+    const numericColumns = columns.map((_, index) =>
+        index > 0 &&
+        visual.rows.every(row => {
+            const value = cellText(row[index] ?? "");
+            return isBlank(value) || isNumeric(value);
+        })
+    );
+
+    const head = columns
+        .map((column, index) => `<th${numericColumns[index] ? ' class="is-numeric"' : ""}>${column}</th>`)
+        .join("");
+
+    const body = visual.rows
+        .map((row, rowIndex) => {
+            const cells = row
+                .map((cell, index) =>
+                    `<td${numericColumns[index] ? ' class="is-numeric"' : ""}>${cellText(cell)}</td>`
+                )
+                .join("");
+
+            const highlighted = visual.highlightRow === rowIndex;
+            return `<tr${highlighted ? ' class="is-highlight"' : ""}>${cells}</tr>`;
+        })
+        .join("");
+
+    const sourceLabel = visual.source
+        ? `<span class="detail-visual-source">${visual.source[language]}</span>`
+        : "";
+
+    return `
+        <section class="detail-visual detail-visual-table">
+
+            <div class="detail-visual-head">
+                <h2>${visual.title[language]}</h2>
+                ${sourceLabel}
+            </div>
+
+            <div class="detail-table-wrap">
+                <table class="detail-table">
+                    <thead><tr>${head}</tr></thead>
+                    <tbody>${body}</tbody>
+                </table>
+            </div>
+
+            ${
+                visual.caption
+                    ? `<p class="detail-visual-caption">${visual.caption[language]}</p>`
+                    : ""
+            }
+
+        </section>
+    `;
+}
+
+
+function getEmbedSource(embed) {
+    if (embed.provider === "tableau") {
+        const separator = embed.url.includes("?") ? "&" : "?";
+        return `${embed.url}${separator}:showVizHome=no&:embed=y&:toolbar=yes&:tabs=yes`;
+    }
+
+    return embed.url;
+}
+
+
+function renderLiveEmbed(item, language) {
+    const embed = item.liveEmbed;
+
+    if (!embed || !embed.url) {
+        return "";
+    }
+
+    const openText = language === "zh"
+        ? "在新窗口打开交互看板 ↗"
+        : "Open the interactive dashboard in a new tab ↗";
+
+    const hint = language === "zh"
+        ? "可以直接在下方看板中点击、筛选和切换参数。"
+        : "You can click, filter and change the controls directly in the dashboard below.";
+
+    return `
+        <section class="live-embed-section">
+
+            <div class="container">
+
+                <div class="live-embed-head">
+                    <div>
+                        <span class="eyebrow">
+                            ${language === "zh" ? "交互看板" : "Live Dashboard"}
+                        </span>
+                        <h2>${embed.title[language]}</h2>
+                        <p>${embed.caption ? embed.caption[language] : hint}</p>
+                    </div>
+                    <a
+                        class="live-embed-open"
+                        href="${embed.url}"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        ${openText}
+                    </a>
+                </div>
+
+                <div class="live-embed-frame${embed.provider === "html" ? " is-responsive" : ""}">
+                    <iframe
+                        src="${getEmbedSource(embed)}"
+                        title="${embed.title[language]}"
+                        loading="lazy"
+                        style="height: ${embed.height || 840}px"
+                        ${embed.provider === "html" ? "data-autoheight" : ""}
+                        allowfullscreen
+                    ></iframe>
+                </div>
+
+            </div>
+
+        </section>
+    `;
+}
+
+
+/* Self-hosted dashboards post their content height so the frame fits without inner scrolling. */
+window.addEventListener("message", event => {
+    const data = event.data;
+
+    if (!data || data.type !== "embed-height" || typeof data.height !== "number") {
+        return;
+    }
+
+    document.querySelectorAll("iframe[data-autoheight]").forEach(frame => {
+        if (frame.contentWindow === event.source) {
+            frame.style.height = `${Math.min(Math.ceil(data.height), 6000)}px`;
+        }
+    });
+});
+
+
+function getProcessColumns(stepCount) {
+    return stepCount <= 6
+        ? stepCount
+        : Math.ceil(stepCount / 2);
+}
+
+
 function renderExperienceNotFound(root, language) {
     const title =
         language === "zh"
@@ -646,7 +983,7 @@ function renderProjectDetail(language = getPortfolioLanguage()) {
     }
 
     document.title =
-        `${project.title[language]} | Project | Michelle Liu`;
+        `${project.title[language]} | Project | Zimeng Liu`;
 
 
     const logoMarkup = project.logo
@@ -778,9 +1115,19 @@ function renderProjectDetail(language = getPortfolioLanguage()) {
                                 `
                                 : ""
                         }
-                        <p class="detail-location">
+                        ${
+                            project.recognition
+                                ? `
+                                    <div class="recognition-badge">
+                                        <span class="recognition-icon" aria-hidden="true">★</span>
+                                        ${project.recognition[language]}
+                                    </div>
+                                `
+                                : ""
+                        }
+                        ${project.location ? `<p class="detail-location">
                             ${project.location[language]}
-                        </p>
+                        </p>` : ""}
 
                     </div>
 
@@ -794,6 +1141,9 @@ function renderProjectDetail(language = getPortfolioLanguage()) {
             </div>
 
         </section>
+
+
+        ${renderLiveEmbed(project, language)}
 
 
         <section class="section section-tight">
@@ -831,24 +1181,30 @@ function renderProjectDetail(language = getPortfolioLanguage()) {
                         </div>
 
 
-                        <div class="detail-sidebar-item">
+                        ${
+                            project.role
+                                ? `
+                                    <div class="detail-sidebar-item">
 
-                            <span>
-                                ${
-                                    language === "zh"
-                                        ? "项目类型"
-                                        : "Project Type"
-                                }
-                            </span>
+                                        <span>
+                                            ${
+                                                language === "zh"
+                                                    ? "项目类型"
+                                                    : "Project Type"
+                                            }
+                                        </span>
 
-                            <strong>
-                                ${project.role[language]}
-                            </strong>
+                                        <strong>
+                                            ${project.role[language]}
+                                        </strong>
 
-                        </div>
+                                    </div>
+                                `
+                                : ""
+                        }
 
 
-                        <div class="detail-sidebar-item">
+                        ${project.location ? `<div class="detail-sidebar-item">
 
                             <span>
                                 ${
@@ -862,7 +1218,7 @@ function renderProjectDetail(language = getPortfolioLanguage()) {
                                 ${project.location[language]}
                             </strong>
 
-                        </div>
+                        </div>` : ""}
 
 
                         <div class="detail-sidebar-item">
@@ -887,6 +1243,9 @@ function renderProjectDetail(language = getPortfolioLanguage()) {
 
 
                 <div class="detail-content">
+
+
+                    ${renderBackground(project, language)}
 
 
                     <section class="detail-summary">
@@ -923,15 +1282,11 @@ ${
 
 </section>
 
-${renderMetrics(project, language)}
-
-
-
-}
-                    </section>
-
 
                     ${renderMetrics(project, language)}
+
+
+                    ${project.visualsFirst ? renderVisuals(project, language) : ""}
 
 
                     <div class="detail-section-heading">
@@ -950,7 +1305,10 @@ ${renderMetrics(project, language)}
                     ${detailSections}
 
 
-                    ${renderVisuals(project, language)}
+                    ${project.visualsFirst ? "" : renderVisuals(project, language)}
+
+
+                    ${renderCodeSamples(project, language)}
 
                 </div>
 

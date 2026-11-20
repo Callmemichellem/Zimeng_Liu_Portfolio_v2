@@ -13,10 +13,10 @@
 
     <meta
         name="description"
-        content="Selected projects and analytical work by Michelle Liu."
+        content="Project details by Zimeng (Michelle) Liu."
     >
 
-    <title>Project | Michelle Liu</title>
+    <title>Project | Zimeng Liu</title>
 
     <link
         rel="stylesheet"
@@ -28,67 +28,28 @@
 
 <body>
 
+<header class="nav">
 
-<nav class="navbar">
+    <div class="container nav-inner">
 
-    <div class="container nav-content">
+        <a class="brand" href="index.html">zimengliu<span>.com</span></a>
 
-        <a
-            class="brand"
-            href="index.html"
-        >
-            zimengliu.com
-        </a>
-
-
-        <ul
-            class="nav-links"
-            id="navLinks"
-        >
-
-            <li>
-                <a href="index.html#about">
-                    About
-                </a>
-            </li>
-
-            <li>
-                <a href="experience.html">
-                    Experience
-                </a>
-            </li>
-
-            <li>
-                <a
-                    href="projects.html"
-                    class="active"
-                >
-                    Projects
-                </a>
-            </li>
-
-            <li>
-                <a href="research.html">
-                    Research
-                </a>
-            </li>
-
-            <li>
-                <a href="cv.html">
-                    CV
-                </a>
-            </li>
-
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a class="active" href="projects.html">Projects</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="journey.html">Journey</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a class="nav-cta" href="index.html#contact">Contact</a></li>
         </ul>
 
-
-        <div class="nav-actions">
+        <div class="nav-tools">
 
             <div
                 class="language-switcher"
                 aria-label="Language"
             >
-
                 <button
                     type="button"
                     data-lang-choice="en"
@@ -104,14 +65,21 @@
                 >
                     中文
                 </button>
-
             </div>
+
+            <button
+                class="menu-btn"
+                type="button"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
 
         </div>
 
     </div>
 
-</nav>
+</header>
 
 
 <main id="projectDetail">
@@ -120,16 +88,20 @@
 
 <footer class="footer">
 
-    <div class="container footer-content">
+    <div class="container footer-inner">
 
         <span>
-            © Michelle Liu
+            © <span data-year></span> Zimeng Liu
         </span>
 
         <span>
-            Sydney · Beijing
+            Personal portfolio · Sydney, Australia
         </span>
 
+    </div>
+
+    <div class="container privacy-note">
+        Personal website. Not an official University of Sydney website.
     </div>
 
 </footer>
@@ -141,6 +113,7 @@
 
 <script src="assets/js/detail.js"></script>
 
+<script src="assets/js/main.js"></script>
 
 </body>
 

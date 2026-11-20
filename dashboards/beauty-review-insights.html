@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>美妆评论洞察工作台 · 刘子萌</title>
+<meta name="robots" content="noindex">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;900&display=swap">
+<style>
+/* Layout: editorial beauty report — porcelain page, rouge (complaints) vs jade (praise) as the two "shades"; serif chapters, hairline rules, swatch-style bars */
+:root{
+  --bg:#F4F3F6; --paper:#FFFFFF; --sunk:#EAE7EE; --ink:#18161D; --soft:#5E5866; --rule:#D9D4DF;
+  --rouge:#B3264A; --rouge-2:#D9718C; --rouge-3:#F1C9D4; --jade:#1F6B5C; --jade-2:#6FAE9F; --jade-3:#CFE6DF; --amber:#A8641A;
+  --serif:'Noto Serif SC','Songti SC',serif; --num:'DM Serif Display','Noto Serif SC',serif; --sans:'Noto Sans SC','PingFang SC','Microsoft YaHei',system-ui,sans-serif; --mono:'IBM Plex Mono','SFMono-Regular',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141218; --paper:#1D1A22; --sunk:#26222C; --ink:#F2EEF4; --soft:#ABA3B3; --rule:#3A3441;
+  --rouge:#EE7D9B; --rouge-2:#B8506D; --rouge-3:#4A2532; --jade:#7CC7B5; --jade-2:#3F8C7B; --jade-3:#1E3A34; --amber:#E2A55E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141218; --paper:#1D1A22; --sunk:#26222C; --ink:#F2EEF4; --soft:#ABA3B3; --rule:#3A3441;
+  --rouge:#EE7D9B; --rouge-2:#B8506D; --rouge-3:#4A2532; --jade:#7CC7B5; --jade-2:#3F8C7B; --jade-3:#1E3A34; --amber:#E2A55E; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.75}
+.wrap{max-width:1120px;margin:0 auto;padding-block:48px 72px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2{font-family:var(--serif);text-wrap:balance;margin:0}
+h3{font-size:15px;margin:0;font-weight:700}
+p{margin:0}
+.en{font-family:var(--num);font-style:italic;color:var(--soft);font-size:18px;font-weight:400}
+.mono{font-family:var(--mono);font-size:12px;color:var(--soft);letter-spacing:.02em}
+.n{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:48px;align-items:end;padding-bottom:36px;border-bottom:1px solid var(--ink)}
+.by{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:22px}
+h1{font-size:clamp(38px,6.4vw,76px);font-weight:900;line-height:1.08;letter-spacing:-.01em}
+h1 em{font-style:normal;color:var(--rouge)}
+.hero .en{display:block;margin-top:10px;font-size:22px}
+.hero p.lede{margin-top:22px;font-size:16.5px;color:var(--soft);max-width:34em}
+.strip{display:grid;gap:6px}
+.sw{display:grid;grid-template-columns:44px 1fr 52px;align-items:center;gap:10px}
+.sw .chip{height:30px;border-radius:15px}
+.sw .k{font-family:var(--num);font-size:18px}
+.sw .v{text-align:right}
+.strip .cap{margin-top:6px}
+
+.figures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--rule)}
+.fig{padding:22px 18px 22px 0;min-width:0}
+.fig+.fig{padding-left:18px;border-left:1px solid var(--rule)}
+.fig b{display:block;font-family:var(--num);font-weight:400;font-size:44px;line-height:1.1}
+.fig b small{font-size:22px}
+.fig span{font-size:13px;color:var(--soft)}
+
+/* chapters */
+.ch{padding:56px 0 8px;display:grid;gap:26px}
+.ch-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:12px}
+h2{font-size:clamp(24px,3vw,32px);font-weight:900;line-height:1.25}
+.ch>*{min-width:0}
+.ch-head>*{min-width:0}
+.intro{color:var(--soft);max-width:44em;font-size:14.5px}
+
+/* method timeline */
+.line{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;position:relative}
+.line::before{content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:var(--ink)}
+.stp{position:relative;padding:28px 16px 0 0;font-size:13.5px;line-height:1.65;min-width:0}
+.stp::before{content:"";position:absolute;top:2px;left:0;width:11px;height:11px;border-radius:50%;background:var(--bg);border:1.5px solid var(--ink)}
+.stp.key::before{background:var(--rouge);border-color:var(--rouge)}
+.stp b{display:block;font-size:14.5px;margin-bottom:4px}
+
+/* bars as swatches */
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
+.duo>div{min-width:0}
+.bars{display:grid;gap:9px;margin-top:16px}
+.bar{display:grid;grid-template-columns:84px 1fr 52px;gap:12px;align-items:center;font-size:14px}
+.bar .t{height:14px;border-radius:7px;background:var(--sunk);overflow:hidden}
+.bar .f{height:100%;border-radius:7px}
+.bar .v{text-align:right;font-family:var(--mono);font-size:13px}
+
+/* pull quotes */
+.pulls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;padding:8px 0}
+.pull{min-width:0;font-size:14px;color:var(--soft)}
+.pull b{display:block;font-family:var(--num);font-weight:400;font-size:46px;line-height:1;color:var(--ink);margin-bottom:8px}
+.pull b.r{color:var(--rouge)} .pull b.j{color:var(--jade)} .pull b.a{color:var(--amber)}
+.pull strong{color:var(--ink);font-weight:700}
+
+/* tables */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:620px}
+th{font-family:var(--mono);font-weight:500;font-size:11.5px;color:var(--soft);text-align:left;padding:8px 12px 8px 0;border-bottom:1px solid var(--ink);letter-spacing:.03em}
+td{padding:10px 12px 10px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+td.n{white-space:nowrap}
+.hi{color:var(--rouge);font-weight:500} .lo{color:var(--jade);font-weight:500}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--rouge);margin-right:6px;vertical-align:middle}
+.tl{color:var(--soft);font-size:13px}
+
+.map{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:start}
+.map>div{min-width:0}
+svg text{fill:var(--soft);font-family:var(--mono);font-size:10.5px}
+svg .lbl{fill:var(--ink);font-family:var(--sans);font-size:12.5px;font-weight:500}
+
+/* bench */
+.bench{background:var(--paper);border:1px solid var(--rule);border-radius:4px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.bench>div{padding:22px;min-width:0}
+.bench>div+div{border-left:1px solid var(--rule);background:var(--sunk)}
+textarea{width:100%;min-height:128px;font:inherit;font-size:14px;line-height:1.6;color:var(--ink);background:var(--bg);border:1px solid var(--rule);border-radius:4px;padding:12px;resize:vertical}
+textarea:focus,button:focus-visible{outline:2px solid var(--rouge);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+button{font:inherit;font-size:12.5px;cursor:pointer;border:1px solid var(--rule);background:transparent;color:var(--ink);border-radius:999px;padding:4px 12px}
+button:hover{border-color:var(--ink)}
+button.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.res{display:grid;gap:10px}
+.res .r{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:baseline;font-size:14px}
+.res .r>span:first-child{font-family:var(--mono);font-size:12px;color:var(--soft)}
+.tg{display:inline-block;font-size:12.5px;padding:0 9px;border-radius:999px;margin:0 4px 4px 0}
+.tg.p{background:var(--rouge-3);color:var(--rouge)} .tg.b{background:var(--jade-3);color:var(--jade)} .tg.s{border:1px solid var(--amber);color:var(--amber)}
+.none{color:var(--soft);font-size:13px}
+.prev{font-size:14px;line-height:1.7;word-break:break-word;border-top:1px solid var(--rule);padding-top:12px;margin-top:4px}
+mark{background:var(--rouge-3);color:var(--rouge);border-radius:2px;padding:0 2px}
+mark.b{background:var(--jade-3);color:var(--jade)} mark.s{background:transparent;color:var(--amber);border-bottom:1px solid var(--amber)} mark.x{background:transparent;color:var(--soft);text-decoration:line-through}
+.score{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.score>div{min-width:0}
+.score .big{font-family:var(--num);font-size:40px;line-height:1}
+.score .from{font-family:var(--mono);font-size:12px;color:var(--soft)}
+
+/* content */
+.prod{display:flex;gap:10px;flex-wrap:wrap}
+.prod button{font-size:14px;padding:6px 16px}
+.basis{font-size:14px;color:var(--soft);border-left:2px solid var(--rouge);padding-left:14px;max-width:52em}
+.basis strong{color:var(--ink)}
+.sheets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.sheet{background:var(--paper);padding:20px 22px;min-width:0;font-size:14px}
+.sheet h3{font-family:var(--mono);font-weight:500;font-size:11.5px;color:var(--soft);letter-spacing:.06em;margin-bottom:10px}
+.sheet ol,.sheet ul{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.say{display:grid;grid-template-columns:40px 1fr;gap:10px;margin-bottom:7px}
+.say i{font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--rouge);padding-top:3px}
+.head-copy{font-family:var(--serif);font-weight:900;font-size:22px;line-height:1.35}
+.sub-copy{color:var(--soft);font-size:13px;margin:6px 0 12px}
+.check{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;margin-top:4px}
+.flags{display:grid;gap:8px;font-size:13.5px}
+.flags div{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:baseline}
+.ok{color:var(--jade)}
+
+/* recoverability */
+.stack{display:flex;height:34px;border-radius:17px;overflow:hidden;margin:6px 0 10px}
+.stack span{display:grid;place-items:center;color:var(--paper);font-family:var(--mono);font-size:12px;white-space:nowrap;overflow:hidden}
+.legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;font-size:13.5px}
+.legend>div{min-width:0}
+.legend b{display:flex;align-items:center;gap:8px;font-size:14px;margin-bottom:4px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%}
+.reply{margin-top:10px;padding:10px 12px;background:var(--paper);border:1px solid var(--rule);border-radius:4px;font-size:13px;color:var(--ink)}
+.reply small{display:block;font-family:var(--mono);font-size:11px;color:var(--soft);margin-bottom:4px}
+/* opportunity */
+.opp{display:grid;gap:8px}
+.opp .o{display:grid;grid-template-columns:96px 1fr 44px 210px;gap:12px;align-items:center;font-size:14px}
+.opp .o .t{height:10px;border-radius:5px;background:var(--sunk);overflow:hidden}
+.opp .o .f{height:100%;border-radius:5px}
+.opp .o .v{font-family:var(--mono);font-size:13px;text-align:right}
+.opp .o .q{font-size:12.5px;color:var(--soft)}
+/* live */
+.live{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);border:1px solid var(--rule);border-radius:4px;background:var(--paper)}
+.live>div{padding:20px;min-width:0}
+.live>div+div{border-left:1px solid var(--rule)}
+.feed{height:300px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;background:var(--sunk);border-radius:4px;padding:12px;margin-top:10px}
+.dm{font-size:13.5px;line-height:1.5;padding:4px 10px;border-radius:12px;background:var(--paper);align-self:flex-start;max-width:100%}
+.dm em{font-style:normal;font-family:var(--mono);font-size:11px;margin-left:6px}
+.dm.c1{box-shadow:inset 3px 0 0 var(--rouge)} .dm.c2{box-shadow:inset 3px 0 0 var(--amber)} .dm.c3{box-shadow:inset 3px 0 0 var(--jade)} .dm.c4{box-shadow:inset 3px 0 0 var(--soft)}
+.ctrl{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.meter{display:grid;gap:7px;margin:12px 0 16px}
+.meter .m{display:grid;grid-template-columns:72px 1fr 24px;gap:10px;align-items:center;font-size:13px}
+.meter .t{height:8px;border-radius:4px;background:var(--sunk);overflow:hidden}
+.meter .f{height:100%;border-radius:4px;transition:width .3s}
+.alert{border-left:3px solid var(--rouge);padding:10px 14px;background:var(--rouge-3);border-radius:0 4px 4px 0;font-size:14px;min-height:96px}
+.alert.calm{border-color:var(--jade);background:var(--jade-3)}
+.alert b{display:block;margin-bottom:4px}
+/* quality */
+.qa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
+.qa>div{min-width:0}
+.tlrow{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center;font-size:13.5px;padding:8px 0;border-bottom:1px solid var(--rule)}
+.tlrow .pts{position:relative;height:18px}
+.tlrow .pts i{position:absolute;top:4px;width:10px;height:10px;border-radius:50%;background:var(--rouge);opacity:.8}
+.moves{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.mv{border-top:2px solid var(--ink);padding-top:12px;font-size:13.5px;min-width:0}
+.mv b{display:block;font-size:15px;margin-bottom:6px}
+.limits{margin:0;padding-left:1.2em;display:grid;gap:6px;color:var(--soft);font-size:14px;max-width:52em}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--ink);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12.5px;color:var(--soft)}
+footer a{color:var(--ink)}
+
+@media (max-width:900px){
+  .hero,.duo,.map,.bench,.check,.ch-head{grid-template-columns:1fr}
+  .bench>div+div{border-left:0;border-top:1px solid var(--rule)}
+  .figures{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fig:nth-child(3){padding-left:0;border-left:0}
+  .fig:nth-child(n+3){border-top:1px solid var(--rule)}
+  .line{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:20px}
+  .line::before{display:none}
+  .pulls,.score,.qa,.live{grid-template-columns:1fr}
+  .live>div+div{border-left:0;border-top:1px solid var(--rule)}
+  .legend{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .opp .o{grid-template-columns:84px 1fr 40px}
+  .opp .o .q{grid-column:1/-1;margin-top:-4px}
+  .sheets{grid-template-columns:1fr}
+  .moves{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (prefers-reduced-motion:no-preference){.f{transition:width .7s ease}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="hero">
+  <div>
+    <div class="by"><span class="mono">刘子萌</span><span class="mono">2026.11</span><span class="mono">数据与应用类作品</span></div>
+    <h1>美妆评论<br><em>洞察</em>工作台</h1>
+    <span class="en">What 2,797 serum reviews are really saying</span>
+    <p class="lede">从真实的精华评论里找出消费者给差评的原因、各成分赛道的口碑差异，再把结论写成选品建议、直播话术、详情页和会员关怀文案。</p>
+  </div>
+  <div class="strip" aria-label="星级分布">
+    <div class="sw"><span class="k">5★</span><span class="chip" style="background:var(--jade);width:100%"></span><span class="v n">1,591</span></div>
+    <div class="sw"><span class="k">4★</span><span class="chip" style="background:var(--jade-2);width:24.9%"></span><span class="v n">396</span></div>
+    <div class="sw"><span class="k">3★</span><span class="chip" style="background:var(--rule);width:12.4%"></span><span class="v n">197</span></div>
+    <div class="sw"><span class="k">2★</span><span class="chip" style="background:var(--rouge-2);width:13.3%"></span><span class="v n">212</span></div>
+    <div class="sw"><span class="k">1★</span><span class="chip" style="background:var(--rouge);width:25.2%"></span><span class="v n">401</span></div>
+    <p class="mono cap">精华品类星级分布 · 282 款产品 · 89 个品牌</p>
+  </div>
+</header>
+
+<div class="figures">
+  <div class="fig"><b>3.92</b><span>平均星级</span></div>
+  <div class="fig"><b>21.9<small>%</small></b><span>1–2 星差评占比（613 条）</span></div>
+  <div class="fig"><b>83.4<small>%</small></b><span>差评能被归到具体原因</span></div>
+  <div class="fig"><b>0.82</b><span>标签精确率（留出集，初版 0.54）</span></div>
+</div>
+
+<section class="ch">
+  <div class="ch-head"><h2>做法</h2><span class="en">Method</span></div>
+  <div class="line">
+    <div class="stp"><b>清洗</b>40,324 条原始评论按 ID 去重为 18,586 条，取精华品类 2,797 条，关联价格与产品名。</div>
+    <div class="stp"><b>建标签</b>8 类痛点、7 类功效、6 类肤质，先用关键词做第一版。</div>
+    <div class="stp key"><b>做金标准</b>用 Claude 逐条标注 241 条评论并抽检：141 条用来改规则，100 条留到最后才用。</div>
+    <div class="stp key"><b>改规则</b>逐条看误判：加入否定词识别、星级约束和语境判断，精确率 0.54 提到 0.82。</div>
+    <div class="stp"><b>出结论</b>差评原因、肤质、成分赛道、价格带四个角度。</div>
+    <div class="stp key"><b>写内容</b>Claude 按结论起草卖点、话术和文案，逐句改写后过合规词检查。</div>
+  </div>
+</section>
+
+<section class="ch">
+  <div class="ch-head"><h2>差评在抱怨什么，好评在夸什么</h2><span class="en">Voice of customer</span></div>
+  <div class="duo">
+    <div><h3>差评原因</h3><p class="mono">占 613 条 1–2 星评论，可多选</p><div class="bars" id="painBars"></div></div>
+    <div><h3>五星评论提到的功效与体验</h3><p class="mono">占 1,591 条 5 星评论，可多选</p><div class="bars" id="benBars"></div></div>
+  </div>
+  <div class="pulls">
+    <div class="pull"><b class="r">25.9%</b><strong>刺激和"没效果"并列差评前两位。</strong>前者靠试用指引和售后关怀兜底，后者要在详情页和直播里把见效周期讲清楚。</div>
+    <div class="pull"><b class="j">4.63★</b><strong>提到肤感的评论星级最高，</strong>高于任何一项功效。吸收快、不黏是最直接的好评来源，直播开场应先做上脸演示。</div>
+    <div class="pull"><b class="a">19.4%</b><strong>近两成差评提到气味，</strong>详情页却很少写气味。补一句气味描述，几乎没有成本。</div>
+  </div>
+  <div>
+    <h3 style="margin-bottom:10px">按肤质看</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>肤质</th><th>评论数</th><th>平均星级</th><th>差评率</th><th>主要痛点</th><th>该怎么做</th></tr></thead>
+      <tbody id="skinRows"></tbody>
+    </table></div>
+    <p class="mono" style="margin-top:8px">肤质来自评论自述；痛点统计自该肤质的 1–3 星评论</p>
+  </div>
+</section>
+
+<section class="ch">
+  <div class="ch-head"><h2>差评里，有多少本可以避免</h2><span class="en">Recoverable complaints</span></div>
+  <p class="intro">把 613 条差评按"谁能解决"分成四类。只涉及效果预期、肤感、气味、价格的，靠详情页、直播和客服就能提前化解；刺激和致痘属于体验风险，能靠试用指引降低；品质和包装问题要交给品牌和供应链。</p>
+  <div>
+    <div class="stack" role="img" aria-label="差评可挽回度构成">
+      <span style="width:35.9%;background:var(--jade)">35.9%</span>
+      <span style="width:38.7%;background:var(--rouge)">38.7%</span>
+      <span style="width:11.6%;background:var(--amber)">11.6%</span>
+      <span style="width:13.8%;background:var(--soft)">13.9%</span>
+    </div>
+    <div class="legend">
+      <div><b><i style="background:var(--jade)"></i>沟通可化解 · 220 条</b>没效果 105、不值 79、气味 77、黏腻 33、搓泥 13（可多选）。根源是预期和信息不对称。
+        <div class="reply"><small>客服回复模板</small>理解您的失望。这款建议连续使用 4 周再评估，我们为您补发一份使用指南，也可以帮您申请小样换购其他质地。</div></div>
+      <div><b><i style="background:var(--rouge)"></i>试用可降低 · 237 条</b>提到刺激或致痘。无法完全避免，但首单附试用步骤、首周回访，可以更早发现并止损。
+        <div class="reply"><small>客服回复模板</small>很抱歉给您带来不适，请先停用并用清水清洁。我们会为您优先处理退换，也想了解您的肤质和使用步骤，帮您找更合适的产品。</div></div>
+      <div><b><i style="background:var(--amber)"></i>需反馈品牌 · 71 条</b>包装损坏、空瓶、分层、变味、疑似换配方。运营单独解决不了，要按批次汇总给品牌和供应链。
+        <div class="reply"><small>客服回复模板</small>非常抱歉，请您提供批号和照片，我们会立即为您换新，并把这批产品的情况反馈给品质团队跟进。</div></div>
+      <div><b><i style="background:var(--soft)"></i>未归类 · 85 条</b>规则没有识别出具体原因，比如"不喜欢""不适合我"，或者表达比较特别。这部分交给大模型逐条读。</div>
+    </div>
+  </div>
+</section>
+
+<section class="ch">
+  <div class="ch-head"><h2>哪些赛道口碑稳，哪些需求大但风险高</h2><span class="en">Assortment</span></div>
+  <p class="intro">按产品名里的成分或功效宣称归类。每款产品约 10 条评论，所以只比较赛道，不给单品排名。</p>
+  <div class="map">
+    <div><svg id="scatter" viewBox="0 0 480 340" role="img" aria-label="各成分赛道的差评率与平均星级" style="width:100%;height:auto"></svg></div>
+    <div>
+      <h3>价格越高，差评越在意"值不值"</h3>
+      <div class="tbl" style="margin-top:10px"><table style="min-width:0">
+        <thead><tr><th>价格带</th><th>评论</th><th>星级</th><th>嫌不值</th><th>嫌没效</th></tr></thead>
+        <tbody id="priceRows"></tbody></table></div>
+      <p class="tl" style="margin-top:10px">百元以上产品的差评，超过三分之一在说不值；三十美元以下的差评，更多在说没效果。高价款要讲每天成本和使用周期，平价款要讲多久能看到变化。</p>
+    </div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>赛道</th><th>产品</th><th>评论</th><th>平均星级</th><th>差评率</th><th>差评里最常提到</th></tr></thead>
+    <tbody id="ingRows"></tbody></table></div>
+  <div class="pulls">
+    <div class="pull"><b class="j">13.0%</b><strong>屏障修护差评率最低，</strong>平均 4.29 星，适合做拉新款和敏感肌入门款。</div>
+    <div class="pull"><b class="r">33.2%</b><strong>淡斑赛道需求大、口碑风险也最大，</strong>维C 紧随其后（29.6%），差评主因都是刺激。上新时要配耐受指南和小样。</div>
+    <div class="pull"><b class="a">40.2%</b><strong>A 醇类差评里四成提到刺激，</strong>用法和频率要放在功效之前讲。</div>
+  </div>
+  <div>
+    <h3>机会指数：需求大、口碑缺口也大的地方，就是改良新品的机会</h3>
+    <p class="tl" style="margin:4px 0 14px">需求分 = 评论量 ÷ 最大赛道评论量；缺口分 = 差评率 ÷ 最高差评率；机会指数 = 两者的几何平均 × 100。</p>
+    <div class="opp" id="oppRows"></div>
+    <p class="tl" style="margin-top:12px">排在前面的淡斑和维C，说明消费者想要、但现有产品让很多人失望，"温和型淡斑精华"是值得验证的新品方向；屏障修护指数最低，不是没价值，而是口碑已经稳定，适合做引流款守住份额。</p>
+  </div>
+</section>
+
+<section class="ch">
+  <div class="ch-head"><h2>评论打标器</h2><span class="en">Try it</span></div>
+  <p class="intro">页面里运行的就是统计用的那套规则。贴一条英文评论、选星级，或者点示例。划线的词被否定词排除了，比如 "isn't sticky" 不算黏腻。</p>
+  <div class="bench">
+    <div>
+      <label for="revIn" class="mono">评论</label>
+      <textarea id="revIn"></textarea>
+      <div class="btns" id="stars" aria-label="星级"></div>
+      <div class="btns" id="exBtns"></div>
+    </div>
+    <div class="res">
+      <div class="r"><span>痛点</span><span id="oPain"></span></div>
+      <div class="r"><span>功效</span><span id="oBen"></span></div>
+      <div class="r"><span>肤质</span><span id="oSkin"></span></div>
+      <div class="prev" id="oText"></div>
+    </div>
+  </div>
+  <div>
+    <h3>准不准</h3>
+    <p class="tl" style="margin:4px 0 16px">用 100 条从未参与改规则的评论检验（40 条差评、20 条中评、40 条好评）。</p>
+    <div class="score">
+      <div><div class="big n">0.82</div><div class="from">精确率 · 初版 0.54</div><p class="tl" style="margin-top:6px">打上的标签大多是对的，统计占比可以信。</p></div>
+      <div><div class="big n">0.64</div><div class="from">召回率 · 初版 0.63</div><p class="tl" style="margin-top:6px">"没效果""不值"的说法太多样，规则只抓到常见表达。</p></div>
+      <div><div class="big n">0.72</div><div class="from">F1 · 初版 0.59</div><p class="tl" style="margin-top:6px">改规则用的 141 条上是 0.80，留出集更低，说明有过拟合，以 0.72 为准。</p></div>
+    </div>
+    <p class="tl" style="margin-top:16px">"包装"类在留出集上一条也没抓到：为了压误报，规则卡得太严。这类评论更适合交给大模型逐条复核，规则负责量大、表达固定的部分。</p>
+  </div>
+</section>
+
+<section class="ch">
+  <div class="ch-head"><h2>把结论写成上线内容</h2><span class="en">Content</span></div>
+  <p class="intro">两款均为示例产品，不对应任何真实品牌。</p>
+  <div class="prod" id="prodTabs"></div>
+  <p class="basis" id="prodWhy"></p>
+  <div class="sheets" id="prodCopy"></div>
+  <div>
+    <h3>合规词自查</h3>
+    <p class="tl" style="margin:4px 0 12px">参考《广告法》和化妆品功效宣称相关规定整理的常见风险表述，仅供运营自查，不替代法务审核。可直接改下面的文字。</p>
+    <div class="check">
+      <textarea id="compIn" style="min-height:110px"></textarea>
+      <div class="flags" id="compOut"></div>
+    </div>
+  </div>
+</section>
+
+<section class="ch">
+  <div class="ch-head"><h2>直播弹幕预警</h2><span class="en">Live room radar</span></div>
+  <p class="intro">把同一套思路搬进直播间：弹幕按问题类型实时归类，最近 15 条里某类问题超过 5 条，就提醒主播切换到对应话术。下面是一场屏障修护精华直播的模拟弹幕，点"播放"看它怎么工作。</p>
+  <div class="live">
+    <div>
+      <div class="ctrl"><button type="button" id="livePlay">播放</button><button type="button" id="liveReset">从头开始</button><span class="mono" id="liveCount"></span></div>
+      <div class="feed" id="feed" aria-live="off"></div>
+    </div>
+    <div>
+      <h3>最近 15 条弹幕</h3>
+      <div class="meter" id="meter"></div>
+      <div class="alert calm" id="alertBox"></div>
+    </div>
+  </div>
+  <p class="tl">弹幕为模拟数据，归类用中文关键词规则。真实场景可以接入直播后台的弹幕数据，规则拿不准的交给大模型。</p>
+</section>
+
+<section class="ch">
+  <div class="ch-head"><h2>品质异常预警</h2><span class="en">Batch watch</span></div>
+  <div class="qa">
+    <div>
+      <p class="intro">差评里提到"换配方""分层""变质""过期""空瓶"的，往往不是个人体验问题，而是批次或配方出了状况。在 18,586 条护肤评论里，有 343 条 1–3 星评论出现这类信号。</p>
+      <p class="tl" style="margin-top:12px">预警规则：同一款产品 30 天内出现 3 条及以上，就推送给品牌和供应链核查批次。按这条规则，有 9 款产品触发预警。抽查 20 条命中评论，18 条确实在说品质问题（误报如"希望品牌改配方"）。</p>
+      <p class="tl" style="margin-top:12px">右侧是触发最集中的六个案例，按品类展示，不点名品牌。</p>
+    </div>
+    <div id="qaRows"></div>
+  </div>
+  <p class="tl">局限：每款产品只有约 10 条最新评论，"短期集中"的一部分来自抓取方式；真实部署需要接入全量评论，并和退货、客诉数据交叉验证。</p>
+</section>
+
+<section class="ch">
+  <div class="ch-head"><h2>落到电商运营上</h2><span class="en">Next moves</span></div>
+  <div class="moves">
+    <div class="mv"><b>选品</b>屏障修护类做拉新款；按机会指数验证温和型淡斑新品，上新同步备小样。</div>
+    <div class="mv"><b>直播</b>开场先上脸演示肤感；弹幕预警提示时切换话术，A 醇和维C 先讲用法。</div>
+    <div class="mv"><b>详情页</b>首屏写清肤感、气味和见效周期；高价款补每天成本。</div>
+    <div class="mv"><b>会员</b>首购后第 1、7、28 天：提醒试用、回访肤感、对比复盘和复购。</div>
+    <div class="mv"><b>客服与品质</b>差评按"谁能解决"分流：沟通类走客服模板，品质类按批次推给品牌。</div>
+  </div>
+</section>
+
+<section class="ch">
+  <div class="ch-head"><h2>局限</h2><span class="en">Caveats</span></div>
+  <ul class="limits">
+    <li>数据是美国 Sephora 的英文评论，不能直接代表中国消费者，落地前要用天猫、抖音的评论重跑。</li>
+    <li>每款产品约 10 条评论，结论只停在赛道层面；赛道之间的差异是相关，不是因果。</li>
+    <li>肤质和成分来自评论自述与产品名，会有漏标。</li>
+    <li>部分评论来自品牌赠送的试用，好评率可能偏高。</li>
+  </ul>
+</section>
+
+<footer>
+  <span><a href="../project-detail.html?id=beauty-review-insights" target="_top">← 项目页 / Project page</a></span>
+  <span>数据：<a href="https://www.kaggle.com/datasets/natashamessier/sephora-skincare-reviews-and-sentiment" target="_blank" rel="noopener">Sephora Skincare Reviews &amp; Sentiment</a>（Kaggle，MIT）</span>
+</footer>
+</div>
+
+<script>
+const PAIN=[['刺激过敏',25.9],['无明显效果',25.1],['致痘闷痘',20.1],['价格价值',20.1],['气味',19.4],['黏腻厚重',10.1],['包装',3.4],['搓泥',2.8]];
+const BEN=[['保湿补水',37.9],['提亮淡斑',36.5],['肤感质地',31.7],['舒缓修护',20.6],['抗老紧致',17.5],['净痘清痘',12.8],['控油毛孔',5.8]];
+function bars(id,data,max,cols){document.getElementById(id).innerHTML=data.map(([k,v],i)=>`<div class="bar"><span>${k}</span><div class="t"><div class="f" style="width:${(v/max*100).toFixed(1)}%;background:${cols[Math.min(i,cols.length-1)]}"></div></div><span class="v">${v}%</span></div>`).join('')}
+bars('painBars',PAIN,40,['var(--rouge)','var(--rouge)','var(--rouge-2)','var(--rouge-2)','var(--rouge-2)','var(--rouge-3)']);
+bars('benBars',BEN,40,['var(--jade)','var(--jade)','var(--jade)','var(--jade-2)','var(--jade-2)','var(--jade-3)']);
+const SKIN=[['敏感肌',337,3.95,20.8,'刺激、致痘、气味','强调先在耳后试用，避免绝对化的"温和"承诺'],['干皮',133,4.47,9.0,'黏腻、没效果','满意度最高，保湿类内容可多用干皮反馈'],['痘肌',83,3.84,24.1,'致痘、黏腻','差评率最高，讲清质地和是否易闷痘'],['混合皮',77,4.18,14.3,'致痘、黏腻、价格','给分区用法，T 区少量'],['油皮',60,4.05,21.7,'黏腻、致痘','主推清爽质地，演示吸收速度']];
+document.getElementById('skinRows').innerHTML=SKIN.map(([k,n,a,r,t,m])=>`<tr><td><b>${k}</b></td><td class="n">${n}</td><td class="n">${a.toFixed(2)}</td><td class="n ${r>=20?'hi':r<=10?'lo':''}">${r.toFixed(1)}%</td><td>${t}</td><td class="tl">${m}</td></tr>`).join('');
+const ING=[['维C',45,452,3.67,29.6,'刺激 29.9%　没效果 19.4%　不值 18.7%'],['淡斑/传明酸',45,449,3.51,33.2,'刺激 30.2%　没效果 24.8%　不值 17.4%'],['A 醇类',43,402,3.81,24.1,'刺激 40.2%　气味 23.7%　没效果 18.6%'],['玻尿酸',40,393,4.09,17.3,'没效果 33.8%　致痘 26.5%　不值 20.6%'],['烟酰胺',30,307,4.06,17.9,'没效果 29.1%　刺激 21.8%　不值 18.2%'],['酸类焕肤',29,291,3.92,21.3,'致痘 33.9%　刺激 30.6%　没效果 25.8%'],['多肽',26,256,3.72,27.7,'气味 23.9%　刺激 23.9%　没效果 21.1%'],['屏障/神经酰胺',15,154,4.29,13.0,'刺激 25.0%　气味 20.0%　致痘 15.0%']];
+document.getElementById('ingRows').innerHTML=ING.map(([k,p,n,a,r,t])=>`<tr><td><b>${k}</b></td><td class="n">${p}</td><td class="n">${n}</td><td class="n">${a.toFixed(2)}</td><td class="n ${r>=25?'hi':r<=15?'lo':''}">${r.toFixed(1)}%</td><td class="tl">${t}</td></tr>`).join('');
+const PB=[['< $30',602,3.83,9.0,29.2],['$30–60',810,3.98,19.2,19.2],['$60–100',960,3.91,22.0,25.7],['≥ $100',425,3.94,35.2,28.4]];
+document.getElementById('priceRows').innerHTML=PB.map(([k,n,a,v,e])=>`<tr><td>${k}</td><td class="n">${n}</td><td class="n">${a.toFixed(2)}</td><td class="n ${v>=30?'hi':''}">${v}%</td><td class="n">${e}%</td></tr>`).join('');
+(function(){const s=document.getElementById('scatter');const W=480,H=340,L=44,R=20,T=18,B=40;const x=v=>L+(v-10)/(36-10)*(W-L-R),y=v=>T+(4.4-v)/(4.4-3.4)*(H-T-B);
+let g='';[10,15,20,25,30,35].forEach(v=>{g+=`<line x1="${x(v)}" x2="${x(v)}" y1="${T}" y2="${H-B}" stroke="var(--rule)" stroke-dasharray="2 3"/><text x="${x(v)}" y="${H-B+16}" text-anchor="middle">${v}%</text>`});
+[3.4,3.6,3.8,4.0,4.2,4.4].forEach(v=>{g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--rule)" stroke-dasharray="2 3"/><text x="${L-8}" y="${y(v)+4}" text-anchor="end">${v.toFixed(1)}</text>`});
+g+=`<text x="${W-R}" y="${H-6}" text-anchor="end">差评率 →</text><text x="${L}" y="${T-6}" text-anchor="start">↑ 平均星级</text>`;
+const off={'维C':[14,16,'start'],'淡斑/传明酸':[-14,-12,'end'],'A 醇类':[14,4,'start'],'玻尿酸':[-12,-10,'end'],'烟酰胺':[14,14,'start'],'酸类焕肤':[14,4,'start'],'多肽':[-14,-8,'end'],'屏障/神经酰胺':[14,4,'start']};
+ING.forEach(([k,p,n,a,r])=>{const cx=x(r),cy=y(a),rad=5+Math.sqrt(n)/2.6;const col=r>=25?'var(--rouge)':r<=15?'var(--jade)':'var(--amber)';const o=off[k];g+=`<circle cx="${cx}" cy="${cy}" r="${rad}" fill="${col}" fill-opacity=".22" stroke="${col}" stroke-width="1.5"/><circle cx="${cx}" cy="${cy}" r="2.5" fill="${col}"/><text class="lbl" x="${cx+o[0]}" y="${cy+o[1]}" text-anchor="${o[2]}">${k}</text>`});
+s.innerHTML=g})();
+
+const NEG=/\b(not|no|never|without|zero|isn'?t|doesn'?t|didn'?t|won'?t|wasn'?t|hasn'?t|haven'?t|nor|free of|instead of)\b[^.!?]{0,22}$/i;
+const P2={
+'致痘闷痘':{re:/broke (me|my skin|my face)? ?out|break(s|ing)? (me|my skin) out|made me break ?out|breakouts?|broke out|pimples?|clogged|cystic|red bumps|bumps|acne/ig,excl:/(clear|calm|treat|prevent|heal|help|fade|reduc|scar|spots? from|fight)[^.!?]{0,25}$/i,low:true},
+'刺激过敏':{re:/burn(s|ed|ing)?|sting(s|ing)?|irritat\w*|itch\w*|rash\w*|reaction|allerg\w*|tingl\w*|swollen|hives/ig},
+'搓泥':{re:/\bpill(s|ed|ing)?\b|piling|ball(s|ed)? up/ig},
+'黏腻厚重':{re:/sticky|tacky|greasy|oily|heavy|residue|sits? on top|doesn'?t absorb|goopy|too shiny|stays tacky/ig,low:true},
+'气味':{re:/smell\w*|scent\w*|fragrance\w*|odou?r|stink\w*/ig,low:true},
+'无明显效果':{re:/no (visible |noticeable |real )?(difference|results?|benefit|change)|saw no|(not|didn'?t|did not) (notice|see|do|help|work|change|make)\w*|(not|didn'?t) (necessarily )?(notice|see) (a |any )?(huge |big |notable |much )?(difference|change|results?)|doesn'?t (do|work|help|noticab)\w*|not (seeing|noticing|working)|nothing (changed|happened|miraculous)|did nothing|does nothing|ineffective|underwhelm|no wow|can'?t (see|say|confirm)|any difference|waste|not worth|without results|just ok/ig,low:true,noNeg:true},
+'价格价值':{re:/expensive|pric(e|ey|y)|overpriced|money|worth|cost|tiny|miniature|small (size|bottle|amount)|for the price/ig,low:true},
+'包装':{re:/packag\w*|bottle|pump|dropper|\blid\b|\bcap\b|container|dispenser|leak\w*|falling apart|\btube\b|\bjar\b/ig,low:true,ctx:/broke|broken|leak|mess|hard to|difficult|terrible|worst|falling|fix|defective|doesn'?t work|didn'?t work|annoy|cheap|flimsy|rolling|explod|wouldn'?t come out|no .{0,20}come out|infuriat|pain to|clog/i}};
+const BENR={'保湿补水':/hydrat\w*|moistur\w*|plump\w*|dewy|quench\w*/ig,'提亮淡斑':/bright\w*|dark spots?|hyperpig\w*|glow\w*|radian\w*|skin tone|discolor\w*|dull\w*/ig,'抗老紧致':/wrinkles?|fine lines?|firm\w*|aging|ageing|sagg\w*|elastic\w*|\blift\w*/ig,'控油毛孔':/pores?|oil control|less oily|shine|sebum|mattif\w*/ig,'净痘清痘':/acne|blemish\w*|clear(er)? skin|clear(s|ed)? up/ig,'舒缓修护':/sooth\w*|calm\w*|redness|barrier|repair\w*|heal\w*/ig,'肤感质地':/absorb\w*|lightweight|light weight|not sticky|non.?greasy|silky|smooth\w*/ig};
+const SKR={'干皮':/dry skin|skin is (very |super |extremely )?dry|dehydrated skin/ig,'油皮':/oily skin|skin is (very |super )?oily|oily t.?zone/ig,'混合皮':/combination|combo skin/ig,'敏感肌':/sensitive/ig,'痘肌':/acne.?prone|breakout.?prone/ig,'熟龄肌':/mature skin|in my (40|50|60)s/ig};
+function run(text,rating){const marks=[];const pain=[];
+ for(const k in P2){const d=P2[k];d.re.lastIndex=0;let m,hit=false;while((m=d.re.exec(text))){const pre=text.slice(Math.max(0,m.index-40),m.index);let ok=true;
+  if(!d.noNeg&&NEG.test(pre)){ok=false;marks.push([m.index,m[0].length,'x'])}
+  else if(d.excl&&d.excl.test(pre))ok=false;
+  else if(k==='刺激过敏'&&rating>=4&&!/tingl/i.test(m[0]))ok=false;
+  else if(d.low&&rating>=4&&!(k==='价格价值'&&/(docked|too pric|pricey)/i.test(text)))ok=false;
+  if(ok&&d.ctx){const st=text.lastIndexOf('.',m.index)+1,en=text.slice(m.index).search(/[.!?]/);const sent=text.slice(st,en<0?text.length:m.index+en);if(!d.ctx.test(sent))ok=false}
+  if(ok){hit=true;marks.push([m.index,m[0].length,'p'])}}
+  if(hit)pain.push(k)}
+ const ben=[];for(const k in BENR){const re=BENR[k];re.lastIndex=0;let m,hit=false;while((m=re.exec(text))){const pre=text.slice(Math.max(0,m.index-40),m.index);if(NEG.test(pre))continue;hit=true;marks.push([m.index,m[0].length,'b'])}if(hit)ben.push(k)}
+ const sk=[];for(const k in SKR){const re=SKR[k];re.lastIndex=0;let m,hit=false;while((m=re.exec(text))){hit=true;marks.push([m.index,m[0].length,'s'])}if(hit)sk.push(k)}
+ return {pain,ben,sk,marks}}
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+let curStar=5;
+function render(){const t=document.getElementById('revIn').value;const r=run(t,curStar);
+ const tags=(a,c)=>a.length?a.map(x=>`<span class="tg ${c}">${x}</span>`).join(''):'<span class="none">—</span>';
+ document.getElementById('oPain').innerHTML=tags(r.pain,'p');document.getElementById('oBen').innerHTML=tags(r.ben,'b');document.getElementById('oSkin').innerHTML=tags(r.sk,'s');
+ const ms=r.marks.sort((a,b)=>a[0]-b[0]||b[1]-a[1]);let out='',i=0;ms.forEach(([s,l,c])=>{if(s<i)return;out+=esc(t.slice(i,s));const cls=c==='p'?'':c;out+=`<mark class="${cls}">${esc(t.slice(s,s+l))}</mark>`;i=s+l});out+=esc(t.slice(i));
+ document.getElementById('oText').innerHTML=out||'<span class="none">命中的词会在这里高亮</span>'}
+const starsEl=document.getElementById('stars');
+function setStar(n){curStar=n;[...starsEl.children].forEach((c,j)=>c.classList.toggle('on',j===n-1))}
+[1,2,3,4,5].forEach(n=>{const b=document.createElement('button');b.type='button';b.id='star'+n;b.textContent=n+'★';b.onclick=()=>{setStar(n);render()};starsEl.appendChild(b)});
+const EX=[['油皮·黏腻',2,'Not for me! After using the product my skin became very shiny and oily. I also noticed my pores looked bigger.'],['过敏',1,'Do not buy. Allergic reaction, my face got so red and itchy, even though I only used this product for 2 nights.'],['气味',3,'Bad smell. It hasn’t been long enough to tell how this retinol is working but I’m struggling with the smell. I would not purchase because of it.'],['没效果',1,'Not for me. Bought two bottles to give it a good try. No noticeable difference in my dark spots, pretty disappointed.'],['包装',2,'Defective pump. The pump literally doesn’t work so I can’t get the product to come out.'],['好评里的否定词',5,'Must try! Use it every day and can really see a difference. Feels great and isn’t sticky. I have sensitive skin and this works great for me.']];
+const exEl=document.getElementById('exBtns');EX.forEach(([lab,st,txt],i)=>{const b=document.createElement('button');b.type='button';b.id='ex'+i;b.textContent=lab;b.onclick=()=>{document.getElementById('revIn').value=txt;setStar(st);render()};exEl.appendChild(b)});
+document.getElementById('revIn').addEventListener('input',render);
+document.getElementById('revIn').value=EX[5][2];setStar(5);render();
+
+const PROD={
+ a:{name:'屏障修护精华',why:'<strong>为什么是它：</strong>屏障修护赛道平均 4.29 星、差评率 13.0%，口碑最稳；敏感肌是评论里自述最多的肤质（337 条），最怕刺激；近两成差评提到气味。所以内容围绕三件事：肤感演示、试用步骤、气味说明。',
+  s:[
+   ['卖点',`<ol><li><b>先看肤感：</b>水润不黏，约 30 秒吸收。提到肤感的评论平均 4.63 星，演示比口播有说服力。</li><li><b>配方不含香精（示例设定）：</b>直接回应气味类差评。</li><li><b>神经酰胺配方：</b>帮助维护皮肤屏障。</li></ol>`],
+   ['直播口播 · 约 60 秒',`<div class="say"><i>开场</i><span>换季一涂东西就泛红、刺刺的，扣个"1"，我看看有多少人。</span></div><div class="say"><i>痛点</i><span>精华的差评里，四分之一在说刺激。所以今天先不讲多神奇，先讲怎么用得安心。</span></div><div class="say"><i>演示</i><span>我在手臂上挤一泵，大家看质地，抹开，三十秒，摸上去是滑的，不黏手。</span></div><div class="say"><i>用法</i><span>第一次用，先在耳后试三天，没问题再上全脸，早晚各一泵就够。</span></div><div class="say"><i>下单</i><span>今天下单送同款小样，先开小样，满意了再开正装。</span></div>`],
+   ['详情页首屏',`<p class="head-copy">换季泛红干痒？<br>先把屏障养稳</p><p class="sub-copy">神经酰胺修护配方　配方不含香精　水润不黏</p><ul><li>首屏放上脸吸收的短视频，替代静态质地图</li><li>写明气味，例如"几乎无味"</li><li>用法区写试用步骤，不写"适合所有肌肤"</li></ul>`],
+   ['问答与会员消息',`<p><b>敏感肌能用吗？</b>配方温和，但肤质因人而异，建议先在耳后试用 3 天；如持续刺痛、泛红请停用。</p><p style="margin-top:8px"><b>会搓泥吗？</b>等完全吸收再叠面霜，1 泵就够。</p><p class="tl" style="margin-top:12px">第 1 天提醒耳后试用；第 7 天回访肤感，回复 1/2/3 即可；第 28 天邀请拍同角度对比照，推送复购权益。</p>`]]},
+ b:{name:'维C焕亮精华',why:'<strong>为什么是它：</strong>维C 赛道评论量第一（452 条），差评率却有 29.6%：差评里三成说刺激、两成说没效果、近两成说不值。所以内容围绕三件事：建立耐受的用法、说清见效周期、讲出价值感。（示例假设已取得美白祛斑类特殊化妆品注册证。）',
+  s:[
+   ['卖点',`<ol><li><b>循序渐进：</b>前两周隔天晚上用，适应后改为每天，回应刺激类差评。</li><li><b>周期说清楚：</b>建议连续使用 4–8 周、配合防晒再评估，不承诺几天见效。</li><li><b>算清每天成本：</b>一瓶约用 60 天（示例），回应"不值"。</li></ol>`],
+   ['直播口播 · 约 60 秒',`<div class="say"><i>开场</i><span>想提亮、又怕维C刺痛的，扣个"怕"。</span></div><div class="say"><i>痛点</i><span>维C精华的差评，近三成说刺激，两成说没效果，问题多半出在用法和预期上。</span></div><div class="say"><i>用法</i><span>前两周隔天晚上用，叠在保湿后面；白天一定要防晒。</span></div><div class="say"><i>预期</i><span>提亮需要时间，连续用四到八周再看，我们不说几天见效。</span></div><div class="say"><i>下单</i><span>今天是小样加正装：先用小样适应，再开正装。</span></div>`],
+   ['详情页首屏',`<p class="head-copy">维C焕亮，<br>从温和开始</p><p class="sub-copy">两周适应方案　连续使用 4–8 周评估　每瓶约 60 天</p><ul><li>首屏放"第 1–14 天 / 第 15 天起"的用法时间轴</li><li>写明轻微刺感，以及什么情况需要停用</li><li>价格区展示每天成本</li></ul>`],
+   ['问答与会员消息',`<p><b>有点刺感正常吗？</b>初用可能有轻微刺感；若持续灼热、泛红请停用。可以先涂保湿再涂精华。</p><p style="margin-top:8px"><b>用了两周没变化？</b>皮肤更新需要时间，建议连续 4–8 周、配合防晒再看。</p><p class="tl" style="margin-top:12px">第 3 天询问适应情况；第 14 天提醒可改为每天用；第 45 天邀请对比复盘，推送复购权益。</p>`]]}};
+const tabsEl=document.getElementById('prodTabs');
+function showProd(k){const p=PROD[k];[...tabsEl.children].forEach(c=>c.classList.toggle('on',c.dataset.k===k));document.getElementById('prodWhy').innerHTML=p.why;document.getElementById('prodCopy').innerHTML=p.s.map(([h,b])=>`<div class="sheet"><h3>${h}</h3>${b}</div>`).join('')}
+Object.keys(PROD).forEach(k=>{const b=document.createElement('button');b.type='button';b.id='tab-'+k;b.dataset.k=k;b.textContent=PROD[k].name;b.onclick=()=>showProd(k);tabsEl.appendChild(b)});showProd('a');
+
+const RULES=[[/最[好佳强优]|第一|顶级|极致|全网/g,'绝对化用语，《广告法》禁止'],[/100%|百分百/g,'绝对化数字承诺，需要依据'],[/零刺激|无刺激|不刺激/g,'无法保证人人不刺激，改为试用步骤'],[/抗敏|脱敏|抗过敏/g,'化妆品不得宣称抗敏、脱敏'],[/治疗|根治|消炎|杀菌|药用|处方|医学级|医用/g,'医疗用语，化妆品不得使用'],[/祛斑|美白|淡斑/g,'美白祛斑类宣称，需特殊化妆品注册证'],[/修复/g,'容易引申为医疗功效，建议改为"修护"'],[/立刻|立即|马上|\d+天(见效|淡斑|美白)|速效/g,'速效承诺，需要功效试验依据'],[/纯天然|无添加/g,'泛化表述，需写明具体成分和依据'],[/烂脸|换脸|逆龄|永久/g,'夸大或不当表述']];
+function comp(){const t=document.getElementById('compIn').value;const hits=[];RULES.forEach(([re,why])=>{re.lastIndex=0;const f=[...new Set((t.match(re)||[]))];if(f.length)hits.push([f.join('、'),why])});
+ document.getElementById('compOut').innerHTML=hits.length?hits.map(([w,why])=>`<div><span class="tg p">${esc(w)}</span><span>${why}</span></div>`).join(''):'<div><span class="ok">●</span><span>没有发现常见风险词。上线前仍需法务或品牌合规确认。</span></div>'}
+document.getElementById('compIn').value='全网最好用的抗敏精华，零刺激，7天淡斑，医学级修复烂脸，100%纯天然无添加！';
+document.getElementById('compIn').addEventListener('input',comp);comp();
+
+// ---- opportunity index ----
+(function(){const maxN=Math.max(...ING.map(r=>r[2])),maxR=Math.max(...ING.map(r=>r[4]));
+ const rows=ING.map(([k,p,n,a,r])=>{const d=n/maxN*100,g=r/maxR*100;return [k,Math.sqrt(d*g),d,g]}).sort((a,b)=>b[1]-a[1]);
+ document.getElementById('oppRows').innerHTML=rows.map(([k,v,d,g])=>{const col=v>=85?'var(--rouge)':v>=60?'var(--amber)':'var(--jade)';const q=v>=85?'改良新品机会':v>=60?'优化内容与用法':'稳定，做引流';return `<div class="o"><span>${k}</span><div class="t"><div class="f" style="width:${v.toFixed(1)}%;background:${col}"></div></div><span class="v">${v.toFixed(0)}</span><span class="q">${q} · 需求 ${d.toFixed(0)} / 缺口 ${g.toFixed(0)}</span></div>`}).join('')})();
+
+// ---- live radar ----
+const CAT=[['敏感刺激',/敏感|过敏|刺痛|刺激|泛红|红血丝|烂脸|孕妇|酒精/,'var(--rouge)','c1','敏感肌姐妹先别急：这款配方不含香精和酒精（示例设定），但每个人肤质不同，第一次一定先在耳后试三天，没问题再上全脸。'],
+ ['价格优惠',/多少钱|价格|贵|便宜|优惠|券|划算|值不值|满减|赠品|小样|买一送|学生党/,'var(--amber)','c2','给大家算笔账：一瓶早晚各一泵能用约两个月，折下来每天成本很低；今天下单再送同款小样，先试再开正装。'],
+ ['效果周期',/多久|几天|见效|有用|效果|管用|真的假的|维持/,'var(--jade)','c3','肤感是当下就能感觉到的；皮肤状态的变化，建议连续用四周再看，我们不说几天见效。'],
+ ['肤感质地',/黏|油皮|搓泥|吸收|厚重|清爽|闷/,'var(--jade-2)','c3','我再上脸演示一次：一泵抹开，等三十秒，摸上去是滑的，叠面霜之前等它完全吸收就不会搓泥。'],
+ ['气味',/味道|香精|香味|好闻|气味/,'var(--soft)','c4','这款几乎没有味道，对气味敏感的姐妹可以放心。'],
+ ['发货售后',/发货|快递|退|换货|保质期|日期/,'var(--soft)','c4','发货和售后问题请点左下角客服，主播这边先回答产品问题。']];
+const DM=['来了来了','主播今天皮肤好好','这个是精华还是乳液','上脸看看','质地看着好水','姐妹们冲','吸收快吗','油皮能用吗','今天有赠品吗',
+'敏感肌能用吗','我用维C都刺痛，这个会不会','红血丝能用吗','上次用别家过敏了','敏感肌+1','会不会泛红','孕妇可以用吗','刺激吗','烂脸期能用吗','有没有酒精','我脸一涂东西就刺痛','敏感肌求回答',
+'好的谢谢主播','耳后试三天记住了','味道怎么样','没有香精吧','吸收挺快的','叠面霜会不会搓泥',
+'多少钱','贵不贵','有券吗','今天什么价','比旗舰店便宜吗','买一送几','小样送几个','值不值啊','满减怎么算','学生党买得起吗',
+'多久见效','用几天能看到效果','真的有用吗','效果能维持吗','一瓶能用多久','真的假的',
+'什么时候发货','可以退吗','保质期多久','下单了','已拍','冲了冲了','主播讲得好清楚'];
+let li=0,timer=null;const WIN=15,TH=5;
+function cls(t){for(const c of CAT)if(c[1].test(t))return c;return null}
+function liveRender(){const shown=DM.slice(0,li);const feed=document.getElementById('feed');
+ feed.innerHTML=shown.slice(-8).map(t=>{const c=cls(t);return `<div class="dm ${c?c[3]:''}">${esc(t)}${c?`<em style="color:${c[2]}">${c[0]}</em>`:''}</div>`}).join('');
+ const win=shown.slice(-WIN);const cnt=CAT.map(c=>win.filter(t=>c[1].test(t)).length);
+ document.getElementById('meter').innerHTML=CAT.map((c,i)=>`<div class="m"><span>${c[0]}</span><div class="t"><div class="f" style="width:${cnt[i]/WIN*100}%;background:${c[2]}"></div></div><span class="n">${cnt[i]}</span></div>`).join('');
+ let top=-1,mx=0;cnt.forEach((v,i)=>{if(v>mx){mx=v;top=i}});const box=document.getElementById('alertBox');
+ if(mx>=TH){box.className='alert';box.innerHTML=`<b>${CAT[top][0]}类问题集中出现（最近 15 条里 ${mx} 条），建议切换话术：</b>${CAT[top][4]}`}
+ else{box.className='alert calm';box.innerHTML='<b>暂无集中问题</b>按原定节奏讲解，继续上脸演示。'}
+ document.getElementById('liveCount').textContent=`${li} / ${DM.length} 条`}
+function step(){if(li>=DM.length){stop();return}li++;liveRender()}
+function stop(){clearInterval(timer);timer=null;document.getElementById('livePlay').textContent='播放'}
+document.getElementById('livePlay').onclick=()=>{if(timer){stop();return}if(li>=DM.length)li=0;timer=setInterval(step,650);document.getElementById('livePlay').textContent='暂停'};
+document.getElementById('liveReset').onclick=()=>{stop();li=0;liveRender()};
+li=19;liveRender();
+
+// ---- quality watch ----
+const QA=[['面部油',7,6,'分层'],['洁面',22,6,'换配方'],['爽肤水',22,5,'变质、换配方'],['洁面',12,4,'分层、换配方'],['面霜',9,3,'换配方'],['有色面霜',14,3,'分层']];
+document.getElementById('qaRows').innerHTML='<p class="mono" style="margin-bottom:6px">横条长度为集中出现的天数（满格 30 天），圆点为条数</p>'+QA.map(([c,d,n,k])=>`<div class="tlrow"><span><b>${c}</b><br><span class="tl">${n} 条 / ${d} 天 · ${k}</span></span><div class="pts" style="width:${d/30*100}%;border-bottom:2px solid var(--rouge-3)">${Array.from({length:n},(_,i)=>`<i style="left:calc(${n>1?i/(n-1)*100:0}% - ${n>1?i/(n-1)*10:0}px)"></i>`).join('')}</div></div>`).join('');
+</script>
+
+</body></html>

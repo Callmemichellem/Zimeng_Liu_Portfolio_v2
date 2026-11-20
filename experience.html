@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -12,72 +13,38 @@
 
     <meta
         name="description"
-        content="Professional experience of Michelle Liu."
+        content="Professional experience of Zimeng (Michelle) Liu across consulting, data, finance, research and audit."
     >
 
-    <title>Experience | Michelle Liu</title>
+    <title data-zh="实习经历 | Zimeng Liu">Experience | Zimeng Liu</title>
 
     <link
         rel="stylesheet"
         href="assets/css/styles.css"
     >
+
 </head>
 
 
 <body>
 
-<nav class="navbar">
+<header class="nav">
 
-    <div class="container nav-content">
+    <div class="container nav-inner">
 
-        <a
-            class="brand"
-            href="index.html"
-        >
-            zimengliu.com
-        </a>
+        <a class="brand" href="index.html">zimengliu<span>.com</span></a>
 
-
-        <ul
-            class="nav-links"
-            id="navLinks"
-        >
-            <li>
-                <a href="index.html#about">
-                    About
-                </a>
-            </li>
-
-            <li>
-                <a
-                    href="experience.html"
-                    class="active"
-                >
-                    Experience
-                </a>
-            </li>
-
-            <li>
-                <a href="projects.html">
-                    Projects
-                </a>
-            </li>
-
-            <li>
-                <a href="research.html">
-                    Research
-                </a>
-            </li>
-
-            <li>
-                <a href="cv.html">
-                    CV
-                </a>
-            </li>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="experience.html">Experience</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="journey.html">Journey</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a class="nav-cta" href="index.html#contact">Contact</a></li>
         </ul>
 
-
-        <div class="nav-actions">
+        <div class="nav-tools">
 
             <div
                 class="language-switcher"
@@ -100,11 +67,19 @@
                 </button>
             </div>
 
+            <button
+                class="menu-btn"
+                type="button"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
         </div>
 
     </div>
 
-</nav>
+</header>
 
 
 <main>
@@ -113,19 +88,11 @@
 
         <div class="container">
 
-            <span class="eyebrow">
-                Professional Experience
-            </span>
+            <span class="eyebrow" data-zh="实习经历">Professional Experience</span>
 
-            <h1>
-                Experience
-            </h1>
+            <h1 data-zh="实习经历">Experience</h1>
 
-            <p class="lead">
-                An overview of my experience across data,
-                finance, securities research, accounting,
-                audit and sustainability.
-            </p>
+            <p class="lead" data-zh="我在咨询、数据、金融、证券研究、会计审计与可持续发展领域的经历概览。">An overview of my experience across consulting, data, finance, securities research, accounting, audit and sustainability.</p>
 
         </div>
 
@@ -138,18 +105,11 @@
 
             <div class="section-heading">
 
-                <span class="eyebrow">
-                    Career Map
-                </span>
+                <span class="eyebrow" data-zh="经历地图">Career Map</span>
 
-                <h2>
-                    Experience by field
-                </h2>
+                <h2 data-zh="按领域浏览">Experience by field</h2>
 
-                <p>
-                    Select an organisation to jump directly
-                    to its position in the timeline.
-                </p>
+                <p data-zh="点击机构名称，可直接跳转到时间线中的对应位置。">Select an organisation to jump directly to its position in the timeline.</p>
 
             </div>
 
@@ -171,19 +131,11 @@
 
             <div class="section-heading">
 
-                <span class="eyebrow">
-                    Timeline
-                </span>
+                <span class="eyebrow" data-zh="时间线">Timeline</span>
 
-                <h2>
-                    Professional journey
-                </h2>
+                <h2 data-zh="职业历程">Professional journey</h2>
 
-                <p>
-                    Key responsibilities are summarised here.
-                    Open an experience for detailed analysis,
-                    evidence and selected visualisations.
-                </p>
+                <p data-zh="这里概括主要职责；点击进入可查看详细分析、关键数据与可视化。">Key responsibilities are summarised here. Open an experience for detailed analysis, evidence and selected visualisations.</p>
 
             </div>
 
@@ -203,16 +155,20 @@
 
 <footer class="footer">
 
-    <div class="container footer-content">
+    <div class="container footer-inner">
 
         <span>
-            © Michelle Liu
+            © <span data-year></span> Zimeng Liu
         </span>
 
         <span>
-            Sydney · Beijing
+            Personal portfolio · Sydney, Australia
         </span>
 
+    </div>
+
+    <div class="container privacy-note">
+        Personal website. Not an official University of Sydney website.
     </div>
 
 </footer>
@@ -223,6 +179,8 @@
 <script src="assets/js/i18n.js"></script>
 
 <script src="assets/js/experience.js"></script>
+
+<script src="assets/js/main.js"></script>
 
 </body>
 
