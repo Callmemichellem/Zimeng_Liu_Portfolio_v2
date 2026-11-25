@@ -110,20 +110,24 @@ function renderExperienceDetail(language = getPortfolioLanguage()) {
                     <div class="detail-company-info">
 
                         <span class="eyebrow">
-                            ${experience.dates[language]}
+                            ${experience.dates[language]}${experience.status ? ` · ${experience.status[language]}` : ""}
                         </span>
 
                         <h1>
                             ${experience.company[language]}
                         </h1>
 
+                        ${experience.headline ? `<p class="detail-tagline">“${experience.headline[language]}”</p>` : ""}
+
                         <p class="detail-role">
                             ${experience.role[language]}
                         </p>
 
-                        <p class="detail-location">
+                        ${experience.focus ? `<p class="detail-subtitle">${experience.focus[language]}</p>` : ""}
+
+                        ${experience.location ? `<p class="detail-location">
                             ${experience.location[language]}
-                        </p>
+                        </p>` : ""}
 
                     </div>
 
@@ -173,7 +177,7 @@ function renderExperienceDetail(language = getPortfolioLanguage()) {
 
                         </div>
 
-                        <div class="detail-sidebar-item">
+                        ${experience.location ? `<div class="detail-sidebar-item">
 
                             <span>
                                 ${language === "zh"
@@ -185,7 +189,7 @@ function renderExperienceDetail(language = getPortfolioLanguage()) {
                                 ${experience.location[language]}
                             </strong>
 
-                        </div>
+                        </div>` : ""}
 
                         <div class="detail-sidebar-item">
 
@@ -1141,6 +1145,11 @@ function renderProjectDetail(language = getPortfolioLanguage()) {
     );
 
     if (!project) {
+        // items that moved from Projects to Experience keep their old links working
+        if (PORTFOLIO_DATA.experiences.some(item => item.id === projectId)) {
+            window.location.replace(`experience-detail.html?id=${encodeURIComponent(projectId)}`);
+            return;
+        }
         renderProjectNotFound(root, language);
         return;
     }

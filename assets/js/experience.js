@@ -127,9 +127,9 @@ function renderExperienceTimeline(container, language) {
                             ${experience.role[language]}
                         </p>
 
-                        <p class="experience-location">
+                        ${experience.location ? `<p class="experience-location">
                             ${experience.location[language]}
-                        </p>
+                        </p>` : ""}
                     </div>
 
                 </div>

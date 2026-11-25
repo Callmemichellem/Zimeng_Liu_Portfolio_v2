@@ -64,6 +64,8 @@ const PORTFOLIO_DATA = {
 
             sortDate: "2026-12",
 
+            logo: "assets/logos/ant-group.png",
+
             background: {
                 title: {
                     en: "The brief & my role",
@@ -349,6 +351,329 @@ const PORTFOLIO_DATA = {
                         bullets: [
                             "搭建跨部门 KPI 进度协同共享看板，同步各业务组的目标完成率、缺口预警与待协同事项。",
                             "配套建立周度进度同步机制。"
+                        ]
+                    }
+                ]
+            }
+        },
+
+        {
+            id: "cicc-investment-analysis",
+            category: "finance-investment",
+
+            headline: {
+                en: "Cheap, Big and Fast",
+                zh: "低价、大量、高周转"
+            },
+
+            title: {
+                en: "CICC Investment Analysis Project — Eastroc Beverage: Business Model, Revenue and Cost Structure",
+                zh: "中金证券投资分析项目——东鹏饮料：商业模式、收入结构与成本结构"
+            },
+
+            company: {
+                en: "CICC",
+                zh: "中金公司"
+            },
+
+            role: {
+                en: "Investment Analysis Project · Project member",
+                zh: "投资分析项目 · 项目组员"
+            },
+
+            // shown under the role on the detail page
+            focus: {
+                en: "Business model, revenue and cost analysis of Eastroc Beverage (605499.SH / 09980.HK)",
+                zh: "东鹏饮料（605499.SH / 09980.HK）商业模式、收入与成本分析"
+            },
+
+            status: {
+                en: "In progress · week 1 delivered",
+                zh: "进行中 · 第 1 周已完成"
+            },
+
+            dates: {
+                en: "18 Nov – 19 Dec 2026",
+                zh: "2026.11.18 – 2026.12.19"
+            },
+
+            sortDate: "2026-11",
+
+            logo: "assets/logos/projects/cicc.png",
+
+            background: {
+                title: {
+                    en: "The Company and the Question",
+                    zh: "公司与问题"
+                },
+                pointsTitle: {
+                    en: "What the first module covers",
+                    zh: "第一阶段回答的问题"
+                },
+                paragraphs: {
+                    en: [
+                        "The target company is Eastroc Beverage, China's leading energy-drink maker, listed on the Shanghai main board (2021) and in Hong Kong (February 2026). Founded in Shenzhen in 1994, it reported 2025 revenue of RMB 20.875bn (+31.8%) and net profit attributable to shareholders of RMB 4.415bn (+32.7%), with a 51.6% share of China's energy-drink volume.",
+                        "The four-week project moves from business model to industry, financial analysis and an investment report. The first module, delivered as three slides built from the 2023–2025 annual reports and the 2026 interim and third-quarter reports, asks how the company makes money and what its advantages cost."
+                    ],
+                    zh: [
+                        "目标公司是东鹏饮料：中国能量饮料龙头，2021 年在上交所主板上市，2026 年 2 月在港交所上市。公司 1994 年成立于深圳，2025 年营收 208.75 亿元（+31.8%），归母净利润 44.15 亿元（+32.7%），能量饮料销量份额 51.6%。",
+                        "四周项目依次覆盖商业模式、行业、财务分析和投资报告。第一阶段用 2023–2025 年报、2026 年半年报和三季报做成 3 页分析，回答公司怎么赚钱、优势的代价是什么。"
+                    ]
+                },
+                points: {
+                    en: [
+                        "Business model: who the customers are, what the value proposition is, and which parts of the value chain the company owns.",
+                        "Revenue structure: products, channels and regions from 2023 to Q3 2026, and how operating activities turn into cash.",
+                        "Cost structure: where the costs sit, what builds the moat and what could become a burden."
+                    ],
+                    zh: [
+                        "商业模式：客户是谁、价值主张是什么、公司掌握价值链的哪些环节。",
+                        "收入结构：2023 年至 2026 年三季度的产品、渠道和区域结构，以及经营活动如何转化为现金。",
+                        "成本结构：成本花在哪里，哪些投入构成壁垒，哪些可能变成负担。"
+                    ]
+                }
+            },
+
+            overviewBullets: {
+                en: [
+                    "Broke down Eastroc Beverage's value chain across customer positioning, R&D and production, channels and delivery: it owns the brand, recipes, 14 production bases (6.747m tonnes of design capacity in 2025) and 600k+ store fridges, and leaves delivery to 3,479 distributors (85.7% of revenue), a cost-advantage model unlike outsourced-production peers.",
+                    "Built 2023–Q3 2026 revenue, cash-flow and cost tables: the flagship energy drink brings about 70% of revenue at a 50.8% gross margin, but growth slowed from +31.8% in 2025 to +10.4% in the first three quarters of 2026; distributor prepayments lifted 2023–2025 operating cash flow to 1.56× net profit, and direct materials make up about 80% of cost of sales."
+                ],
+                zh: [
+                    "从用户定位、研发生产、渠道销售、产品交付四个环节拆解东鹏饮料的价值链：公司掌握品牌、配方、14 个生产基地（2025 年设计产能 674.7 万吨）和 60 万台以上终端冰柜，把配送交给 3,479 家经销商（经销收入占 85.7%），是一家靠自建工厂取得成本优势的大众消费品公司。",
+                    "整理 2023 年至 2026 年三季度的收入、现金流与成本表：东鹏特饮贡献约七成收入、毛利率 50.8%，但营收增速由 2025 年的 +31.8% 降至 2026 年前三季度的 +10.4%；经销商预付货款使 2023–2025 年经营现金流达到同期净利润的 1.56 倍；直接材料约占主营业务成本八成。"
+                ]
+            },
+
+            tags: [
+                "Equity Research",
+                "Business Model Analysis",
+                "Revenue Structure",
+                "Cost Structure",
+                "Cash Flow Quality",
+                "Consumer Goods",
+                "Excel",
+                "PowerPoint"
+            ],
+
+            metrics: [
+                {
+                    value: { en: "RMB 20.9bn", zh: "208.75 亿元" },
+                    label: {
+                        en: "2025 revenue, +31.8% year on year",
+                        zh: "2025 年营收，同比 +31.8%"
+                    }
+                },
+                {
+                    value: "74.8%",
+                    label: {
+                        en: "Share of 2025 revenue from energy drinks (50.8% gross margin)",
+                        zh: "2025 年能量饮料收入占比（毛利率 50.8%）"
+                    }
+                },
+                {
+                    value: "85.7%",
+                    label: {
+                        en: "Revenue through distributors; top five customers only 4.9%",
+                        zh: "经销渠道收入占比；前五大客户仅占 4.9%"
+                    }
+                },
+                {
+                    value: "1.56×",
+                    label: {
+                        en: "2023–2025 operating cash flow relative to net profit",
+                        zh: "2023–2025 年经营现金流 / 同期净利润"
+                    }
+                },
+                {
+                    value: "+31.8% → +10.4%",
+                    label: {
+                        en: "Revenue growth: 2025 vs first three quarters of 2026",
+                        zh: "营收增速：2025 年 vs 2026 年前三季度"
+                    }
+                },
+                {
+                    value: "79.6%",
+                    label: {
+                        en: "Direct materials in 2025 cost of sales; freight 7.3%",
+                        zh: "2025 年直接材料占主营业务成本；运费 7.3%"
+                    }
+                }
+            ],
+
+            visuals: [
+                {
+                    type: "table",
+                    source: {
+                        en: "Slide 1 · business model",
+                        zh: "第 1 页 · 商业模式"
+                    },
+                    title: {
+                        en: "Value Chain: What Eastroc Owns",
+                        zh: "价值链拆解：东鹏掌握什么"
+                    },
+                    columns: {
+                        en: ["Link", "Question", "Eastroc's answer"],
+                        zh: ["环节", "问题", "东鹏的做法"]
+                    },
+                    rows: [
+                        [{ en: "Customer positioning", zh: "用户定位" }, { en: "Whose money?", zh: "挣谁的钱" }, { en: "Mass-market blue-collar workers and young people; large 500ml bottles at about half the per-100ml price of canned Red Bull", zh: "大众蓝领和年轻人，功能刚需且价格敏感；500ml 大瓶装，每 100ml 价格约为罐装红牛的一半" }],
+                        [{ en: "R&D and production", zh: "研发生产" }, { en: "Original or follower?", zh: "原创还是跟随" }, { en: "Own recipes; 14 bases produce near demand, with only about 50k tonnes outsourced", zh: "配方自主研发；14 个基地就近生产，委托加工仅约 5 万吨" }],
+                        [{ en: "Channels", zh: "渠道销售" }, { en: "Platform or own channel?", zh: "平台还是自营" }, { en: "Distributors 85.7%; key accounts such as petrol stations and highway service areas 11.3%; online 3.0%", zh: "经销占 85.7%；加油站、高速服务区等重客直营 11.3%；线上 3.0%" }],
+                        [{ en: "Delivery", zh: "产品交付" }, { en: "Offline or online?", zh: "线下还是线上" }, { en: "Distributors deliver to small stores; the company places 600k+ fridges to control shelf display; freight is 7.25% of cost of sales", zh: "经销商配送到小店；公司自购 60 万台以上冰柜掌控终端陈列；运费占主营业务成本 7.25%" }]
+                    ],
+                    caption: {
+                        en: "Unlike Three Squirrels, which outsources production, Eastroc owns the brand, recipes, factories and store fridges and leaves only delivery to distributors.",
+                        zh: "与外包生产的三只松鼠不同，东鹏掌握品牌、配方、工厂和终端冰柜，只把配送交给经销商。"
+                    }
+                },
+                {
+                    type: "table",
+                    source: {
+                        en: "Slide 2 · revenue structure",
+                        zh: "第 2 页 · 收入结构"
+                    },
+                    title: {
+                        en: "Revenue, Net Profit and Operating Cash Flow (RMB bn)",
+                        zh: "营收、归母净利润与经营现金流（亿元）"
+                    },
+                    columns: {
+                        en: ["Period", "Core revenue", "Growth", "Operating cash flow", "Net profit", "Cash / profit"],
+                        zh: ["期间", "主营收入", "营收同比", "经营现金流", "归母净利润", "倍数"]
+                    },
+                    rows: [
+                        ["2023", "112.5", "+32.4%", "32.8", "20.4", "1.61"],
+                        ["2024", "158.2", "+40.6%", "57.9", "33.3", "1.74"],
+                        ["2025", "208.6", "+31.8%", "61.7", "44.2", "1.40"],
+                        [{ en: "Q1–Q3 2026", zh: "2026 年前三季度" }, "185.7", "+10.4%", "35.4", "41.5", "0.85"]
+                    ],
+                    highlightRow: 3,
+                    caption: {
+                        en: "Figures in RMB 100m (亿元). Distributors pay in advance (contract liabilities of 5.97bn at end-2025, receivables of only 0.09bn), so cash flow ran ahead of profit until 2026, when operating cash flow fell below net profit and Q3 energy-drink revenue fell 8.6%.",
+                        zh: "单位：亿元。经销商预付货款（2025 年末合同负债 59.7 亿元，应收账款仅 0.9 亿元），所以现金流一直好于利润；到 2026 年前三季度，经营现金流低于净利润，Q3 单季能量饮料收入 −8.6%。"
+                    }
+                },
+                {
+                    type: "table",
+                    source: {
+                        en: "Slide 3 · cost structure",
+                        zh: "第 3 页 · 成本结构"
+                    },
+                    title: {
+                        en: "Costs as a Share of Revenue",
+                        zh: "成本费用占营业收入比例"
+                    },
+                    columns: {
+                        en: ["Item", "2023", "2024", "2025", "Q1–Q3 2026"],
+                        zh: ["项目", "2023", "2024", "2025", "2026 年前三季度"]
+                    },
+                    rows: [
+                        [{ en: "Cost of sales", zh: "营业成本" }, "56.9%", "55.2%", "55.1%", "52.5%"],
+                        [{ en: "Selling expenses", zh: "销售费用" }, "17.4%", "16.9%", "16.3%", "16.0%"],
+                        [{ en: "Admin expenses", zh: "管理费用" }, "3.3%", "2.7%", "2.8%", "3.0%"],
+                        [{ en: "R&D expenses", zh: "研发费用" }, "0.5%", "0.4%", "0.3%", "0.4%"],
+                        [{ en: "Gross margin", zh: "毛利率" }, "43.1%", "44.8%", "44.9%", "47.5%"],
+                        [{ en: "Net margin", zh: "归母净利率" }, "18.1%", "21.0%", "21.1%", "22.3%"]
+                    ],
+                    caption: {
+                        en: "Direct materials (sugar, PET preforms, cartons) are about 80% of cost of sales. New products carry lower margins (electrolyte drinks 34.8% vs energy drinks 50.8%), so a rising new-product mix pulls the overall margin down; recent margin gains came mainly from cheaper raw materials.",
+                        zh: "直接材料（白砂糖、PET 瓶坯、纸箱等）约占主营业务成本八成。新品毛利率低于能量饮料（电解质 34.8% vs 能量饮料 50.8%），新品占比越高，整体毛利率越受拖累；近期毛利率改善主要来自原料降价。"
+                    }
+                },
+                {
+                    type: "table",
+                    source: {
+                        en: "Project outline",
+                        zh: "项目大纲"
+                    },
+                    title: {
+                        en: "Four-Week Structure",
+                        zh: "四周安排"
+                    },
+                    columns: {
+                        en: ["Week", "Topic", "Status"],
+                        zh: ["周次", "主题", "进度"]
+                    },
+                    rows: [
+                        ["1", { en: "Business model: revenue, cost, profit model, moat", zh: "公司商业模式分析：收入、成本、盈利模式、壁垒" }, { en: "Delivered (3 slides)", zh: "已完成（3 页）" }],
+                        ["2", { en: "Industry: size, supply and demand, competition, growth drivers; forecasting model", zh: "行业分析：规模、供需、竞争、增长驱动；预测模型" }, { en: "Next", zh: "待完成" }],
+                        ["3", { en: "Operations and financials: three statements, ratios, attribution, valuation basics", zh: "经营与财务分析：三张表、财务比率、业绩归因、估值基础" }, { en: "Next", zh: "待完成" }],
+                        ["4", { en: "Investment report", zh: "投资分析报告" }, { en: "Next", zh: "待完成" }]
+                    ],
+                    caption: {
+                        en: "The page will be updated as each module is completed.",
+                        zh: "每完成一个模块，本页会同步更新。"
+                    }
+                }
+            ],
+
+            details: {
+                en: [
+                    {
+                        title: "Business Model",
+                        bullets: [
+                            "Customers: the direct customers are 3,479 distributors, with the top five at only 4.9% of sales; end consumers started with long-haul drivers and now include students, sports fans and gamers.",
+                            "Value proposition: an energy boost at a low price, in large bottles, chilled and within reach in small stores and petrol stations.",
+                            "Model: own factories at scale, distributors pay in advance and push stock into stores together with company-owned fridges; profit comes from low prices, high volume and fast turnover, and new products reuse the same channel."
+                        ]
+                    },
+                    {
+                        title: "Revenue Structure",
+                        bullets: [
+                            "2025 revenue by product: energy drinks RMB 15.60bn (74.8%), electrolyte drinks 3.27bn (15.7%, +119%), other drinks 1.99bn (9.5%).",
+                            "In the first three quarters of 2026 revenue grew 10.4%; energy drinks fell 8.6% in Q3 alone and the two largest regions, South and Central China, declined, while tea drinks grew 183%.",
+                            "Each sale is one-off, but low unit prices and daily consumption make repeat purchases high, and dispersed distributors mean no reliance on any single customer."
+                        ]
+                    },
+                    {
+                        title: "Cost Structure and Moat",
+                        bullets: [
+                            "Asset-heavy in production (14 bases, RMB 6.36bn of fixed assets and construction in progress, 23.8% of total assets) and asset-light in distribution.",
+                            "Producing near demand keeps freight at about 7% of cost of sales, so large, low-priced bottles still earn a 50.8% gross margin; 3,479 distributors, 4.5m+ active stores and 600k+ fridges let new products reach shelves quickly.",
+                            "Possible burdens: rebates payable rose about 70% to RMB 3.45bn by Q1 2026; Nongfu Spring entered electrolyte drinks at under RMB 4; margin gains from cheaper raw materials will not last."
+                        ]
+                    },
+                    {
+                        title: "View So Far and Next Steps",
+                        bullets: [
+                            "Eastroc's edge comes from the cost advantage of its own factories and a nationwide store network that rivals cannot copy quickly; as energy-drink growth slows, spending on fridges, rebates and new plants will weigh on profit and cash flow.",
+                            "The key question for future revenue is whether energy drinks stop declining and whether tea and other new categories can carry growth.",
+                            "Next: industry analysis and a forecasting model, financial statement and ratio analysis, then the investment report."
+                        ]
+                    }
+                ],
+
+                zh: [
+                    {
+                        title: "商业模式",
+                        bullets: [
+                            "客户：直接客户是 3,479 家经销商，前五大只占销售额 4.9%；最终消费者以长途司机等蓝领起家，现在覆盖学生、运动人群和游戏玩家。",
+                            "价值主张：满足提神、补能的功能刚需，大瓶平价，在小店、加油站随手可买，冷藏即饮。",
+                            "模式：自建工厂规模化生产，经销商预付货款提货，再由经销商和公司投放的冰柜铺到终端；利润来自低价、大量、高周转，新品复用同一套渠道。"
+                        ]
+                    },
+                    {
+                        title: "收入结构",
+                        bullets: [
+                            "2025 年按产品：能量饮料 156.0 亿元（74.8%），电解质饮料 32.7 亿元（15.7%，+119%），其他饮料 19.9 亿元（9.5%）。",
+                            "2026 年前三季度营收 +10.4%；Q3 单季能量饮料 −8.6%，华南、华中两大区域收入下滑，茶饮料前三季度 +183%。",
+                            "每笔是一次性交易，但饮料单价低、天天消费，复购高；经销商分散，收入不依赖单一客户。"
+                        ]
+                    },
+                    {
+                        title: "成本结构与竞争优势",
+                        bullets: [
+                            "生产端偏重（14 个基地，固定资产与在建工程 63.6 亿元，占总资产 23.8%），渠道端偏轻。",
+                            "就近建厂使运费只占主营业务成本 7% 左右，大瓶平价的能量饮料仍有 50.8% 毛利率；3,479 家经销商、450 万+ 活跃终端和 60 万台以上冰柜让新品能快速铺货。",
+                            "可能的负担：26Q1 末应付销售返利 34.5 亿元，同比约 +70%；农夫山泉以不到 4 元切入电解质赛道；原料降价带来的毛利率改善不会一直持续。"
+                        ]
+                    },
+                    {
+                        title: "目前的判断与下一步",
+                        bullets: [
+                            "东鹏的竞争优势来自自建工厂的成本优势和覆盖全国的终端网络，对手很难短期复制；但能量饮料增长放缓后，冰柜、返利、新工厂等投入会压低利润和现金流。",
+                            "判断未来收入，关键看能量饮料能否止住下滑，以及茶饮料等新品能否接上增长。",
+                            "下一步：行业分析与预测模型、财务报表与比率分析，最后完成投资分析报告。"
                         ]
                     }
                 ]
@@ -6596,322 +6921,7 @@ search.fit(X_train, y_train)`
         ]
     }
 },
-{
-    id: "cicc-investment-analysis",
-    category: "finance-investment",
 
-    headline: {
-        en: "Cheap, Big and Fast",
-        zh: "低价、大量、高周转"
-    },
-
-    title: {
-        en: "CICC Investment Analysis Project — Eastroc Beverage: Business Model, Revenue and Cost Structure",
-        zh: "中金证券投资分析项目——东鹏饮料：商业模式、收入结构与成本结构"
-    },
-
-    organisation: {
-        en: "CICC",
-        zh: "中金证券"
-    },
-
-    role: {
-        en: "Project member · business model, revenue and cost analysis of Eastroc Beverage (605499.SH / 09980.HK)",
-        zh: "项目组员 · 东鹏饮料（605499.SH / 09980.HK）商业模式、收入与成本分析"
-    },
-
-    status: {
-        en: "In progress · week 1 delivered",
-        zh: "进行中 · 第 1 周已完成"
-    },
-
-    dates: {
-        en: "18 Nov – 19 Dec 2026",
-        zh: "2026.11.18 – 2026.12.19"
-    },
-
-    sortDate: "2026-11",
-
-    logo: "assets/logos/projects/cicc.png",
-
-    background: {
-        title: {
-            en: "The Company and the Question",
-            zh: "公司与问题"
-        },
-        pointsTitle: {
-            en: "What the first module covers",
-            zh: "第一阶段回答的问题"
-        },
-        paragraphs: {
-            en: [
-                "The target company is Eastroc Beverage, China's leading energy-drink maker, listed on the Shanghai main board (2021) and in Hong Kong (February 2026). Founded in Shenzhen in 1994, it reported 2025 revenue of RMB 20.875bn (+31.8%) and net profit attributable to shareholders of RMB 4.415bn (+32.7%), with a 51.6% share of China's energy-drink volume.",
-                "The four-week project moves from business model to industry, financial analysis and an investment report. The first module, delivered as three slides built from the 2023–2025 annual reports and the 2026 interim and third-quarter reports, asks how the company makes money and what its advantages cost."
-            ],
-            zh: [
-                "目标公司是东鹏饮料：中国能量饮料龙头，2021 年在上交所主板上市，2026 年 2 月在港交所上市。公司 1994 年成立于深圳，2025 年营收 208.75 亿元（+31.8%），归母净利润 44.15 亿元（+32.7%），能量饮料销量份额 51.6%。",
-                "四周项目依次覆盖商业模式、行业、财务分析和投资报告。第一阶段用 2023–2025 年报、2026 年半年报和三季报做成 3 页分析，回答公司怎么赚钱、优势的代价是什么。"
-            ]
-        },
-        points: {
-            en: [
-                "Business model: who the customers are, what the value proposition is, and which parts of the value chain the company owns.",
-                "Revenue structure: products, channels and regions from 2023 to Q3 2026, and how operating activities turn into cash.",
-                "Cost structure: where the costs sit, what builds the moat and what could become a burden."
-            ],
-            zh: [
-                "商业模式：客户是谁、价值主张是什么、公司掌握价值链的哪些环节。",
-                "收入结构：2023 年至 2026 年三季度的产品、渠道和区域结构，以及经营活动如何转化为现金。",
-                "成本结构：成本花在哪里，哪些投入构成壁垒，哪些可能变成负担。"
-            ]
-        }
-    },
-
-    overviewBullets: {
-        en: [
-            "Broke down Eastroc Beverage's value chain across customer positioning, R&D and production, channels and delivery: it owns the brand, recipes, 14 production bases (6.747m tonnes of design capacity in 2025) and 600k+ store fridges, and leaves delivery to 3,479 distributors (85.7% of revenue), a cost-advantage model unlike outsourced-production peers.",
-            "Built 2023–Q3 2026 revenue, cash-flow and cost tables: the flagship energy drink brings about 70% of revenue at a 50.8% gross margin, but growth slowed from +31.8% in 2025 to +10.4% in the first three quarters of 2026; distributor prepayments lifted 2023–2025 operating cash flow to 1.56× net profit, and direct materials make up about 80% of cost of sales."
-        ],
-        zh: [
-            "从用户定位、研发生产、渠道销售、产品交付四个环节拆解东鹏饮料的价值链：公司掌握品牌、配方、14 个生产基地（2025 年设计产能 674.7 万吨）和 60 万台以上终端冰柜，把配送交给 3,479 家经销商（经销收入占 85.7%），是一家靠自建工厂取得成本优势的大众消费品公司。",
-            "整理 2023 年至 2026 年三季度的收入、现金流与成本表：东鹏特饮贡献约七成收入、毛利率 50.8%，但营收增速由 2025 年的 +31.8% 降至 2026 年前三季度的 +10.4%；经销商预付货款使 2023–2025 年经营现金流达到同期净利润的 1.56 倍；直接材料约占主营业务成本八成。"
-        ]
-    },
-
-    tags: [
-        "Equity Research",
-        "Business Model Analysis",
-        "Revenue Structure",
-        "Cost Structure",
-        "Cash Flow Quality",
-        "Consumer Goods",
-        "Excel",
-        "PowerPoint"
-    ],
-
-    metrics: [
-        {
-            value: { en: "RMB 20.9bn", zh: "208.75 亿元" },
-            label: {
-                en: "2025 revenue, +31.8% year on year",
-                zh: "2025 年营收，同比 +31.8%"
-            }
-        },
-        {
-            value: "74.8%",
-            label: {
-                en: "Share of 2025 revenue from energy drinks (50.8% gross margin)",
-                zh: "2025 年能量饮料收入占比（毛利率 50.8%）"
-            }
-        },
-        {
-            value: "85.7%",
-            label: {
-                en: "Revenue through distributors; top five customers only 4.9%",
-                zh: "经销渠道收入占比；前五大客户仅占 4.9%"
-            }
-        },
-        {
-            value: "1.56×",
-            label: {
-                en: "2023–2025 operating cash flow relative to net profit",
-                zh: "2023–2025 年经营现金流 / 同期净利润"
-            }
-        },
-        {
-            value: "+31.8% → +10.4%",
-            label: {
-                en: "Revenue growth: 2025 vs first three quarters of 2026",
-                zh: "营收增速：2025 年 vs 2026 年前三季度"
-            }
-        },
-        {
-            value: "79.6%",
-            label: {
-                en: "Direct materials in 2025 cost of sales; freight 7.3%",
-                zh: "2025 年直接材料占主营业务成本；运费 7.3%"
-            }
-        }
-    ],
-
-    visuals: [
-        {
-            type: "table",
-            source: {
-                en: "Slide 1 · business model",
-                zh: "第 1 页 · 商业模式"
-            },
-            title: {
-                en: "Value Chain: What Eastroc Owns",
-                zh: "价值链拆解：东鹏掌握什么"
-            },
-            columns: {
-                en: ["Link", "Question", "Eastroc's answer"],
-                zh: ["环节", "问题", "东鹏的做法"]
-            },
-            rows: [
-                [{ en: "Customer positioning", zh: "用户定位" }, { en: "Whose money?", zh: "挣谁的钱" }, { en: "Mass-market blue-collar workers and young people; large 500ml bottles at about half the per-100ml price of canned Red Bull", zh: "大众蓝领和年轻人，功能刚需且价格敏感；500ml 大瓶装，每 100ml 价格约为罐装红牛的一半" }],
-                [{ en: "R&D and production", zh: "研发生产" }, { en: "Original or follower?", zh: "原创还是跟随" }, { en: "Own recipes; 14 bases produce near demand, with only about 50k tonnes outsourced", zh: "配方自主研发；14 个基地就近生产，委托加工仅约 5 万吨" }],
-                [{ en: "Channels", zh: "渠道销售" }, { en: "Platform or own channel?", zh: "平台还是自营" }, { en: "Distributors 85.7%; key accounts such as petrol stations and highway service areas 11.3%; online 3.0%", zh: "经销占 85.7%；加油站、高速服务区等重客直营 11.3%；线上 3.0%" }],
-                [{ en: "Delivery", zh: "产品交付" }, { en: "Offline or online?", zh: "线下还是线上" }, { en: "Distributors deliver to small stores; the company places 600k+ fridges to control shelf display; freight is 7.25% of cost of sales", zh: "经销商配送到小店；公司自购 60 万台以上冰柜掌控终端陈列；运费占主营业务成本 7.25%" }]
-            ],
-            caption: {
-                en: "Unlike Three Squirrels, which outsources production, Eastroc owns the brand, recipes, factories and store fridges and leaves only delivery to distributors.",
-                zh: "与外包生产的三只松鼠不同，东鹏掌握品牌、配方、工厂和终端冰柜，只把配送交给经销商。"
-            }
-        },
-        {
-            type: "table",
-            source: {
-                en: "Slide 2 · revenue structure",
-                zh: "第 2 页 · 收入结构"
-            },
-            title: {
-                en: "Revenue, Net Profit and Operating Cash Flow (RMB bn)",
-                zh: "营收、归母净利润与经营现金流（亿元）"
-            },
-            columns: {
-                en: ["Period", "Core revenue", "Growth", "Operating cash flow", "Net profit", "Cash / profit"],
-                zh: ["期间", "主营收入", "营收同比", "经营现金流", "归母净利润", "倍数"]
-            },
-            rows: [
-                ["2023", "112.5", "+32.4%", "32.8", "20.4", "1.61"],
-                ["2024", "158.2", "+40.6%", "57.9", "33.3", "1.74"],
-                ["2025", "208.6", "+31.8%", "61.7", "44.2", "1.40"],
-                [{ en: "Q1–Q3 2026", zh: "2026 年前三季度" }, "185.7", "+10.4%", "35.4", "41.5", "0.85"]
-            ],
-            highlightRow: 3,
-            caption: {
-                en: "Figures in RMB 100m (亿元). Distributors pay in advance (contract liabilities of 5.97bn at end-2025, receivables of only 0.09bn), so cash flow ran ahead of profit until 2026, when operating cash flow fell below net profit and Q3 energy-drink revenue fell 8.6%.",
-                zh: "单位：亿元。经销商预付货款（2025 年末合同负债 59.7 亿元，应收账款仅 0.9 亿元），所以现金流一直好于利润；到 2026 年前三季度，经营现金流低于净利润，Q3 单季能量饮料收入 −8.6%。"
-            }
-        },
-        {
-            type: "table",
-            source: {
-                en: "Slide 3 · cost structure",
-                zh: "第 3 页 · 成本结构"
-            },
-            title: {
-                en: "Costs as a Share of Revenue",
-                zh: "成本费用占营业收入比例"
-            },
-            columns: {
-                en: ["Item", "2023", "2024", "2025", "Q1–Q3 2026"],
-                zh: ["项目", "2023", "2024", "2025", "2026 年前三季度"]
-            },
-            rows: [
-                [{ en: "Cost of sales", zh: "营业成本" }, "56.9%", "55.2%", "55.1%", "52.5%"],
-                [{ en: "Selling expenses", zh: "销售费用" }, "17.4%", "16.9%", "16.3%", "16.0%"],
-                [{ en: "Admin expenses", zh: "管理费用" }, "3.3%", "2.7%", "2.8%", "3.0%"],
-                [{ en: "R&D expenses", zh: "研发费用" }, "0.5%", "0.4%", "0.3%", "0.4%"],
-                [{ en: "Gross margin", zh: "毛利率" }, "43.1%", "44.8%", "44.9%", "47.5%"],
-                [{ en: "Net margin", zh: "归母净利率" }, "18.1%", "21.0%", "21.1%", "22.3%"]
-            ],
-            caption: {
-                en: "Direct materials (sugar, PET preforms, cartons) are about 80% of cost of sales. New products carry lower margins (electrolyte drinks 34.8% vs energy drinks 50.8%), so a rising new-product mix pulls the overall margin down; recent margin gains came mainly from cheaper raw materials.",
-                zh: "直接材料（白砂糖、PET 瓶坯、纸箱等）约占主营业务成本八成。新品毛利率低于能量饮料（电解质 34.8% vs 能量饮料 50.8%），新品占比越高，整体毛利率越受拖累；近期毛利率改善主要来自原料降价。"
-            }
-        },
-        {
-            type: "table",
-            source: {
-                en: "Project outline",
-                zh: "项目大纲"
-            },
-            title: {
-                en: "Four-Week Structure",
-                zh: "四周安排"
-            },
-            columns: {
-                en: ["Week", "Topic", "Status"],
-                zh: ["周次", "主题", "进度"]
-            },
-            rows: [
-                ["1", { en: "Business model: revenue, cost, profit model, moat", zh: "公司商业模式分析：收入、成本、盈利模式、壁垒" }, { en: "Delivered (3 slides)", zh: "已完成（3 页）" }],
-                ["2", { en: "Industry: size, supply and demand, competition, growth drivers; forecasting model", zh: "行业分析：规模、供需、竞争、增长驱动；预测模型" }, { en: "Next", zh: "待完成" }],
-                ["3", { en: "Operations and financials: three statements, ratios, attribution, valuation basics", zh: "经营与财务分析：三张表、财务比率、业绩归因、估值基础" }, { en: "Next", zh: "待完成" }],
-                ["4", { en: "Investment report", zh: "投资分析报告" }, { en: "Next", zh: "待完成" }]
-            ],
-            caption: {
-                en: "The page will be updated as each module is completed.",
-                zh: "每完成一个模块，本页会同步更新。"
-            }
-        }
-    ],
-
-    details: {
-        en: [
-            {
-                title: "Business Model",
-                bullets: [
-                    "Customers: the direct customers are 3,479 distributors, with the top five at only 4.9% of sales; end consumers started with long-haul drivers and now include students, sports fans and gamers.",
-                    "Value proposition: an energy boost at a low price, in large bottles, chilled and within reach in small stores and petrol stations.",
-                    "Model: own factories at scale, distributors pay in advance and push stock into stores together with company-owned fridges; profit comes from low prices, high volume and fast turnover, and new products reuse the same channel."
-                ]
-            },
-            {
-                title: "Revenue Structure",
-                bullets: [
-                    "2025 revenue by product: energy drinks RMB 15.60bn (74.8%), electrolyte drinks 3.27bn (15.7%, +119%), other drinks 1.99bn (9.5%).",
-                    "In the first three quarters of 2026 revenue grew 10.4%; energy drinks fell 8.6% in Q3 alone and the two largest regions, South and Central China, declined, while tea drinks grew 183%.",
-                    "Each sale is one-off, but low unit prices and daily consumption make repeat purchases high, and dispersed distributors mean no reliance on any single customer."
-                ]
-            },
-            {
-                title: "Cost Structure and Moat",
-                bullets: [
-                    "Asset-heavy in production (14 bases, RMB 6.36bn of fixed assets and construction in progress, 23.8% of total assets) and asset-light in distribution.",
-                    "Producing near demand keeps freight at about 7% of cost of sales, so large, low-priced bottles still earn a 50.8% gross margin; 3,479 distributors, 4.5m+ active stores and 600k+ fridges let new products reach shelves quickly.",
-                    "Possible burdens: rebates payable rose about 70% to RMB 3.45bn by Q1 2026; Nongfu Spring entered electrolyte drinks at under RMB 4; margin gains from cheaper raw materials will not last."
-                ]
-            },
-            {
-                title: "View So Far and Next Steps",
-                bullets: [
-                    "Eastroc's edge comes from the cost advantage of its own factories and a nationwide store network that rivals cannot copy quickly; as energy-drink growth slows, spending on fridges, rebates and new plants will weigh on profit and cash flow.",
-                    "The key question for future revenue is whether energy drinks stop declining and whether tea and other new categories can carry growth.",
-                    "Next: industry analysis and a forecasting model, financial statement and ratio analysis, then the investment report."
-                ]
-            }
-        ],
-
-        zh: [
-            {
-                title: "商业模式",
-                bullets: [
-                    "客户：直接客户是 3,479 家经销商，前五大只占销售额 4.9%；最终消费者以长途司机等蓝领起家，现在覆盖学生、运动人群和游戏玩家。",
-                    "价值主张：满足提神、补能的功能刚需，大瓶平价，在小店、加油站随手可买，冷藏即饮。",
-                    "模式：自建工厂规模化生产，经销商预付货款提货，再由经销商和公司投放的冰柜铺到终端；利润来自低价、大量、高周转，新品复用同一套渠道。"
-                ]
-            },
-            {
-                title: "收入结构",
-                bullets: [
-                    "2025 年按产品：能量饮料 156.0 亿元（74.8%），电解质饮料 32.7 亿元（15.7%，+119%），其他饮料 19.9 亿元（9.5%）。",
-                    "2026 年前三季度营收 +10.4%；Q3 单季能量饮料 −8.6%，华南、华中两大区域收入下滑，茶饮料前三季度 +183%。",
-                    "每笔是一次性交易，但饮料单价低、天天消费，复购高；经销商分散，收入不依赖单一客户。"
-                ]
-            },
-            {
-                title: "成本结构与竞争优势",
-                bullets: [
-                    "生产端偏重（14 个基地，固定资产与在建工程 63.6 亿元，占总资产 23.8%），渠道端偏轻。",
-                    "就近建厂使运费只占主营业务成本 7% 左右，大瓶平价的能量饮料仍有 50.8% 毛利率；3,479 家经销商、450 万+ 活跃终端和 60 万台以上冰柜让新品能快速铺货。",
-                    "可能的负担：26Q1 末应付销售返利 34.5 亿元，同比约 +70%；农夫山泉以不到 4 元切入电解质赛道；原料降价带来的毛利率改善不会一直持续。"
-                ]
-            },
-            {
-                title: "目前的判断与下一步",
-                bullets: [
-                    "东鹏的竞争优势来自自建工厂的成本优势和覆盖全国的终端网络，对手很难短期复制；但能量饮料增长放缓后，冰柜、返利、新工厂等投入会压低利润和现金流。",
-                    "判断未来收入，关键看能量饮料能否止住下滑，以及茶饮料等新品能否接上增长。",
-                    "下一步：行业分析与预测模型、财务报表与比率分析，最后完成投资分析报告。"
-                ]
-            }
-        ]
-    }
-},
 {
     id: "graduate-outcome-dashboard",
     name: { en: "Graduate Outcome Dashboard", zh: "毕业生成果看板" },
@@ -8305,7 +8315,7 @@ print((supporter_dm["NumDonationsWithin3Months"] > 0).mean())   # 0.1585 (53,664
 
         sortDate: "2026-10",
 
-        logo: "",
+        logo: "assets/logos/projects/thailand-nomad.png",
 
         // Show the dashboard visuals before the written details.
         visualsFirst: true,
