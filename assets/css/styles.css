@@ -2640,3 +2640,116 @@ html.site-search-open {
     .nav .language-switcher { padding: 4px 7px; font-size: .8rem; }
     .menu-btn { padding: 0 2px; }
 }
+
+/* ---------- 足迹地图交互升级：3D 地球 / 缩放 / 年份轴 / 城市卡片（r32） ---------- */
+.jm-svg svg { touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
+.jm-svg svg:active { cursor: grabbing; }
+.jm-map:not(.jm-zoomed):not(.jm-is-globe) .jm-svg svg { cursor: default; }
+.jm-map.jm-zoomed .jm-svg svg { touch-action: none; }
+.jm-land, .jm-visited, .jm-home, .jm-province, .jm-context, .jm-grat, .jm-sphere-flat { vector-effect: non-scaling-stroke; }
+.jm-grat { fill: none; stroke: rgba(160, 200, 240, .08); stroke-width: .6; }
+.jm-sphere-flat { fill: #0f2338; stroke: #1d3a57; stroke-width: 1; }
+.jm-visited { fill: #4f97d6; stroke: #9fd8ff; stroke-width: .55; }
+.jm-home { stroke: #d9f0ff; stroke-width: .55; }
+.jm-faded { opacity: .28; }
+.jm-visited, .jm-home { transition: opacity .35s ease, filter .15s; }
+.jm-city { transition: opacity .35s ease; }
+.jm-city.jm-dim { opacity: .3; }
+.jm-dotg { cursor: pointer; transition: opacity .35s ease; }
+.jm-dotg.jm-faded { opacity: .3; }
+.jm-dot-small { fill: #6fe6ff; stroke: rgba(111, 230, 255, .35); stroke-width: 4; }
+.jm-city .jm-halo { fill: rgba(111, 230, 255, .14); }
+.jm-city.jm-current .jm-halo { fill: rgba(255, 211, 107, .22); }
+/* globe */
+.jm-atmo { fill: url(#jmAtmo); pointer-events: none; }
+.jm-ocean { fill: url(#jmOcean); stroke: rgba(120, 190, 255, .55); stroke-width: 1.2; }
+.jm-shade { fill: url(#jmShade); pointer-events: none; }
+.jm-is-globe .jm-land { fill: #23405e; stroke: #3b6189; stroke-width: .45; }
+.jm-is-globe .jm-grat { stroke: rgba(160, 210, 255, .12); }
+/* map controls */
+.jm-ctrl { position: absolute; top: 12px; right: 12px; display: flex; flex-direction: column; gap: 6px; z-index: 2; }
+.jm-ctrl button {
+    width: 34px; height: 34px; border-radius: 10px; border: 1px solid #2f5376; background: rgba(16, 36, 58, .88);
+    color: #e8f2fc; font: inherit; font-size: 1.1rem; font-weight: 700; line-height: 1; cursor: pointer; backdrop-filter: blur(6px);
+}
+.jm-ctrl button:hover { background: #1b4066; border-color: #4a9ae0; }
+.jm-ctrl button.active { background: #4a9ae0; border-color: #4a9ae0; color: #fff; }
+.jm-ctrl button[hidden] { display: none; }
+.jm-hint { position: absolute; left: 12px; bottom: 10px; padding: 4px 10px; border-radius: 999px; background: rgba(11, 26, 43, .72); color: #a9bed3; font-size: .74rem; pointer-events: none; }
+/* year ruler */
+.jm-years { margin-top: 16px; }
+.jm-years-label { color: #9cc9f2; font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
+.jm-ruler { display: flex; overflow-x: auto; scrollbar-width: none; padding: 2px 0 16px; scroll-behavior: smooth; }
+.jm-ruler::-webkit-scrollbar { display: none; }
+.jm-yr {
+    position: relative; flex: 1 0 92px; display: flex; flex-direction: column; align-items: center; gap: 8px;
+    padding: 6px 0 0; border: 0; background: none; color: #6f8cab; font: inherit; font-size: 1.15rem; font-weight: 700; cursor: pointer;
+    transition: color .2s;
+}
+.jm-yr span { display: flex; align-items: flex-end; height: 1.9rem; line-height: 1.1; transition: font-size .2s, color .2s; }
+.jm-yr::after {
+    content: ""; display: block; width: 100%; height: 14px;
+    background:
+        linear-gradient(#5f86ad, #5f86ad) center bottom / 2px 14px no-repeat,
+        repeating-linear-gradient(90deg, #35506d 0 1px, transparent 1px 9px) left bottom / 100% 8px no-repeat;
+}
+.jm-yr:hover { color: #cfe6ff; }
+.jm-yr.active { color: #fff; }
+.jm-yr.active span { font-size: 1.55rem; }
+.jm-yr.active::before {
+    content: ""; position: absolute; left: 50%; bottom: -14px; transform: translateX(-50%);
+    border: 8px solid transparent; border-bottom: 10px solid #5cc2ff; filter: drop-shadow(0 0 6px rgba(92, 194, 255, .7));
+}
+.jm-yr:focus-visible { outline: 2px solid #5cc2ff; outline-offset: 2px; border-radius: 8px; }
+.jm-year-note { margin: 2px 0 0; color: #8fa9c4; font-size: .78rem; line-height: 1.5; }
+.jm-legend .lg-faded { background: rgba(79, 151, 214, .3); }
+/* stats card */
+.jm-stats {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 14px 0 0; padding: 16px 6px;
+    border: 1px solid #1f3d5c; border-radius: 16px; background: linear-gradient(180deg, #11283f, #0d2034);
+}
+.jm-stats.jm-stats-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.jm-stats div { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; gap: 6px; padding: 0 10px; border-right: 1px solid #24405e; }
+.jm-stats div:last-child { border-right: 0; }
+.jm-stats strong { font-size: 1.75rem; line-height: 1.1; color: #8fd0ff; }
+.jm-stats span { color: #a9bed3; font-size: .78rem; line-height: 1.4; }
+/* city cards */
+.jm-citycards { margin-top: 16px; }
+.jm-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 8px; }
+.jm-pcard {
+    position: relative; display: flex; flex-direction: column; justify-content: space-between; min-height: 138px; padding: 12px 14px;
+    border: 1px solid #24405e; border-radius: 16px; overflow: hidden; text-align: left; cursor: pointer; color: #e8f2fc; font: inherit;
+    background: linear-gradient(160deg, #173a5c 0%, #0f2740 70%);
+    transition: transform .2s, border-color .2s, box-shadow .2s, opacity .3s;
+}
+.jm-pcard:hover { transform: translateY(-2px); border-color: #4a9ae0; }
+.jm-pcard.active { border-color: #9fd8ff; box-shadow: 0 0 0 1px #9fd8ff, 0 8px 24px rgba(92, 194, 255, .25); }
+.jm-pcard.jm-dim { opacity: .4; }
+.jm-pcard-year { position: relative; z-index: 1; font-size: 1.25rem; font-weight: 800; color: #fff; letter-spacing: -.01em; text-shadow: 0 2px 10px rgba(0, 0, 0, .35); }
+.jm-sky { position: absolute; right: -4px; bottom: 2px; width: 70%; height: auto; color: #4a9ae0; opacity: .42; }
+.jm-pcard-body { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 2px; margin-top: 18px; }
+.jm-pcard-body b { font-size: 1.02rem; }
+.jm-pcard-body em { font-style: normal; font-size: .72rem; font-weight: 700; color: #9fd8ff; }
+.jm-pcard-body small { color: #a9bed3; font-size: .74rem; line-height: 1.35; }
+.jm-citycards .jm-places-label { display: block; }
+@media (min-width: 861px) { .jm-info .jm-stops { grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); } }
+@media (max-width: 860px) {
+    .jm-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .jm-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 14px; }
+    .jm-stats div:nth-child(2) { border-right: 0; }
+}
+@media (max-width: 560px) {
+    .jm-ctrl { top: 8px; right: 8px; gap: 4px; }
+    .jm-ctrl button { width: 30px; height: 30px; font-size: 1rem; }
+    .jm-hint { font-size: .66rem; left: 8px; bottom: 6px; }
+    .jm-yr { flex-basis: 54px; font-size: .92rem; }
+    .jm-yr span { height: 1.5rem; }
+    .jm-yr.active span { font-size: 1.15rem; }
+    .jm-stats strong { font-size: 1.4rem; }
+    .jm-pcard { min-height: 124px; padding: 10px 12px; }
+    .jm-pcard-year { font-size: 1.05rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .jm-pcard, .jm-yr span, .jm-visited, .jm-home, .jm-city { transition: none; }
+}
+.jm-pcard-body small, .jm-pcard-body b { text-shadow: 0 1px 6px rgba(8, 20, 35, .95); }
