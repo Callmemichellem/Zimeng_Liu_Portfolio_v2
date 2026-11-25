@@ -39,6 +39,323 @@ const PORTFOLIO_DATA = {
 
     experiences: [
         {
+            id: "ant-group",
+            category: "data-business",
+
+            company: {
+                en: "Ant Group",
+                zh: "蚂蚁集团"
+            },
+
+            role: {
+                en: "Business Analysis Intern · Digital Finance",
+                zh: "经营分析实习生 · 数字金融"
+            },
+
+            location: {
+                en: "China",
+                zh: "中国"
+            },
+
+            dates: {
+                en: "Nov 2026 – Present",
+                zh: "2026年11月 – 至今"
+            },
+
+            sortDate: "2026-12",
+
+            background: {
+                title: {
+                    en: "The brief & my role",
+                    zh: "背景与我的角色"
+                },
+                paragraphs: {
+                    en: [
+                        "I am a business analysis intern at Ant Group, working on the core business metrics behind transaction volume, user activity and conversion efficiency.",
+                        "The business context is Ant Group's digital finance business, which works with partner financial institutions to provide inclusive finance: Huabei (credit purchases), Jiebei (credit loans), Ant Fortune, Ant Insurance and MYbank, covering small-business lending, consumer finance, wealth management and insurance.",
+                        "My work covers four areas: day-to-day metric monitoring, root-cause analysis when a metric moves, standardising KPI definitions across business lines, and tracking KPI progress across departments. The internship is ongoing, and this page will be updated as the work produces results."
+                    ],
+                    zh: [
+                        "我在蚂蚁集团经营分析岗位实习，围绕交易规模、用户活跃和转化效率三类核心经营指标开展分析。",
+                        "业务背景是蚂蚁的数字金融业务：联合金融机构提供普惠金融服务，包括花呗（信用购）、借呗（信用贷）、蚂蚁财富、蚂蚁保和网商银行，覆盖小微信贷、消费金融、理财和保险。",
+                        "工作分四块：日常指标监控、指标异动时的根因归因、各业务线 KPI 口径统一，以及跨部门 KPI 进度协同。实习仍在进行中，本页会随工作成果持续更新。"
+                    ]
+                },
+                pointsTitle: {
+                    en: "My part",
+                    zh: "我的分工"
+                },
+                points: {
+                    en: [
+                        "Daily and hourly monitoring of core business metrics",
+                        "Drill-down attribution of metric anomalies",
+                        "A business-wide KPI dictionary with unified definitions",
+                        "A cross-department KPI progress dashboard"
+                    ],
+                    zh: [
+                        "核心经营指标的日度 / 小时级监控",
+                        "指标异动的多维下钻归因",
+                        "统一口径的全链路经营 KPI 字典",
+                        "跨部门 KPI 进度协同看板"
+                    ]
+                }
+            },
+
+            approach: {
+                en: [
+                    {
+                        title: "See problems the day they happen",
+                        question: "How can the team spot an abnormal metric without checking every report by hand?",
+                        action: "Built daily and hourly monitoring for core metrics across transaction volume, user activity and conversion efficiency: SQL pulls the full-funnel data into a linked Excel dashboard that highlights abnormal metrics automatically."
+                    },
+                    {
+                        title: "Explain why a metric moved",
+                        question: "When a metric drops, which dimension is actually driving it?",
+                        action: "Set up a multi-dimensional drill-down attribution framework and used Python to test whether the movement in each dimension is significant, tracing short-term swings in core metrics to their underlying causes. For example, a conversion drop in one payment scenario was traced to a change in channel placement rules, followed by a targeted fix."
+                    },
+                    {
+                        title: "One definition per metric",
+                        question: "Do different business lines mean the same thing when they report the same KPI?",
+                        action: "Aligned responsibility boundaries across business lines and compiled a full-funnel KPI dictionary that fixes each metric's definition, formula, data source and validation rules; wrote business reviews and thematic analysis reports on top of it."
+                    },
+                    {
+                        title: "Keep every team on the same page",
+                        question: "How do business groups see each other's progress and blockers without endless meetings?",
+                        action: "Built a shared cross-department KPI progress dashboard that syncs target completion, gap alerts and items needing coordination, together with a weekly progress-sync routine."
+                    }
+                ],
+                zh: [
+                    {
+                        title: "当天就发现异常",
+                        question: "怎样不靠人工逐份翻报表，也能及时发现指标异常？",
+                        action: "搭建覆盖交易规模、用户活跃、转化效率三类核心指标的日度 / 小时级监控：用 SQL 拉取全链路数据，配置 Excel 联动看板自动高亮异常指标。"
+                    },
+                    {
+                        title: "说清指标为什么动",
+                        question: "指标下滑时，真正起作用的是哪个维度？",
+                        action: "搭建多维度下钻归因框架，用 Python 检验各维度异动是否显著，定位核心指标短期波动的底层原因。例如把某支付场景的转化率下滑追溯到渠道投放规则的调整，并据此提出定向优化方案。"
+                    },
+                    {
+                        title: "一个指标只有一种口径",
+                        question: "各业务线报同一个 KPI 时，说的是同一件事吗？",
+                        action: "对齐各业务线权责边界，梳理全链路经营 KPI 字典，明确每项指标的统计口径、计算公式、数据源与校验规则，并在此基础上撰写经营复盘与专题分析报告。"
+                    },
+                    {
+                        title: "让各团队看到同一张进度表",
+                        question: "怎样让各业务组不靠反复开会就能看到彼此的进度和卡点？",
+                        action: "搭建跨部门 KPI 进度协同共享看板，同步各业务组的目标完成率、缺口预警与待协同事项，并配套周度进度同步机制。"
+                    }
+                ]
+            },
+
+            tools: [
+                {
+                    name: "SQL",
+                    kind: {
+                        en: "Data extraction",
+                        zh: "取数"
+                    },
+                    use: {
+                        en: "Pulled full-funnel data for the metric monitoring.",
+                        zh: "拉取全链路数据，支撑指标监控。"
+                    }
+                },
+                {
+                    name: "Excel",
+                    kind: {
+                        en: "Dashboard",
+                        zh: "看板"
+                    },
+                    use: {
+                        en: "Linked monitoring dashboard that highlights abnormal metrics; cross-department KPI progress dashboard.",
+                        zh: "联动监控看板自动高亮异常指标；跨部门 KPI 进度协同看板。"
+                    }
+                },
+                {
+                    name: "Python",
+                    kind: {
+                        en: "Analysis",
+                        zh: "分析"
+                    },
+                    use: {
+                        en: "Significance tests on the dimensions behind a metric anomaly.",
+                        zh: "对指标异动的各维度做显著性检验。"
+                    }
+                },
+                {
+                    name: {
+                        en: "KPI dictionary",
+                        zh: "KPI 字典"
+                    },
+                    kind: {
+                        en: "Documentation",
+                        zh: "文档"
+                    },
+                    use: {
+                        en: "Definition, formula, data source and validation rules for each business KPI.",
+                        zh: "明确每项经营 KPI 的统计口径、计算公式、数据源与校验规则。"
+                    }
+                }
+            ],
+
+            visuals: [
+                {
+                    type: "table",
+                    source: {
+                        en: "Business context",
+                        zh: "业务背景"
+                    },
+                    title: {
+                        en: "Digital Finance: Inclusive Finance with Partner Institutions",
+                        zh: "数字金融：联合金融机构的普惠金融"
+                    },
+                    columns: {
+                        en: ["Product", "Service"],
+                        zh: ["产品", "服务"]
+                    },
+                    rows: [
+                        [{ en: "Huabei · credit purchases", zh: "花呗 · 信用购" }, { en: "Consumer finance", zh: "消费金融" }],
+                        [{ en: "Jiebei · credit loans", zh: "借呗 · 信用贷" }, { en: "Consumer credit", zh: "消费信贷" }],
+                        [{ en: "Ant Fortune", zh: "蚂蚁财富" }, { en: "Wealth management", zh: "理财" }],
+                        [{ en: "Ant Insurance", zh: "蚂蚁保" }, { en: "Insurance", zh: "保险" }],
+                        [{ en: "MYbank", zh: "网商银行" }, { en: "Small-business lending", zh: "小微信贷" }]
+                    ],
+                    caption: {
+                        en: "Ant Group's digital finance business covers small-business lending, consumer finance, wealth management and insurance, delivered together with partner financial institutions.",
+                        zh: "蚂蚁集团的数字金融业务联合金融机构，覆盖小微信贷、消费金融、理财、保险等普惠金融服务。"
+                    }
+                }
+            ],
+
+            metrics: [
+                {
+                    value: {
+                        en: "Daily + hourly",
+                        zh: "日度 + 小时级"
+                    },
+                    label: {
+                        en: "Monitoring of core business metrics",
+                        zh: "核心经营指标监控"
+                    }
+                },
+                {
+                    value: {
+                        en: "Drill-down",
+                        zh: "多维下钻"
+                    },
+                    label: {
+                        en: "Root-cause attribution of metric anomalies",
+                        zh: "指标异动根因归因"
+                    }
+                },
+                {
+                    value: {
+                        en: "Unified",
+                        zh: "统一口径"
+                    },
+                    label: {
+                        en: "KPI definitions, formulas and validation rules",
+                        zh: "KPI 口径、公式与校验规则"
+                    }
+                },
+                {
+                    value: {
+                        en: "Weekly",
+                        zh: "周度"
+                    },
+                    label: {
+                        en: "Cross-department KPI progress sync",
+                        zh: "跨部门 KPI 进度同步"
+                    }
+                }
+            ],
+
+            overviewBullets: {
+                en: [
+                    "Built daily and hourly monitoring of core business metrics (transaction volume, user activity, conversion), pulling full-funnel data with SQL into a linked Excel dashboard that flags anomalies automatically.",
+                    "Traced metric swings to their root causes with drill-down attribution and Python significance tests, and standardised KPI definitions in a full-funnel dictionary and a shared cross-department progress dashboard."
+                ],
+                zh: [
+                    "搭建交易规模、用户活跃、转化效率三类核心经营指标的日度 / 小时级监控，用 SQL 拉取全链路数据，配置 Excel 联动看板自动高亮异常指标。",
+                    "用多维下钻与 Python 显著性检验定位指标异动的根因；梳理全链路经营 KPI 字典统一口径，并搭建跨部门 KPI 进度协同看板。"
+                ]
+            },
+
+            tags: [
+                "Business Analysis",
+                "SQL",
+                "Python",
+                "Excel",
+                "KPI Monitoring",
+                "Root-cause Analysis"
+            ],
+
+            details: {
+                en: [
+                    {
+                        title: "Metric monitoring",
+                        bullets: [
+                            "Built daily and hourly monitoring for core metrics across transaction volume, user activity and conversion efficiency.",
+                            "SQL pulls the full-funnel data automatically; a linked Excel dashboard highlights abnormal metrics."
+                        ]
+                    },
+                    {
+                        title: "Anomaly attribution",
+                        bullets: [
+                            "Set up a multi-dimensional drill-down attribution framework and used Python significance tests to locate the dimensions behind short-term metric swings.",
+                            "For example, traced a conversion drop in one payment scenario to a change in channel placement rules and proposed a targeted fix."
+                        ]
+                    },
+                    {
+                        title: "KPI standardisation",
+                        bullets: [
+                            "Aligned responsibility boundaries across business lines and compiled a full-funnel KPI dictionary with each metric's definition, formula, data source and validation rules.",
+                            "Wrote business reviews and thematic analysis reports to support management's resource-allocation decisions."
+                        ]
+                    },
+                    {
+                        title: "Cross-department progress",
+                        bullets: [
+                            "Built a shared KPI progress dashboard that syncs each business group's target completion, gap alerts and items needing coordination.",
+                            "Set up a weekly progress-sync routine across departments."
+                        ]
+                    }
+                ],
+
+                zh: [
+                    {
+                        title: "指标监控",
+                        bullets: [
+                            "搭建覆盖交易规模、用户活跃、转化效率三类核心经营指标的日度 / 小时级监控体系。",
+                            "用 SQL 自动拉取全链路数据，配置 Excel 联动看板自动高亮异常指标。"
+                        ]
+                    },
+                    {
+                        title: "异动归因",
+                        bullets: [
+                            "搭建多维度下钻归因框架，用 Python 完成异动维度的显著性检验，定位核心指标短期波动的底层原因。",
+                            "例如识别出某支付场景转化率下滑的诱因是渠道投放规则迭代，并输出定向优化方案。"
+                        ]
+                    },
+                    {
+                        title: "KPI 口径标准化",
+                        bullets: [
+                            "对齐各业务线权责边界，梳理全链路经营 KPI 字典，明确每项指标的统计口径、计算公式、数据源与校验规则。",
+                            "撰写经营复盘与专题分析报告，为管理层资源分配决策提供依据。"
+                        ]
+                    },
+                    {
+                        title: "跨部门进度协同",
+                        bullets: [
+                            "搭建跨部门 KPI 进度协同共享看板，同步各业务组的目标完成率、缺口预警与待协同事项。",
+                            "配套建立周度进度同步机制。"
+                        ]
+                    }
+                ]
+            }
+        },
+
+        {
             id: "roland-berger",
             category: "consulting-strategy",
 
@@ -66,6 +383,172 @@ const PORTFOLIO_DATA = {
 
             logo: "assets/logos/roland-berger.jpg",
 
+            background: {
+                title: {
+                    en: "The brief & my role",
+                    zh: "项目背景与我的角色"
+                },
+                paragraphs: {
+                    en: [
+                        "The client is a listed Chinese manufacturer with three main business lines. The boundary between its existing information systems and new automation spending had not been drawn, and operational improvements had no verifiable path to financial returns. Phase 1 had to turn a list of projects into an investment case the finance team would accept; Phase 2 asked why output falls short of plan and whether more capacity is really needed.",
+                        "I worked in the project team, iterating each deliverable against written tasks and feedback from my supervisor: 11 kinds of deliverables in the first six weeks, from the project charter and benchmark report to the Excel dashboard, KPI dictionary and bottleneck deck."
+                    ],
+                    zh: [
+                        "客户是一家拥有三类主营业务的 A 股制造业上市公司。已有信息系统与新增自动化投资的边界尚未划清，运营改善也缺少可验证的财务兑现路径。一期要把一份项目清单变成财务认可的投资方案；二期要回答产出为什么达不到计划、是否真的需要扩产。",
+                        "我在项目组中按带教布置的任务与书面反馈逐版迭代，前六周交付 11 类成果，从项目章程、对标报告到 Excel 看板、KPI 字典与产能瓶颈汇报。"
+                    ]
+                },
+                pointsTitle: {
+                    en: "My part",
+                    zh: "我的分工"
+                },
+                points: {
+                    en: [
+                        "Problem framing: SCQ, issue tree and 15 decision-rule hypotheses",
+                        "Benchmarking and data quality: 10 metric definitions, 42 graded data points, 9 peers and 7 benchmark factories",
+                        "Investment model and Excel dashboard: value pool, use-case screening and phasing",
+                        "Phase 2 diagnostics: 37-KPI dictionary, OEE and loss trees, plan-attainment funnel, bottlenecks"
+                    ],
+                    zh: [
+                        "问题定义：SCQ、议题树与 15 条决策式假设",
+                        "对标与数据质量：10 项指标口径、42 个分级数据点、9 家同业与 7 个标杆工厂",
+                        "投资回报模型与 Excel 看板：价值池、用例筛选与分阶段实施",
+                        "二期诊断：37 项 KPI 字典、OEE 与损失树、计划达成漏斗、产能瓶颈"
+                    ]
+                }
+            },
+
+            approach: {
+                en: [
+                    {
+                        title: "Reframe the question",
+                        question: "The brief started as ‘which equipment should we buy?’, which says nothing about whether the money comes back.",
+                        action: "Rewrote it as ‘which investments produce returns the finance team will recognise?’, then used SCQ and an issue tree to break it into 5 themes and 15 hypotheses, each written as ‘if A, then B, otherwise C’ with a validation owner and closing date.",
+                        result: "Every hypothesis pointed to a decision and to the data needed to close it, which set the order of 8 data packages: public data → client data → site verification."
+                    },
+                    {
+                        title: "Test the evidence before using it",
+                        question: "Public figures come with different definitions and reliability. Which ones are solid enough to build a model on?",
+                        action: "Unified definitions for 10 key metrics, graded 42 external data points A / B / C (4 / 17 / 21), extracted key figures twice independently and back-solved undisclosed costs to within 0.01 percentage points.",
+                        result: "Two business lines’ gross margins moved about 7.5 points in opposite directions over two years. Industry factors could not explain it, so I flagged it for client data rather than inventing a cause."
+                    },
+                    {
+                        title: "Size the value conservatively",
+                        question: "Industry benchmarks show what the leaders achieve. How much of that can this client actually realise?",
+                        action: "Multiplied each cost base by the industry improvement and by the client’s own historical realisation rate by category (materials and yield 80%, labour 45%, energy 85%), deducted operating costs, and screened use cases on NPV, IRR and payback at an 8% discount rate, with 10% and 12% sensitivities.",
+                        result: "A weighted realisation rate of 66.4% brought the mid-case realisable profit to about 4.4% of gross profit. 7 of 9 use cases and packages cleared the threshold, and I recommended a first wave of no more than about 39% of the two-year-payback investment ceiling."
+                    },
+                    {
+                        title: "Agree on definitions before diagnosing losses",
+                        question: "Phase 2 asked why output falls short of plan, but the same KPI was being calculated in different ways.",
+                        action: "After showing that three methods on the same line differ by 5–10 points, wrote a 37-KPI dictionary (formula, denominator, time window, data source); then decomposed OEE (61% / 68% / 57%) into availability, performance and quality losses and built loss trees and plan-attainment funnels.",
+                        result: "The 11–18-point plan gap was attributed by first cause; rush orders and order changes ranked in the top three for every business line."
+                    },
+                    {
+                        title: "Find the real bottleneck before adding capacity",
+                        question: "Does growth require new production lines?",
+                        action: "Used a six-layer capacity definition (theoretical → engineering → planned → actual → qualified → sellable) to model how the bottleneck moves as the product mix shifts.",
+                        result: "Once a high-spec product passes about 23% of tonnage, the bottleneck moves downstream. With orders up 10%, the ~189-tonne gap can be closed by two extra machines (about +247 t) instead of a new line."
+                    }
+                ],
+                zh: [
+                    {
+                        title: "重构问题",
+                        question: "课题最初是“该买哪些设备”，但这个问题回答不了钱能不能收回来。",
+                        action: "改写为“哪些投资能产生可被财务确认的回报”，用 SCQ 与议题树拆成 5 个主题、15 条假设，每条写成“若 A 则 B，否则 C”，并配置验证负责人与关闭时点。",
+                        result: "每条假设都指向一个决策和关闭它所需的数据，据此排出 8 个数据包的取证顺序：公开数据 — 客户数据 — 现场核实。"
+                    },
+                    {
+                        title: "先检验证据，再使用证据",
+                        question: "公开数据口径不一、可信度不同，哪些足以支撑建模？",
+                        action: "统一 10 项关键指标口径，42 个外部数据点按 A / B / C 分级（4 / 17 / 21 个），关键数据双重独立摘录，未披露成本倒推误差控制在 0.01 个百分点以内。",
+                        result: "发现两项主营业务毛利率两年内一升一降、幅度均约 7.5 个百分点；行业因素解释不了，列为需客户数据验证的问题，不强行归因。"
+                    },
+                    {
+                        title: "保守测算价值",
+                        question: "行业标杆的改善幅度，客户自己能兑现多少？",
+                        action: "按“成本基数 × 行业改善幅度 × 客户历史分类兑现率”（材料与良率 80%、人工 45%、能源 85%）测算，扣除运营成本，再以 NPV、IRR 与回收期筛选用例（折现率 8%，另做 10%、12% 敏感性）。",
+                        result: "加权兑现率 66.4%，中情景可兑现利润约占毛利 4.4%；9 个用例与投资包中 7 个通过门槛，建议首批投入不超过 2 年回收期投资上限的约 39%。"
+                    },
+                    {
+                        title: "先统一口径，再诊断损失",
+                        question: "二期要回答“产出为什么达不到计划”，但同一个 KPI 存在多种算法。",
+                        action: "证明同一条线三种算法可差 5—10 个百分点后，编写 37 项 KPI 字典（公式、分母、时间窗口、数据源）；再将 OEE（61% / 68% / 57%）拆解为可用率、性能率、质量率损失，搭建损失树与计划达成漏斗。",
+                        result: "11—18 个百分点的计划缺口按首因归因，插单改单在三类业务均列前三。"
+                    },
+                    {
+                        title: "扩产之前先找真正的瓶颈",
+                        question: "业务增长是否需要新建产线？",
+                        action: "以“理论 — 工程 — 计划 — 实际 — 合格 — 可售”六层产能口径，模拟产品结构变化时瓶颈如何转移。",
+                        result: "某高端产品吨数占比超过约 23% 后，瓶颈转到下游工序；订单再增 10% 时约 189 吨的缺口，在新瓶颈工序增加 2 台设备（约 +247 吨）即可覆盖，无需新建产线。"
+                    }
+                ]
+            },
+
+            tools: [
+                {
+                    name: "Excel",
+                    kind: {
+                        en: "Modelling & dashboard",
+                        zh: "建模与看板"
+                    },
+                    use: {
+                        en: "Built the linked raw data → calculations → dashboard workbook (13 tabs and about 1,060 formulas in Phase 1, later extended), with scenario and sensitivity tabs, use-case screening and NPV / IRR / payback.",
+                        zh: "搭建“原始数据 — 计算 — 看板”联动工作簿（一期 13 个页签、约 1,060 个公式，二期继续扩展），含情景与敏感性、用例筛选及 NPV / IRR / 回收期测算。"
+                    }
+                },
+                {
+                    name: "PowerPoint",
+                    kind: {
+                        en: "Storylines",
+                        zh: "汇报材料"
+                    },
+                    use: {
+                        en: "Turned the bottleneck analysis into a 13-slide deck and drew the end-to-end value-stream maps.",
+                        zh: "将产能瓶颈分析做成 13 页汇报，并绘制端到端价值流图。"
+                    }
+                },
+                {
+                    name: "Word",
+                    kind: {
+                        en: "Reports",
+                        zh: "报告"
+                    },
+                    use: {
+                        en: "Wrote the project charter, benchmark report, realisable-profit note and KPI dictionary write-up, each iterated over several versions.",
+                        zh: "撰写项目章程、外部对标报告、可兑现利润说明与 KPI 字典说明，每份迭代多个版本。"
+                    }
+                },
+                {
+                    name: {
+                        en: "Public sources",
+                        zh: "公开资料"
+                    },
+                    kind: {
+                        en: "Evidence base",
+                        zh: "证据底座"
+                    },
+                    use: {
+                        en: "Annual and interim reports, investor-relations records, smart-factory and lighthouse lists, industry statistics and regulation texts, each logged with its location and reporting period in a source register.",
+                        zh: "年报与半年报、投资者关系记录、智能工厂与灯塔工厂名单、行业统计及法规原文，均在来源清单中登记原文位置与报告期。"
+                    }
+                },
+                {
+                    name: {
+                        en: "Consulting frameworks",
+                        zh: "咨询框架"
+                    },
+                    kind: {
+                        en: "Toolkit",
+                        zh: "分析工具箱"
+                    },
+                    use: {
+                        en: "SCQ, issue trees, hypothesis-driven planning, value trees, value-stream mapping, OEE and loss trees, plan-attainment funnels, and service-level and safety-stock models.",
+                        zh: "SCQ、议题树、假设驱动、价值树、价值流图、OEE 与损失树、计划达成漏斗、服务水平与安全库存模型。"
+                    }
+                }
+            ],
+
             overviewBullets: {
                 en: [
                     "Working on an automation and digital-transformation engagement for a listed Chinese manufacturer: Phase 1 decides which investments can deliver returns the finance team will recognise; Phase 2 diagnoses capacity constraints and production losses.",
@@ -88,10 +571,64 @@ const PORTFOLIO_DATA = {
 
             metrics: [
                 {
+                    value: {
+                        en: "7 of 9",
+                        zh: "9 选 7"
+                    },
+                    label: {
+                        en: "Use cases and packages clearing the value threshold on NPV, IRR and payback",
+                        zh: "以 NPV、IRR 与回收期评价，通过金额门槛的用例与投资包"
+                    }
+                },
+                {
+                    value: "≤ 39%",
+                    label: {
+                        en: "Recommended first wave as a share of the two-year-payback investment ceiling",
+                        zh: "建议首批投入占 2 年回收期投资上限的比例"
+                    }
+                },
+                {
+                    value: "66.4%",
+                    label: {
+                        en: "Weighted realisation rate applied to industry benchmarks, a deliberately conservative haircut",
+                        zh: "对行业基准打折的加权兑现率，刻意保守"
+                    }
+                },
+                {
+                    value: {
+                        en: "~4.4%",
+                        zh: "约 4.4%"
+                    },
+                    label: {
+                        en: "Mid-case realisable profit as a share of gross profit (model estimate)",
+                        zh: "中情景可兑现利润占毛利比例（模型测算）"
+                    }
+                },
+                {
+                    value: {
+                        en: "+247 t",
+                        zh: "+247 吨"
+                    },
+                    label: {
+                        en: "From two extra machines at the new bottleneck, covering a ~189 t gap without a new line",
+                        zh: "新瓶颈工序增加 2 台设备的产能，覆盖约 189 吨缺口，无需新建产线"
+                    }
+                },
+                {
+                    value: {
+                        en: "5–10 pp",
+                        zh: "5—10 个百分点"
+                    },
+                    label: {
+                        en: "Gap between three KPI methods on one line, resolved with a 37-KPI dictionary",
+                        zh: "同一条线三种算法的差距，以 37 项 KPI 字典统一"
+                    }
+                },
+                {
                     value: "15",
                     label: {
-                        en: "Initial hypotheses written as 'if A, then B, otherwise C' decision rules",
-                        zh: "写成“若 A 则 B，否则 C”决策规则的初始假设"
+                        en: "Hypotheses written as ‘if A, then B, otherwise C’ decision rules",
+                        zh: "写成“若 A 则 B，否则 C”决策规则的假设"
                     }
                 },
                 {
@@ -102,31 +639,13 @@ const PORTFOLIO_DATA = {
                     }
                 },
                 {
-                    value: "9 + 7",
+                    value: {
+                        en: "~1,060",
+                        zh: "约 1,060"
+                    },
                     label: {
-                        en: "Listed peers and benchmark factory cases compared",
-                        zh: "对标的上市同业与标杆工厂案例"
-                    }
-                },
-                {
-                    value: "7 of 9",
-                    label: {
-                        en: "Use cases and investment packages clearing the value threshold",
-                        zh: "通过金额门槛的用例与投资包"
-                    }
-                },
-                {
-                    value: "~1,060",
-                    label: {
-                        en: "Formulas across the Phase 1 dashboard workbooks (13 tabs)",
-                        zh: "一期看板两个工作簿的公式数（13 个页签）"
-                    }
-                },
-                {
-                    value: "37",
-                    label: {
-                        en: "KPIs defined in the Phase 2 KPI dictionary",
-                        zh: "二期 KPI 字典指标"
+                        en: "Formulas in the Phase 1 dashboard workbooks (13 tabs)",
+                        zh: "一期看板公式数（13 个页签）"
                     }
                 }
             ],
@@ -196,8 +715,12 @@ const PORTFOLIO_DATA = {
                         en: "Discount rate of 8%, with 10% and 12% sensitivities; one-off investment is evaluated separately from the annual benefit threshold.",
                         zh: "折现率 8%，另做 10%、12% 敏感性；一次性投入与年度收益门槛分开评价。"
                     }
-                }
-            ],
+                },
+        {
+            type: "widget",
+            widget: "roi-calculator"
+        }
+    ],
 
             details: {
                 en: [
@@ -328,6 +851,164 @@ const PORTFOLIO_DATA = {
 
             logo: "assets/logos/beijing-green-exchange.jpg",
 
+            background: {
+                title: {
+                    en: "The brief & my role",
+                    zh: "项目背景与我的角色"
+                },
+                paragraphs: {
+                    en: [
+                        "The National Green Technology Exchange Center, operated by Beijing Green Exchange, wanted to answer two questions: how technology trading can help zero-carbon industrial parks actually adopt and finance green technologies, and how to set up a provincial node in Hebei.",
+                        "As a research analyst intern I was the main author of the 17-page research report and the 13-slide Hebei node-centre plan, produced a 26-slide pain-point diagnosis of a central state-owned energy group, and supported cross-institution research and partnership work."
+                    ],
+                    zh: [
+                        "国家绿色技术交易中心（北京绿色交易所）希望回答两个问题：技术交易如何帮助零碳园区真正用上、并为绿色技术买单；以及如何在河北建立省级节点。",
+                        "作为研究分析实习生，我主笔 17 页研究报告和 13 页河北节点中心建设方案，完成 26 页能源央企痛点诊断，并参与跨机构研究与合作协议工作。"
+                    ]
+                },
+                pointsTitle: {
+                    en: "My part",
+                    zh: "我的分工"
+                },
+                points: {
+                    en: [
+                        "Main author: 17-page research report on technology trading for zero-carbon parks",
+                        "Main author: 13-slide Hebei node-centre plan, the base draft for the briefing to the provincial government",
+                        "26-slide pain-point diagnosis of a central SOE energy group",
+                        "Matching research with Peking University and Steinbeis; revised 2 cooperation agreements"
+                    ],
+                    zh: [
+                        "主笔：17 页零碳园区技术交易研究报告",
+                        "主笔：13 页河北节点中心建设方案，作为交易所向省政府汇报的底稿",
+                        "26 页能源央企痛点诊断",
+                        "与北京大学、德国史太白合作的撮合研究；修订 2 份合作协议"
+                    ]
+                }
+            },
+
+            approach: {
+                en: [
+                    {
+                        title: "Start from where projects stall",
+                        question: "Zero-carbon parks have policy support, so why do so many projects fail to land?",
+                        action: "Pulled together industry survey evidence: over 60% of park projects struggle to implement technology and nearly 70% stall at financing.",
+                        result: "Framed three gaps the exchange could close: from technically feasible to tradable, from built to recognised, and from demonstration to scaled replication."
+                    },
+                    {
+                        title: "Find the exchange’s distinct role",
+                        question: "What can a technology exchange offer that green-power and carbon-trading platforms do not?",
+                        action: "Benchmarked the existing platforms on five dimensions and mapped the full transaction chain.",
+                        result: "Proposed a six-stage service (pain-point diagnosis, technology selection, contracting, delivery acceptance, MRV verification and financing) with four revenue lines and a ‘1 platform + 2 capability centres + 3 business lines’ operating model."
+                    },
+                    {
+                        title: "Sequence data before intelligence",
+                        question: "How can matching be trustworthy when there is hardly any transaction data yet?",
+                        action: "Designed an 8-field pain-point data dictionary and a ‘standardise → interface → intelligence’ roadmap; matching starts with interpretable rules + RAG and moves to learning-to-rank as data builds up, iterated through grey releases and A/B tests.",
+                        result: "Set four measurable objectives (deal probability, delivery success, dispute rate and satisfaction) and acceptance KPIs such as storage availability ≥90%, and mapped four risk categories to NIST AI RMF 1.0 and the EU AI Act."
+                    },
+                    {
+                        title: "Test it on real cases",
+                        question: "Does the design hold up for an actual energy group and actual parks?",
+                        action: "Ran a simulated roll-out for a regional subsidiary of a central SOE energy group and Hebei’s three first-batch national zero-carbon parks, and diagnosed the group at three levels in a 26-slide deck.",
+                        result: "Quantified the integration gaps (5–8% wind and solar curtailment, an 85% consumption rate against a 95% target, a 60% load–PV match) and designed seven AI-agent use cases with inputs, outputs and KPIs."
+                    },
+                    {
+                        title: "Turn research into a government-ready plan",
+                        question: "What should a Hebei node centre build first?",
+                        action: "Reviewed six national and Hebei policies, identified six structural pain points and designed eight initiatives across three pillars, with a joint management committee, a three-phase plan and five requests for government support.",
+                        result: "The 13-slide deck became the base draft for the exchange’s briefing to the provincial government."
+                    }
+                ],
+                zh: [
+                    {
+                        title: "从项目卡在哪里出发",
+                        question: "零碳园区有政策支持，为什么很多项目落不了地？",
+                        action: "梳理行业调研证据：超过 60% 的园区项目技术难落地，近 70% 卡在融资环节。",
+                        result: "归纳交易所可以弥合的“三大断层”：从技术可行到可交易、从建成到被认可、从示范到规模化复制。"
+                    },
+                    {
+                        title: "找准交易所的独特定位",
+                        question: "与绿电、碳交易平台相比，技术交易所能提供什么不同的价值？",
+                        action: "从 5 个维度对标现有平台，梳理完整交易链路。",
+                        result: "提出覆盖痛点诊断、技术选型、签约、交付验收、MRV 核证与融资 6 个环节的全流程服务，配套 4 条收入线与“1 个运营中台 + 2 个能力中心 + 3 条业务线”运营架构。"
+                    },
+                    {
+                        title: "先有数据，再谈智能",
+                        question: "交易数据几乎为零时，撮合怎样才可信？",
+                        action: "设计 8 字段痛点数据字典和“先标准化、后接口化、再智能化”的建设路径；撮合由“可解释规则 + RAG”起步，数据积累后升级为排序学习，通过灰度发布与 A/B 测试迭代。",
+                        result: "设定成交概率、履约成功率、纠纷率、满意度 4 项可衡量目标及储能可用率 ≥90% 等验收 KPI，并参考 NIST AI RMF 1.0 与欧盟 AI Act 梳理 4 类风险。"
+                    },
+                    {
+                        title: "放到真实对象上推演",
+                        question: "这套设计放到真实的能源集团和园区上是否成立？",
+                        action: "以一家能源央企区域公司和河北首批 3 个国家级零碳园区做模拟推演，并用 26 页材料从集团、区域公司到园区三个层级诊断痛点。",
+                        result: "量化消纳缺口：部分场站风光弃电率 5%—8%，某园区消纳率 85%（目标 95%），化工负荷与光伏出力匹配度仅 60%；设计 7 个 AI 智能体场景，明确输入、输出与 KPI。"
+                    },
+                    {
+                        title: "把研究变成可向政府汇报的方案",
+                        question: "河北节点中心应该先建什么？",
+                        action: "梳理 6 项国家与河北政策，识别 6 类结构性痛点，设计三大板块 8 项重点建设内容，配套联合管理委员会、三阶段实施路径与 5 项政府支持诉求。",
+                        result: "13 页方案成为交易所向省政府汇报的底稿。"
+                    }
+                ]
+            },
+
+            tools: [
+                {
+                    name: {
+                        en: "Report writing",
+                        zh: "研究写作"
+                    },
+                    kind: {
+                        en: "Research report",
+                        zh: "研究报告"
+                    },
+                    use: {
+                        en: "Wrote the 17-page, 12-chapter report, from problem framing and platform design to the data roadmap, business model, risk governance and a simulated roll-out.",
+                        zh: "撰写 17 页、12 章研究报告，从问题界定、平台设计到数据路径、商业模式、风险治理与模拟推演。"
+                    }
+                },
+                {
+                    name: "PowerPoint",
+                    kind: {
+                        en: "Decision decks",
+                        zh: "决策汇报"
+                    },
+                    use: {
+                        en: "Built the 13-slide Hebei plan and the 26-slide energy-group diagnosis, from policy review to initiatives and a phased roadmap.",
+                        zh: "制作 13 页河北节点中心方案和 26 页能源集团诊断，从政策梳理到建设内容与分阶段路径。"
+                    }
+                },
+                {
+                    name: {
+                        en: "Policy & industry research",
+                        zh: "政策与行业研究"
+                    },
+                    kind: {
+                        en: "Evidence base",
+                        zh: "证据底座"
+                    },
+                    use: {
+                        en: "National and Hebei policy documents and industry surveys on zero-carbon parks.",
+                        zh: "国家与河北政策文件、零碳园区行业调研。"
+                    }
+                },
+                {
+                    name: {
+                        en: "Analytical frameworks",
+                        zh: "分析框架"
+                    },
+                    kind: {
+                        en: "Structuring",
+                        zh: "结构化工具"
+                    },
+                    use: {
+                        en: "Five-dimension platform benchmark, pain-point data dictionary, KPI-based acceptance criteria, and NIST AI RMF 1.0 / EU AI Act for risk mapping.",
+                        zh: "5 维平台对标、痛点数据字典、基于 KPI 的验收标准，并以 NIST AI RMF 1.0 / 欧盟 AI Act 做风险映射。"
+                    }
+                }
+            ],
+
             overviewBullets: {
                 en: [
                     "Wrote a 17-page research report on how green-technology trading can enable zero-carbon industrial parks, designing an AI-enabled matching platform that runs from pain-point diagnosis to MRV verification and financing.",
@@ -352,45 +1033,75 @@ const PORTFOLIO_DATA = {
 
             metrics: [
                 {
-                    value: "17 pages",
+                    value: {
+                        en: "17 pages",
+                        zh: "17 页"
+                    },
                     label: {
-                        en: "Zero-carbon park research report",
-                        zh: "零碳园区研究报告"
+                        en: "Research report written as main author (12 chapters)",
+                        zh: "主笔研究报告（12 章）"
                     }
                 },
                 {
-                    value: "13 slides",
+                    value: {
+                        en: "13 slides",
+                        zh: "13 页"
+                    },
                     label: {
-                        en: "Hebei node-centre construction plan",
-                        zh: "河北省节点中心建设方案"
+                        en: "Hebei node-centre plan, the base draft for the provincial-government briefing",
+                        zh: "河北节点中心方案，作为向省政府汇报的底稿"
                     }
                 },
                 {
-                    value: "26 slides",
+                    value: {
+                        en: "26 slides",
+                        zh: "26 页"
+                    },
                     label: {
-                        en: "Pain-point diagnosis of a central SOE energy group",
-                        zh: "能源央企痛点诊断"
+                        en: "Pain-point diagnosis of a central SOE energy group, from group level to 6 parks",
+                        zh: "能源央企痛点诊断，从集团层面到 6 个园区"
+                    }
+                },
+                {
+                    value: "6",
+                    label: {
+                        en: "Stages in the proposed service chain, from diagnosis to MRV and financing",
+                        zh: "全流程服务环节，从痛点诊断到 MRV 核证与融资"
+                    }
+                },
+                {
+                    value: "5",
+                    label: {
+                        en: "Dimensions used to benchmark green-power and carbon-trading platforms",
+                        zh: "对标绿电与碳交易平台的维度"
                     }
                 },
                 {
                     value: "8",
                     label: {
                         en: "Construction initiatives across 3 pillars (Hebei plan)",
-                        zh: "建设内容，分属 3 大体系（河北方案）"
+                        zh: "三大板块下的重点建设内容（河北方案）"
                     }
                 },
                 {
                     value: "7",
                     label: {
                         en: "AI-agent use cases with defined inputs, outputs and KPIs",
-                        zh: "AI 智能体方案（含输入、输出与 KPI）"
+                        zh: "明确输入、输出与 KPI 的 AI 智能体场景"
                     }
                 },
                 {
                     value: "4",
                     label: {
-                        en: "Storage acceptance KPIs set in the report",
-                        zh: "报告提出的储能验收 KPI"
+                        en: "Storage acceptance KPIs, e.g. availability ≥90%",
+                        zh: "储能验收 KPI，如可用率 ≥90%"
+                    }
+                },
+                {
+                    value: "2",
+                    label: {
+                        en: "Cross-institution cooperation agreements revised",
+                        zh: "修订的跨机构合作协议"
                     }
                 }
             ],
@@ -615,54 +1326,257 @@ const PORTFOLIO_DATA = {
 
             logo: "",
 
-            overviewBullets: {
+            background: {
+                title: {
+                    en: "The brief & my role",
+                    zh: "项目背景与我的角色"
+                },
+                paragraphs: {
+                    en: [
+                        "Forecity Investment Group runs projects through several subsidiaries, each keeping its own ledgers with its own accounts and fields. That made it hard to compare project costs, funding needs and delivery progress, or to decide where further spending should go.",
+                        "My work was to turn those scattered records into one comparable dataset, build dashboards and payment checks on top of it, and give management a structured basis for project funding decisions. I also took part in building MyAnnie, a Chinese-language health and aged-care platform for Chinese-speaking seniors and their families, and analysed its internal beta test."
+                    ],
+                    zh: [
+                        "Forecity Investment Group 通过多家子公司运营项目，各子公司台账的科目与字段各不相同，难以横向比较项目成本、资金需求与交付进度，也难以判断后续资金该投向哪里。",
+                        "我的工作是把分散的记录整合为可比的数据集，在此基础上搭建看板与付款核查，并为管理层的项目投入决策提供结构化依据。此外，我参与了华人长者健康养老平台 MyAnnie 的搭建，并完成平台内测分析。"
+                    ]
+                },
+                pointsTitle: {
+                    en: "My part",
+                    zh: "我的分工"
+                },
+                points: {
+                    en: [
+                        "SQL mapping of accounts and fields across 4 subsidiaries",
+                        "Tableau dashboards for cost, funding needs and delivery progress",
+                        "Excel VBA pre-payment checks against budget, contract and market quotes",
+                        "Weighted scoring model for 8 projects",
+                        "MyAnnie platform build and beta-test analysis"
+                    ],
+                    zh: [
+                        "以 SQL 统一 4 家子公司的科目与字段映射",
+                        "以 Tableau 搭建成本、资金需求与交付进度看板",
+                        "以 Excel VBA 按预算、合同、市场报价核查付款",
+                        "8 个项目的加权评分模型",
+                        "MyAnnie 平台搭建与内测分析"
+                    ]
+                }
+            },
+
+            approach: {
                 en: [
-                    "Analysed project-level costs, expenditure and input-output performance across subsidiary projects.",
-                    "Supported management decisions on whether additional project expenditure should continue based on cost evidence, progress and expected-return logic."
+                    {
+                        title: "Make the data comparable first",
+                        question: "Four subsidiaries recorded the same kinds of cost under different accounts and fields. How can projects be compared?",
+                        action: "Mapped each subsidiary’s accounts and fields to one common structure in SQL and consolidated the scattered ledgers into a single dataset.",
+                        result: "Projects across all four subsidiaries could be compared side by side on the same definitions."
+                    },
+                    {
+                        title: "Put cost, cash and progress on one screen",
+                        question: "Management needed to see where money was going and whether delivery was keeping pace.",
+                        action: "Built Tableau dashboards for cost, funding requirements and delivery progress on top of the unified dataset.",
+                        result: "Cost, funding needs and progress could be reviewed together instead of ledger by ledger."
+                    },
+                    {
+                        title: "Turn payment checks into rules",
+                        question: "Before a payment is approved, what exactly should it be checked against, and can that be done in bulk?",
+                        action: "Broke the check into three rules (budget, contract and market quote) and implemented batch checking with an audit trail in Excel VBA.",
+                        result: "Flagged 200+ anomalous expenses; the exception list was built into the payment-approval process."
+                    },
+                    {
+                        title: "Judge projects on more than cost",
+                        question: "Should each project keep receiving money?",
+                        action: "Built a weighted scoring model combining cost, progress and location value.",
+                        result: "Sorted 8 projects into 4 to continue funding, 2 to reallocate and 2 for further review."
+                    }
                 ],
                 zh: [
-                    "分析不同项目的成本、费用及投入产出表现，并形成结构化财务分析。",
-                    "结合成本证据、项目进度与预期回报逻辑，支持管理层判断是否继续追加项目投入。"
+                    {
+                        title: "先让数据可比",
+                        question: "4 家子公司用不同的科目和字段记录同类成本，项目之间怎么比较？",
+                        action: "用 SQL 将各子公司的科目与字段映射到统一结构，把分散的台账整合为单一数据集。",
+                        result: "4 家子公司的项目可以在同一口径下横向比较。"
+                    },
+                    {
+                        title: "把成本、资金与进度放在同一屏",
+                        question: "管理层需要同时看到钱花在哪里、交付是否跟得上。",
+                        action: "基于统一数据集，用 Tableau 搭建成本、资金需求与交付进度看板。",
+                        result: "成本、资金需求与进度可以放在一起看，而不是逐本台账翻查。"
+                    },
+                    {
+                        title: "把付款核查变成规则",
+                        question: "付款审批前到底该核对什么，能否批量完成？",
+                        action: "将核查拆为预算、合同、市场报价三项规则，用 Excel VBA 实现批量核查与留痕。",
+                        result: "识别 200+ 笔异常费用，异常清单嵌入付款审批流程。"
+                    },
+                    {
+                        title: "不只看成本来评估项目",
+                        question: "每个项目是否应该继续投入？",
+                        action: "搭建成本、进度、区位价值加权评分模型。",
+                        result: "8 个项目分为继续投入 4 个、调整配置 2 个、进一步审查 2 个。"
+                    }
+                ]
+            },
+
+            tools: [
+                {
+                    name: "SQL",
+                    kind: {
+                        en: "Data integration",
+                        zh: "数据整合"
+                    },
+                    use: {
+                        en: "Mapped accounts and fields across 4 subsidiaries and consolidated the ledgers into one dataset.",
+                        zh: "统一 4 家子公司的科目与字段映射，将台账整合为单一数据集。"
+                    }
+                },
+                {
+                    name: "Tableau",
+                    kind: {
+                        en: "Dashboards",
+                        zh: "看板"
+                    },
+                    use: {
+                        en: "Dashboards for project cost, funding requirements and delivery progress.",
+                        zh: "项目成本、资金需求与交付进度看板。"
+                    }
+                },
+                {
+                    name: "Excel VBA",
+                    kind: {
+                        en: "Automated checks",
+                        zh: "自动核查"
+                    },
+                    use: {
+                        en: "Batch pre-payment checks against budget, contract and market-quote rules, with an audit trail; 200+ exceptions flagged.",
+                        zh: "按预算、合同、市场报价规则批量核查付款并留痕，识别 200+ 笔异常。"
+                    }
+                },
+                {
+                    name: "Excel",
+                    kind: {
+                        en: "Scoring model",
+                        zh: "评分模型"
+                    },
+                    use: {
+                        en: "Weighted cost, progress and location-value scoring of 8 projects.",
+                        zh: "按成本、进度、区位价值加权为 8 个项目评分。"
+                    }
+                }
+            ],
+
+            metrics: [
+                {
+                    value: "4",
+                    label: {
+                        en: "Subsidiaries’ ledgers unified into one dataset with SQL",
+                        zh: "以 SQL 整合台账的子公司"
+                    }
+                },
+                {
+                    value: "3",
+                    label: {
+                        en: "Pre-payment rules automated in Excel VBA: budget, contract, market quote",
+                        zh: "以 Excel VBA 自动化的付款前核查规则：预算、合同、市场报价"
+                    }
+                },
+                {
+                    value: "200+",
+                    label: {
+                        en: "Anomalous expenses flagged; exception list built into payment approval",
+                        zh: "识别的异常费用，异常清单嵌入付款审批"
+                    }
+                },
+                {
+                    value: "4 / 2 / 2",
+                    label: {
+                        en: "8 projects scored: continue / reallocate / further review",
+                        zh: "8 个项目评分结果：继续投入 / 调整配置 / 进一步审查"
+                    }
+                }
+            ],
+
+            overviewBullets: {
+                en: [
+                    "Unified project ledgers from 4 subsidiaries with SQL, built Tableau dashboards for cost, funding needs and delivery progress, and automated pre-payment checks in Excel VBA against budget, contract and market-quote rules, flagging 200+ anomalous expenses.",
+                    "Scored 8 projects into 4 continue / 2 reallocate / 2 review with a weighted cost, progress and location model, and took part in building MyAnnie, a health and aged-care platform for Chinese-speaking seniors, including its internal beta-test analysis."
+                ],
+                zh: [
+                    "用 SQL 统一 4 家子公司的科目与字段映射、整合项目台账，用 Tableau 搭建成本、资金需求与交付进度看板，并将付款前核查拆为预算、合同、市场报价三项规则，以 Excel VBA 批量核查，识别 200+ 笔异常费用。",
+                    "以加权评分模型将 8 个项目分为继续投入 4 个、调整配置 2 个、进一步审查 2 个；参与华人长者健康养老平台 MyAnnie 的搭建，并完成平台内测分析。"
                 ]
             },
 
             tags: [
                 "Financial Analysis",
-                "Cost Analysis",
-                "Investment Decision"
+                "SQL",
+                "Tableau",
+                "Excel VBA",
+                "Cost Control",
+                "Investment Decision",
+                "Platform Beta Testing"
             ],
 
             details: {
                 en: [
                     {
-                        title: "Project Financial Analysis",
+                        title: "Data Integration",
                         bullets: [
-                            "Reviewed project-level costs, expenses and input-output performance across subsidiary projects.",
-                            "Prepared structured financial schedules and variance observations for management review."
+                            "Mapped the accounts and fields of 4 subsidiaries to one common structure in SQL, consolidating scattered project ledgers into a single dataset that can be compared across projects.",
+                            "Reviewed project-level costs, expenses and input-output performance on the unified data."
                         ]
                     },
                     {
-                        title: "Decision Support",
+                        title: "Dashboards & Payment Controls",
                         bullets: [
-                            "Assessed whether additional expenditure should continue based on cost performance, project progress and expected-return logic.",
-                            "Translated financial evidence into concise observations supporting resource-allocation decisions."
+                            "Built Tableau dashboards covering project cost, funding requirements and delivery progress.",
+                            "Broke pre-payment checks into three rules (budget, contract and market quote) and implemented batch checking with an audit trail in Excel VBA, flagging 200+ anomalous expenses.",
+                            "The exception list was embedded in the payment-approval process."
+                        ]
+                    },
+                    {
+                        title: "Project Investment Decisions",
+                        bullets: [
+                            "Built a weighted scoring model on cost, progress and location value, sorting 8 projects into 4 to continue funding, 2 to reallocate and 2 for further review.",
+                            "Translated the financial evidence into concise observations for management’s resource-allocation decisions."
+                        ]
+                    },
+                    {
+                        title: "MyAnnie Platform",
+                        bullets: [
+                            "Took part in building MyAnnie (myannie.com.au), a Chinese-language family health and aged-care service for Chinese-speaking seniors and their families, used through WeChat (daily check-ins, health records, medication reminders and family sharing).",
+                            "Took part in the platform’s internal beta test and analysed the results."
                         ]
                     }
                 ],
-
                 zh: [
                     {
-                        title: "项目财务分析",
+                        title: "数据整合",
                         bullets: [
-                            "分析各子项目成本、费用及投入产出表现。",
-                            "整理结构化财务明细及差异分析，支持管理层审阅。"
+                            "以 SQL 统一 4 家子公司的科目与字段映射，将分散的项目台账整合为可横向比较的单一数据集。",
+                            "基于统一数据梳理各项目成本、费用与投入产出表现。"
                         ]
                     },
                     {
-                        title: "管理决策支持",
+                        title: "看板与付款核查",
                         bullets: [
-                            "基于成本表现、项目进度和预期收益逻辑判断是否应继续追加项目投入。",
-                            "将财务数据转化为支持资源配置决策的分析结论。"
+                            "以 Tableau 搭建项目成本、资金需求与交付进度看板。",
+                            "将付款前核查拆解为预算、合同、市场报价三项规则，以 Excel VBA 实现批量核查与留痕，识别 200+ 笔异常费用。",
+                            "异常清单嵌入付款审批流程。"
+                        ]
+                    },
+                    {
+                        title: "项目投入决策",
+                        bullets: [
+                            "搭建成本、进度、区位价值加权评分模型，将 8 个项目分为继续投入 4 个、调整配置 2 个、进一步审查 2 个。",
+                            "将财务证据提炼为简明结论，支持管理层的资源配置决策。"
+                        ]
+                    },
+                    {
+                        title: "MyAnnie 平台",
+                        bullets: [
+                            "参与 MyAnnie（myannie.com.au）的搭建：面向华人长者及其家人的中文健康与养老服务，通过微信使用（每日问候、健康记录、用药提醒、家人共享）。",
+                            "参与平台内测，并对内测结果进行分析。"
                         ]
                     }
                 ]
@@ -696,6 +1610,163 @@ const PORTFOLIO_DATA = {
             sortDate: "2025-07",
 
             logo: "assets/logos/ais.png",
+
+            background: {
+                title: {
+                    en: "The brief & my role",
+                    zh: "项目背景与我的角色"
+                },
+                paragraphs: {
+                    en: [
+                        "Australasia International School is an international school in Sydney. Its tuition receipts had to be recorded and reconciled accurately so that the FY2023 and FY2024 accounts could go through audit.",
+                        "I handled day-to-day bookkeeping in Xero and the bank reconciliations for both financial years, and prepared the workpapers the auditors reviewed."
+                    ],
+                    zh: [
+                        "Australasia International School 是悉尼的一所国际学校，学费收款需要准确入账和对账，FY2023 与 FY2024 的账目才能顺利接受审计。",
+                        "我负责在 Xero 中处理日常记账、完成两个财年的银行对账，并编制供审计复核的底稿。"
+                    ]
+                },
+                pointsTitle: {
+                    en: "My part",
+                    zh: "我的分工"
+                },
+                points: {
+                    en: [
+                        "Recorded about 20 transactions a day in Xero, 2,000+ in total",
+                        "FY2023–FY2024 bank reconciliations covering about A$200,000",
+                        "Investigated 6 discrepancies; closing balances tied out 100%",
+                        "Workpapers for audit review"
+                    ],
+                    zh: [
+                        "在 Xero 中日均处理约 20 笔交易，累计 2,000+ 笔",
+                        "FY2023–FY2024 银行对账，覆盖约 20 万澳元流水",
+                        "核查 6 项差异，期末余额 100% 勾稽一致",
+                        "编制供审计复核的底稿"
+                    ]
+                }
+            },
+
+            approach: {
+                en: [
+                    {
+                        title: "Record it so it can be traced",
+                        question: "How do you make sure every tuition payment can be traced later?",
+                        action: "Recorded each transaction in Xero and matched the payment to its accounting record and supporting material, about 20 a day.",
+                        result: "More than 2,000 transactions recorded, each with a clear trail from bank to ledger."
+                    },
+                    {
+                        title: "Reconcile both financial years",
+                        question: "Do the bank statements and the books agree for FY2023 and FY2024?",
+                        action: "Reconciled the bank statements against the ledger, covering about A$200,000 of transactions.",
+                        result: "Six differences surfaced that needed investigation."
+                    },
+                    {
+                        title: "Explain every difference",
+                        question: "What caused each difference, and what needs to change in the books?",
+                        action: "Traced each of the 6 discrepancies back to the bank line and the accounting record, and documented the outcome in the workpapers.",
+                        result: "Closing balances tied out 100%, with workpapers ready for audit review."
+                    }
+                ],
+                zh: [
+                    {
+                        title: "记账时就让每笔可追溯",
+                        question: "如何保证每笔学费收款事后都能追溯？",
+                        action: "在 Xero 中记录每笔交易，并将收款与账务记录及支持材料对应，日均约 20 笔。",
+                        result: "累计记录 2,000+ 笔交易，从银行流水到账簿都有清晰线索。"
+                    },
+                    {
+                        title: "核对两个财年",
+                        question: "FY2023 与 FY2024 的银行流水和账簿是否一致？",
+                        action: "将银行对账单与账簿记录核对，覆盖约 20 万澳元流水。",
+                        result: "发现 6 项需要核查的差异。"
+                    },
+                    {
+                        title: "每一项差异都要解释清楚",
+                        question: "每项差异由什么造成，账上需要怎么处理？",
+                        action: "将 6 项差异逐一追溯到银行流水和对应的账务记录，并在底稿中记录处理结果。",
+                        result: "期末余额 100% 勾稽一致，底稿可直接供审计复核。"
+                    }
+                ]
+            },
+
+            tools: [
+                {
+                    name: "Xero",
+                    kind: {
+                        en: "Bookkeeping & reconciliation",
+                        zh: "记账与对账"
+                    },
+                    use: {
+                        en: "Recorded about 20 transactions a day and reconciled the FY2023–FY2024 bank accounts.",
+                        zh: "日均记录约 20 笔交易，完成 FY2023–FY2024 银行对账。"
+                    }
+                },
+                {
+                    name: {
+                        en: "Bank statements & supporting documents",
+                        zh: "银行对账单与支持材料"
+                    },
+                    kind: {
+                        en: "Evidence",
+                        zh: "证据"
+                    },
+                    use: {
+                        en: "Matched each payment to its accounting record and supporting material.",
+                        zh: "将每笔收款与账务记录及支持材料对应。"
+                    }
+                },
+                {
+                    name: {
+                        en: "Audit workpapers",
+                        zh: "审计底稿"
+                    },
+                    kind: {
+                        en: "Documentation",
+                        zh: "文档"
+                    },
+                    use: {
+                        en: "Documented the reconciliations and the 6 discrepancies for the auditors.",
+                        zh: "记录对账过程与 6 项差异，供审计复核。"
+                    }
+                }
+            ],
+
+            metrics: [
+                {
+                    value: {
+                        en: "~20 / day",
+                        zh: "约 20 笔 / 天"
+                    },
+                    label: {
+                        en: "Transactions recorded in Xero, 2,000+ in total",
+                        zh: "Xero 日均处理交易，累计 2,000+ 笔"
+                    }
+                },
+                {
+                    value: {
+                        en: "A$200k",
+                        zh: "约 20 万澳元"
+                    },
+                    label: {
+                        en: "FY2023–FY2024 transactions covered by the bank reconciliations",
+                        zh: "FY2023–FY2024 银行对账覆盖的流水"
+                    }
+                },
+                {
+                    value: "6",
+                    label: {
+                        en: "Discrepancies investigated",
+                        zh: "核查的差异"
+                    }
+                },
+                {
+                    value: "100%",
+                    label: {
+                        en: "Closing balances tied out",
+                        zh: "期末余额勾稽一致"
+                    }
+                }
+            ],
 
             overviewBullets: {
                 en: [
@@ -782,6 +1853,157 @@ const PORTFOLIO_DATA = {
 
             logo: "assets/logos/daxin-cpa.jpg",
 
+            background: {
+                title: {
+                    en: "The brief & my role",
+                    zh: "项目背景与我的角色"
+                },
+                paragraphs: {
+                    en: [
+                        "Da Xin Certified Public Accountants was auditing the annual financial statements of a science-park development company.",
+                        "As an audit intern on the engagement team I worked on four account areas (cash, receivables, revenue, and costs and expenses), checking records against evidence, preparing workpapers and joining the physical asset count."
+                    ],
+                    zh: [
+                        "大信会计师事务所承接一家科技园建设公司的年度财务报表审计。",
+                        "作为项目组审计实习生，我参与货币资金、应收账款、收入、成本费用 4 大科目，将账务记录与支持性文件核对，编制底稿，并参与实物资产监盘。"
+                    ]
+                },
+                pointsTitle: {
+                    en: "My part",
+                    zh: "我的分工"
+                },
+                points: {
+                    en: [
+                        "Four account areas: cash, receivables, revenue, and costs and expenses",
+                        "Checked financial records against supporting documents",
+                        "Took part in the on-site physical asset count",
+                        "Prepared traceable workpapers for project-team review"
+                    ],
+                    zh: [
+                        "4 大科目：货币资金、应收账款、收入、成本费用",
+                        "将财务记录与支持性文件核对",
+                        "参与现场实物资产监盘",
+                        "编制可追溯的底稿，供项目组复核"
+                    ]
+                }
+            },
+
+            approach: {
+                en: [
+                    {
+                        title: "Back every figure with evidence",
+                        question: "Is each recorded amount supported by a document?",
+                        action: "Checked financial records against supporting documentation across cash, receivables, revenue, and costs and expenses.",
+                        result: "Organised the audit evidence so each figure could be traced to its source."
+                    },
+                    {
+                        title: "Check the assets, not only the ledger",
+                        question: "Do the assets recorded in the books actually exist?",
+                        action: "Took part in the on-site physical asset count with the engagement team."
+                    },
+                    {
+                        title: "Leave a trail a reviewer can follow",
+                        question: "Can a reviewer follow the work without having to ask?",
+                        action: "Prepared workpapers with references to the supporting evidence.",
+                        result: "Workpapers ready for project-team review."
+                    }
+                ],
+                zh: [
+                    {
+                        title: "每个数字都要有证据",
+                        question: "账上记录的金额是否都有文件支持？",
+                        action: "在货币资金、应收账款、收入、成本费用 4 大科目中，将财务记录与支持性文件核对。",
+                        result: "整理审计证据，使每个数字都能追溯到来源。"
+                    },
+                    {
+                        title: "账实相符，不只看账",
+                        question: "账上的资产是否真实存在？",
+                        action: "随项目组参与现场实物资产监盘。"
+                    },
+                    {
+                        title: "留下复核人能看懂的线索",
+                        question: "复核人能否不用追问就看懂工作过程？",
+                        action: "编制底稿，并标注对应的支持性证据。",
+                        result: "底稿交项目组复核。"
+                    }
+                ]
+            },
+
+            tools: [
+                {
+                    name: {
+                        en: "Audit workpapers",
+                        zh: "审计底稿"
+                    },
+                    kind: {
+                        en: "Documentation",
+                        zh: "文档"
+                    },
+                    use: {
+                        en: "Prepared traceable workpaper support for the four account areas.",
+                        zh: "为 4 大科目编制可追溯的底稿。"
+                    }
+                },
+                {
+                    name: {
+                        en: "Document checks",
+                        zh: "凭证与文件核对"
+                    },
+                    kind: {
+                        en: "Testing",
+                        zh: "测试"
+                    },
+                    use: {
+                        en: "Checked recorded amounts against supporting documents.",
+                        zh: "将账面金额与支持性文件核对。"
+                    }
+                },
+                {
+                    name: {
+                        en: "Physical count",
+                        zh: "实物监盘"
+                    },
+                    kind: {
+                        en: "Observation",
+                        zh: "观察"
+                    },
+                    use: {
+                        en: "Joined the on-site count of physical assets.",
+                        zh: "参与现场实物资产监盘。"
+                    }
+                }
+            ],
+
+            metrics: [
+                {
+                    value: "4",
+                    label: {
+                        en: "Account areas: cash, receivables, revenue, costs and expenses",
+                        zh: "覆盖科目：货币资金、应收账款、收入、成本费用"
+                    }
+                },
+                {
+                    value: {
+                        en: "On-site",
+                        zh: "现场"
+                    },
+                    label: {
+                        en: "Physical asset count",
+                        zh: "实物资产监盘"
+                    }
+                },
+                {
+                    value: {
+                        en: "Traceable",
+                        zh: "可追溯"
+                    },
+                    label: {
+                        en: "Workpapers prepared for project-team review",
+                        zh: "底稿，供项目组复核"
+                    }
+                }
+            ],
+
             overviewBullets: {
                 en: [
                     "Supported the annual audit of a science-park development company, covering cash, receivables, revenue, and costs and expenses.",
@@ -865,6 +2087,230 @@ const PORTFOLIO_DATA = {
 
             logo: "assets/logos/shanxi-securities.jpg",
 
+            background: {
+                title: {
+                    en: "The brief & my role",
+                    zh: "项目背景与我的角色"
+                },
+                paragraphs: {
+                    en: [
+                        "Shanxi Securities’ research institute covers the coal and power sector. In early 2024 the market expected Indonesia, the largest exporter of thermal coal, to cut output, while its leading producers were reporting higher volumes but lower profits.",
+                        "As a research intern on the coal and power team I was the main author of the Indonesia coal-market report and supported daily sector tracking for companies such as China Shenhua and Henan Energy. The internship continued remotely during my SJTU exchange (Dec 2023 – Jan 2024)."
+                    ],
+                    zh: [
+                        "山西证券研究所覆盖煤炭与电力行业。2024 年初，市场预期全球最大动力煤出口国印尼将减产，而印尼龙头煤企却出现销量增长、利润下滑。",
+                        "作为煤炭与电力组的行业研究实习生，我主笔《印度尼西亚煤炭行业研究报告》，并支持中国神华、河南能源等公司的日常行业跟踪。2023 年 12 月至 2024 年 1 月上海交大交换期间转为远程实习。"
+                    ]
+                },
+                pointsTitle: {
+                    en: "My part",
+                    zh: "我的分工"
+                },
+                points: {
+                    en: [
+                        "Main author: Indonesia coal-market report covering supply, demand, policy and trade",
+                        "Five-year coal accident and industry dataset from Wind and Choice",
+                        "Daily coal-industry tracking and news summaries",
+                        "Company tracking: 50+ research reports, announcements and analyst-meeting notes tagged"
+                    ],
+                    zh: [
+                        "主笔：印尼煤炭行业研究报告，覆盖供给、需求、政策与贸易格局",
+                        "基于 Wind、Choice 整理五年煤矿事故与行业数据",
+                        "每日行业跟踪与新闻摘要",
+                        "公司跟踪：研读并标注 50+ 份研报、公告与纪要"
+                    ]
+                }
+            },
+
+            approach: {
+                en: [
+                    {
+                        title: "Check the headline against the source",
+                        question: "The market expected Indonesia to cut production in 2024. Is that what the government actually approved?",
+                        action: "Cross-checked Choice data against the original disclosures of Indonesia’s energy ministry (ESDM).",
+                        result: "The approved 2024 plan (922.14 Mt) is 19% above 2023 actual output (775.2 Mt); the ‘cut’ came from mixing in the 710 Mt early-year target, a definitional mix-up rather than a policy change."
+                    },
+                    {
+                        title: "Split profit into volume and price",
+                        question: "Why are the two leading producers earning less while selling more?",
+                        action: "Broke down Adaro’s and Bayan’s results into sales volume and average selling price.",
+                        result: "Volume +7.1% / +18.3% but ASP −26% / −35.7%, so EBITDA fell 43–49%: ‘volume up, profit down’."
+                    },
+                    {
+                        title: "Strip out one-offs",
+                        question: "Reported unit cash cost fell 5.4%. Is that real cost-cutting?",
+                        action: "Identified and removed a one-off DMO accrual reversal.",
+                        result: "The underlying decline was only 1.6%."
+                    },
+                    {
+                        title: "Stress-test price exposure",
+                        question: "How exposed are producers if coal prices keep falling?",
+                        action: "Built a volume × (price − cost) cash-contribution model with a 3 × 5 price–cost sensitivity matrix.",
+                        result: "A 10% price fall cuts contribution by 29.8%, about three times the price move, and would need 42.4% more volume to offset."
+                    },
+                    {
+                        title: "Keep definitions clean",
+                        question: "IEA and Indonesian official export figures differ. Which should be used?",
+                        action: "Kept the two series separate rather than splicing them, and documented every primary source and calculation check in the appendix.",
+                        result: "Each figure in the report traces back to its source."
+                    }
+                ],
+                zh: [
+                    {
+                        title: "用原始披露核对市场说法",
+                        question: "市场预期印尼 2024 年减产，政府批准的计划真是这样吗？",
+                        action: "将 Choice 数据与印尼能矿部（ESDM）原始披露交叉核验。",
+                        result: "2024 年获批计划产量 922.14 百万吨，比 2023 年实际 775.2 百万吨高 19%；“减产”来自年初 710 百万吨的目标值，是口径混用，而非政策转向。"
+                    },
+                    {
+                        title: "把利润拆成量与价",
+                        question: "两家龙头为什么卖得更多、赚得更少？",
+                        action: "将 Adaro 与 Bayan 的业绩拆解为销量与平均售价。",
+                        result: "销量 +7.1% / +18.3%，平均售价 −26% / −35.7%，EBITDA 下降 43%—49%，呈“量增利降”。"
+                    },
+                    {
+                        title: "剔除一次性因素",
+                        question: "报表上单位现金成本下降 5.4%，是真实降本吗？",
+                        action: "识别并剔除一次性 DMO 计提转回。",
+                        result: "实际降幅仅 1.6%。"
+                    },
+                    {
+                        title: "压力测试价格敞口",
+                        question: "如果煤价继续下跌，煤企受多大影响？",
+                        action: "搭建“销量 ×（售价 − 成本）”现金贡献模型和 3 × 5 价格—成本敏感性矩阵。",
+                        result: "售价下跌 10%，现金贡献减少 29.8%，约为价格跌幅的 3 倍；需增加 42.4% 销量才能弥补。"
+                    },
+                    {
+                        title: "口径不混用",
+                        question: "IEA 与印尼官方的出口数据不一致，用哪个？",
+                        action: "两套数据分别保留、不交叉拼接，并在附录记录每个一手来源与计算校验。",
+                        result: "报告中的每个数字都能追溯到来源。"
+                    }
+                ]
+            },
+
+            tools: [
+                {
+                    name: "Excel",
+                    kind: {
+                        en: "Modelling",
+                        zh: "建模"
+                    },
+                    use: {
+                        en: "Built a cross-year comparable dataset for five years of accident and industry data, the cash-contribution model and the 3 × 5 sensitivity matrix.",
+                        zh: "建立五年事故与行业数据的跨年可比数据集，搭建现金贡献模型与 3 × 5 敏感性矩阵。"
+                    }
+                },
+                {
+                    name: "Wind & Choice",
+                    kind: {
+                        en: "Data terminals",
+                        zh: "金融终端"
+                    },
+                    use: {
+                        en: "Pulled coal-mine accident, supply–demand and company financial data, then cross-checked it against primary disclosures.",
+                        zh: "提取煤矿事故、供需与公司财务数据，并与一手披露交叉核验。"
+                    }
+                },
+                {
+                    name: {
+                        en: "Primary sources",
+                        zh: "一手资料"
+                    },
+                    kind: {
+                        en: "Verification",
+                        zh: "核验"
+                    },
+                    use: {
+                        en: "Indonesia’s ESDM disclosures, Adaro and Bayan financial reports and IEA data, each documented in the appendix.",
+                        zh: "印尼能矿部披露、Adaro 与 Bayan 财报、IEA 数据，均在附录列明。"
+                    }
+                },
+                {
+                    name: "Python",
+                    kind: {
+                        en: "Data collection",
+                        zh: "数据采集"
+                    },
+                    use: {
+                        en: "Scraped official data to support 150+ daily tracking reports.",
+                        zh: "用爬虫抓取官方数据，支撑 150+ 份每日跟踪报告。"
+                    }
+                }
+            ],
+
+            metrics: [
+                {
+                    value: "+19%",
+                    label: {
+                        en: "2024 approved plan vs 2023 actual output; the expected ‘cut’ was a definitional mix-up",
+                        zh: "2024 年获批计划产量较 2023 年实际产量；“减产”预期源于口径混用"
+                    }
+                },
+                {
+                    value: {
+                        en: "−43% to −49%",
+                        zh: "−43% 至 −49%"
+                    },
+                    label: {
+                        en: "EBITDA at two leading producers despite volume growth of 7.1% / 18.3%",
+                        zh: "两家龙头 EBITDA 降幅，同期销量增长 7.1% / 18.3%"
+                    }
+                },
+                {
+                    value: "5.4% → 1.6%",
+                    label: {
+                        en: "Unit cash-cost decline after removing a one-off DMO reversal",
+                        zh: "剔除一次性 DMO 转回后的单位现金成本降幅"
+                    }
+                },
+                {
+                    value: "−29.8%",
+                    label: {
+                        en: "Cash contribution under a 10% coal-price fall, about 3× the price move",
+                        zh: "煤价下跌 10% 时现金贡献变化，约为价格跌幅的 3 倍"
+                    }
+                },
+                {
+                    value: "+42.4%",
+                    label: {
+                        en: "Volume increase needed to offset that price fall",
+                        zh: "弥补该跌幅所需的销量增长"
+                    }
+                },
+                {
+                    value: "150+",
+                    label: {
+                        en: "Daily tracking reports supported with scraped official data",
+                        zh: "以爬虫数据支撑的每日跟踪报告"
+                    }
+                },
+                {
+                    value: {
+                        en: "5 years",
+                        zh: "5 年"
+                    },
+                    label: {
+                        en: "Coal accident and industry data compiled",
+                        zh: "整理的煤矿事故与行业数据跨度"
+                    }
+                },
+                {
+                    value: "50+",
+                    label: {
+                        en: "Research reports, announcements and meeting notes tagged",
+                        zh: "研读并标注的研报、公告与纪要"
+                    }
+                },
+                {
+                    value: "775.2 Mt",
+                    label: {
+                        en: "Indonesia’s 2023 coal output (+12.8%)",
+                        zh: "2023 年印尼煤炭产量（+12.8%）"
+                    }
+                }
+            ],
+
             overviewBullets: {
                 en: [
                     "Collected, cleaned and analysed five years of coal-accident and industry data using Excel and industry research tools.",
@@ -880,46 +2326,10 @@ const PORTFOLIO_DATA = {
                 "Equity Research",
                 "Coal & Power",
                 "Excel",
+                "Wind / Choice",
+                "Python",
                 "Industry Analysis"
             ],
-metrics: [
-    {
-        value: "5 Years",
-        label: {
-            en: "Coal accident and industry data analysed",
-            zh: "煤矿事故及行业数据分析跨度"
-        }
-    },
-    {
-        value: "775.2 Mt",
-        label: {
-            en: "Indonesia coal production in 2023",
-            zh: "2023 年印尼煤炭产量"
-        }
-    },
-    {
-        value: "518 Mt",
-        label: {
-            en: "Indonesia coal exports in 2023",
-            zh: "2023 年印尼煤炭出口量"
-        }
-    },
-    {
-        value: "+12.8%",
-        label: {
-            en: "2023 production growth YoY",
-            zh: "2023 年煤炭产量同比增长"
-        }
-    },
-    {
-        value: "−29.8%",
-        label: {
-            en: "Scenario cash-contribution change under a 10% coal-price decline",
-            zh: "煤价下降 10% 情景下销售现金贡献变化"
-        }
-    }
-],
-
 visuals: [
     {
         type: "bars",
@@ -985,6 +2395,11 @@ visuals: [
             en: "Scenario-based sales cash contribution only; this is not a profit, EBITDA or free-cash-flow forecast.",
             zh: "该结果仅为销售现金贡献压力测试，并非利润、EBITDA 或自由现金流预测。"
         }
+    },
+
+    {
+        type: "widget",
+        widget: "coal-sensitivity"
     }
 ],
 
@@ -1075,6 +2490,167 @@ visuals: [
 
             logo: "assets/logos/edf.jpg",
 
+            background: {
+                title: {
+                    en: "The brief & my role",
+                    zh: "项目背景与我的角色"
+                },
+                paragraphs: {
+                    en: [
+                        "Environmental Defense Fund wanted an evidence-based picture of the Yellow River Basin (water quality, water use, soil erosion and conservation funding) to inform which environmental projects to pursue and how to verify them.",
+                        "I built the dataset from nine government bulletins and developed the report’s analysis: the key findings, funding-intensity and water-saving scenarios, and verification checklists for project decisions."
+                    ],
+                    zh: [
+                        "美国环保协会（EDF）希望基于证据了解黄河流域的水质、用水、水土流失与治理资金状况，用于判断推进哪些环境项目、以及如何核验成效。",
+                        "我基于 9 份政府公报搭建数据集，并完成报告的分析部分：关键发现、资金强度与节水情景测算，以及供项目决策使用的核验清单。"
+                    ]
+                },
+                pointsTitle: {
+                    en: "My part",
+                    zh: "我的分工"
+                },
+                points: {
+                    en: [
+                        "Dataset from 9 government bulletins in 4 categories",
+                        "Analysis of water quality, water use, erosion and funding",
+                        "Funding-intensity and water-saving scenarios",
+                        "Checklists for 5 project types; 10 formulas with checks in the appendix"
+                    ],
+                    zh: [
+                        "基于 4 类、9 份政府公报的数据集",
+                        "水质、用水、水土流失与治理资金分析",
+                        "资金强度与节水情景测算",
+                        "5 类项目核验清单；附录 10 条计算公式与复核"
+                    ]
+                }
+            },
+
+            approach: {
+                en: [
+                    {
+                        title: "Make sources comparable without distorting them",
+                        question: "Nine bulletins use different regions, denominators and monitoring scopes. How can they be combined?",
+                        action: "Unified regional and indicator definitions, validated abnormal records and kept each source’s boundaries and denominators; province-wide administrative statistics were not used as substitutes for basin statistics.",
+                        result: "One dataset covering water resources, water quality, erosion, vegetation and wetlands, and water–sediment dynamics."
+                    },
+                    {
+                        title: "Locate where the problem really is",
+                        question: "The basin is improving overall. Where do the remaining problems sit?",
+                        action: "Compared indicators across monitoring sections, regions and years.",
+                        result: "Good or excellent sections reached 91.0% and all 42 mainstem sections were Class I–II, so the weak spots are in tributaries; 61.8% of remaining erosion lies in three provinces, and the coarse-sediment region’s conservation rate (48.47%) is 19.93 points below the basin."
+                    },
+                    {
+                        title: "Ask what the money buys",
+                        question: "RMB 4.211 billion of central funding was arranged in 2023. What does that mean per square kilometre treated?",
+                        action: "Converted the allocation into unit intensities (about RMB 368,500 per km² of small-watershed treatment) and tested 70% / 85% / 100% effective-area scenarios.",
+                        result: "If only 70% of the area is effective, intensity rises to about RMB 526,400 per km², so budget has to be tracked separately from payment, completion, maintenance and outcomes."
+                    },
+                    {
+                        title: "Size the water-saving opportunity honestly",
+                        question: "Agriculture uses 64.6% of basin water. How much could a realistic cut save?",
+                        action: "Modelled a 5% cut in agricultural gross water use (about 1.267 billion m³) with 50% conversion into verified net saving.",
+                        result: "About 634 million m³, presented as a conditional scenario for sizing monitoring needs, not a realised outcome."
+                    },
+                    {
+                        title: "Turn findings into checklists",
+                        question: "How can project teams actually use this?",
+                        action: "Wrote resource-condition and verification checklists for five project types and set four priority tracking directions.",
+                        result: "All 10 formulas and their checks are documented in the appendix, so each estimate can be reproduced."
+                    }
+                ],
+                zh: [
+                    {
+                        title: "让来源可比，但不扭曲口径",
+                        question: "9 份公报的地区范围、分母与监测口径各不相同，怎么合并？",
+                        action: "统一地区与指标口径，核验异常记录，保留各来源的地理边界与分母；不以全省行政统计替代流域统计。",
+                        result: "形成覆盖水资源、水质、水土流失、植被与湿地、水沙变化的统一数据集。"
+                    },
+                    {
+                        title: "找出问题真正所在",
+                        question: "流域整体在改善，剩下的问题集中在哪里？",
+                        action: "按断面、地区和年份对比各项指标。",
+                        result: "优良断面比例 91.0%，42 个干流断面全部为 I—II 类，薄弱环节在支流；剩余水土流失面积 61.8% 集中在内蒙古、陕西、甘肃，中游多沙粗沙区水土保持率 48.47%，比全流域低 19.93 个百分点。"
+                    },
+                    {
+                        title: "追问资金换来了什么",
+                        question: "2023 年安排中央资金 42.11 亿元，落到每平方公里治理面积是多少？",
+                        action: "将资金换算为单位强度（小流域综合治理约 36.85 万元/km²），按有效治理面积 70%、85%、100% 三档测算。",
+                        result: "若有效面积仅 70%，强度升至约 52.64 万元/km²；因此预算安排须与实际拨付、完工、维护和环境成效分开跟踪。"
+                    },
+                    {
+                        title: "如实估算节水空间",
+                        question: "农业用水占流域 64.6%，合理压减能节约多少？",
+                        action: "设定农业用水压减 5%（约 12.67 亿 m³），按 50% 转化为可核证净节水。",
+                        result: "约 6.34 亿 m³，作为估算监测需求的条件情景，而非已实现成效。"
+                    },
+                    {
+                        title: "把发现变成核验清单",
+                        question: "项目团队如何使用这些结论？",
+                        action: "为 5 类产业项目编写资源条件与核验清单，提出 4 类优先跟踪方向。",
+                        result: "附录列出 10 条计算公式及复核，每个估算都可复现。"
+                    }
+                ]
+            },
+
+            tools: [
+                {
+                    name: {
+                        en: "Government bulletins",
+                        zh: "政府公报"
+                    },
+                    kind: {
+                        en: "Data sources",
+                        zh: "数据来源"
+                    },
+                    use: {
+                        en: "9 bulletins on water resources, soil and water conservation, eco-environment and sediment.",
+                        zh: "水资源、水土保持、生态环境与泥沙 4 类共 9 份公报。"
+                    }
+                },
+                {
+                    name: {
+                        en: "Definition harmonisation",
+                        zh: "口径统一"
+                    },
+                    kind: {
+                        en: "Data cleaning",
+                        zh: "数据清洗"
+                    },
+                    use: {
+                        en: "Unified regional and indicator definitions, validated abnormal records, and kept boundaries and denominators.",
+                        zh: "统一地区与指标口径，核验异常记录，保留边界与分母。"
+                    }
+                },
+                {
+                    name: {
+                        en: "Scenario analysis",
+                        zh: "情景分析"
+                    },
+                    kind: {
+                        en: "Modelling",
+                        zh: "建模"
+                    },
+                    use: {
+                        en: "Effective-area (70% / 85% / 100%) and water-saving (5% cut, 50% conversion) scenarios.",
+                        zh: "有效面积（70% / 85% / 100%）与节水（压减 5%、转化 50%）情景。"
+                    }
+                },
+                {
+                    name: {
+                        en: "Charts & checklists",
+                        zh: "图表与清单"
+                    },
+                    kind: {
+                        en: "Communication",
+                        zh: "呈现"
+                    },
+                    use: {
+                        en: "Trend charts for water quality and erosion, and verification checklists for 5 project types.",
+                        zh: "水质与水土流失趋势图，5 类项目核验清单。"
+                    }
+                }
+            ],
+
             overviewBullets: {
                 en: [
                     "Built a Yellow River Basin dataset from 9 government bulletins, unifying regional and indicator definitions and flagging abnormal records.",
@@ -1097,50 +2673,78 @@ visuals: [
 
             metrics: [
                 {
+                    value: "9",
+                    label: {
+                        en: "Government bulletins merged into one harmonised dataset",
+                        zh: "整合为统一数据集的政府公报"
+                    }
+                },
+                {
                     value: "91.0%",
                     label: {
                         en: "Good / excellent water-quality sections in 2023",
-                        zh: "2023 年主要江河优良断面比例"
+                        zh: "2023 年优良水质断面比例"
                     }
                 },
-
                 {
                     value: "64.6%",
                     label: {
                         en: "Share of basin gross water use from agriculture",
-                        zh: "农业占流域毛用水比例"
+                        zh: "农业用水占流域总用水"
                     }
                 },
-
                 {
-                    value: "251,100 km²",
+                    value: {
+                        en: "251,100 km²",
+                        zh: "25.11 万 km²"
+                    },
                     label: {
                         en: "Soil-erosion area remaining in 2023",
-                        zh: "2023 年仍存在的水土流失面积"
+                        zh: "2023 年剩余水土流失面积"
                     }
                 },
-
                 {
                     value: "61.8%",
                     label: {
-                        en: "Share of erosion area in Inner Mongolia, Shaanxi & Gansu",
-                        zh: "内蒙古、陕西和甘肃占流域水土流失面积"
+                        en: "Share of erosion area in Inner Mongolia, Shaanxi and Gansu",
+                        zh: "内蒙古、陕西、甘肃水土流失面积占比"
                     }
                 },
-
                 {
-                    value: "RMB 4.211bn",
+                    value: {
+                        en: "19.93 pp",
+                        zh: "19.93 个百分点"
+                    },
+                    label: {
+                        en: "Conservation-rate gap of the coarse-sediment region vs the whole basin",
+                        zh: "中游多沙粗沙区水土保持率低于全流域"
+                    }
+                },
+                {
+                    value: {
+                        en: "RMB 4.211bn",
+                        zh: "42.11 亿元"
+                    },
                     label: {
                         en: "Central funding arranged for key soil-conservation projects",
-                        zh: "国家水土保持重点工程中央资金安排"
+                        zh: "中央安排的重点水土保持项目资金"
                     }
                 },
-
                 {
-                    value: "~634m m³",
+                    value: {
+                        en: "~634m m³",
+                        zh: "约 6.34 亿 m³"
+                    },
                     label: {
                         en: "Illustrative net-water-saving scenario",
-                        zh: "情景测算净节水规模"
+                        zh: "示意性净节水情景"
+                    }
+                },
+                {
+                    value: "5",
+                    label: {
+                        en: "Project types with verification checklists",
+                        zh: "编制核验清单的项目类型"
                     }
                 }
             ],
@@ -1428,6 +3032,344 @@ visuals: [
 projects: [
 
     {
+    id: "ai-hiring-ethnicity",
+    category: "ai-data",
+
+    headline: {
+        en: "Does the Name Change the Score?",
+        zh: "换个名字，分数会变吗？"
+    },
+
+    title: {
+        en: "Ethnic Cues in AI Hiring — Do Names and Accents Change How LLMs Screen and Interview Applicants?",
+        zh: "族裔线索与 AI 招聘——姓名和口音会不会改变大模型对求职者的筛选与面试评分？"
+    },
+
+    organisation: {
+        en: "Independent research project",
+        zh: "个人研究课题"
+    },
+
+    role: {
+        en: "Own project · research question, study design and pipeline",
+        zh: "本人主导 · 研究问题、实验设计与实验流程"
+    },
+
+    status: {
+        en: "Experiment design · pilot not yet run",
+        zh: "实验设计阶段 · 尚未开始预实验"
+    },
+
+    statusNote: {
+        en: "This page shows the study design, not results. The pipeline, name bank and literature base are built; the pilot, pre-registration and main runs come next, and the page will be updated as the study progresses.",
+        zh: "本页展示的是实验设计，不是结果。实验流程、姓名库和文献库已经搭好，接下来是预实验、预注册和正式运行，本页会随研究进展更新。"
+    },
+
+    location: {
+        en: "Sydney, Australia",
+        zh: "澳大利亚 · 悉尼"
+    },
+
+    dates: {
+        en: "Sep 2026 – Present",
+        zh: "2026年9月 – 至今"
+    },
+
+    sortDate: "2026-12",
+
+    background: {
+        title: {
+            en: "Where the Question Came From",
+            zh: "研究缘起"
+        },
+        pointsTitle: {
+            en: "Research questions",
+            zh: "研究问题"
+        },
+        paragraphs: {
+            en: [
+                "The idea started with a claim circulating on Xiaohongshu: Chinese job seekers in English-speaking countries rewrite their pinyin surname into an English-looking spelling (Feng → Von, Luo → Law, Yang → Young, Lin → Lynn) and report more interview invitations. Personal stories cannot show cause and effect: there is no control group, and people who change their name often change their resume, volume of applications or target roles at the same time.",
+                "Many employers now place two AI stages before a human sees an applicant: AI resume screening, then an AI interview. The project asks whether ethnic cues such as names and accented English change outcomes in those two stages, under what conditions and through which mechanisms. Chinese applicants are the main case, compared with English, Japanese, Korean, French and German names and with Malaysian and Singaporean Chinese names.",
+                "The design is an algorithmic audit: it follows the logic of a field audit (identical applications that differ in one cue), with large language models in the evaluator's seat."
+            ],
+            zh: [
+                "研究的起点是小红书上流传的一种做法：在英语国家找工作时，把拼音姓改成看起来更像英文姓的写法（冯 Feng → Von、罗 Luo → Law、杨 Yang → Young、林 Lin → Lynn），帖子里说改了以后面试邀请明显变多。个人经验说明不了因果：没有对照组，而且改名的人往往同时改了简历、投递数量或目标岗位。",
+                "现在很多雇主在真人面试之前设了两个 AI 环节：先由 AI 筛选简历，通过的再做 AI 面试。这个课题要回答：姓名和带口音的英语这类族裔线索，会不会改变申请者在这两个环节中的结果；如果会，在什么条件下、通过什么途径。华人是主要案例，对照组是英国、日本、韩国、法国、德国裔名字，以及马来西亚和新加坡华人的名字。",
+                "方法属于算法审计：逻辑和田野审计一样（只改一个线索、其他完全相同的申请材料），只是评价者换成了大模型。"
+            ]
+        },
+        points: {
+            en: [
+                "Do names from different origins receive different scores for the same resume?",
+                "Does spelling the same Chinese surname differently (pinyin, Hong Kong, Taiwan, Malaysia/Singapore, Indonesia, anglicised), or using an English first name, change the result?",
+                "Do the gaps vary with employer type and with the country where the model was developed?",
+                "Can the gaps be explained by what models infer from a name: visa needs, English or Mandarin ability, or simply the number of tokens?",
+                "When accented interview answers score lower, is it recognition failure, evaluation bias or Chinese-English word order?"
+            ],
+            zh: [
+                "同一份简历换成不同来源的名字，分数是否不同？",
+                "同一个华人姓换一种写法（拼音、港式、台式、马新、印尼、英文化），或改用英文名，结果会不会变？",
+                "差异是否随雇主类型、模型开发国家而变化？",
+                "差异能否用模型从名字推断出的签证需要、英语和普通话能力，或者只是分词数来解释？",
+                "带口音的面试回答得分低，是因为识别失败、评价偏见，还是中式语序？"
+            ]
+        }
+    },
+
+    overviewBullets: {
+        en: [
+            "Designing a two-stage audit of AI hiring. Study 1 scores identical resumes that differ only in the name (7 name origins; the same Chinese surname in pinyin, Hong Kong, Taiwan, Malaysian/Singaporean, Indonesian and anglicised spellings; work-rights and employer-type conditions) with models from 8 Chinese and US developers across 12 Australian roles, about 30,600 calls per model.",
+            "Study 2 tests AI interviews: the same answer read in different accents, with different name labels, scored by transcribe-then-score and direct speech pipelines, plus 11 text versions that separate Chinese-English word order from random errors. Built so far: a 1,176-name bank, the scoring and analysis scripts and a 112-paper literature base; hypotheses are two-sided with ±2-point equivalence tests."
+        ],
+        zh: [
+            "设计一个覆盖 AI 招聘两个环节的审计实验。研究一让国内外 8 家开发商的模型给只换名字的相同简历打分（7 种名字来源；同一华人姓的拼音、港式、台式、马新、印尼与英文化写法；工作权利与雇主类型条件），覆盖 12 个澳洲岗位，每个模型约 30,600 次调用。",
+            "研究二检验 AI 面试：同一段回答用不同口音读出、配不同名字标签，分别经过“先转写再打分”和“语音模型直接打分”两种流程，另用 11 个文字版本区分中式语序和普通语法错误。已完成：1,176 个名字的姓名库、打分与分析脚本、112 篇文献的文献库；所有假设为双向，并配 ±2 分的等价检验。"
+        ]
+    },
+
+    tags: [
+        "AI Fairness",
+        "Algorithmic Audit",
+        "LLM Evaluation",
+        "AI Hiring",
+        "Speech AI",
+        "Experimental Design",
+        "Python"
+    ],
+
+    metrics: [
+        {
+            value: "2",
+            label: {
+                en: "AI hiring stages studied: resume screening and AI interview",
+                zh: "研究的 AI 招聘环节：简历筛选与 AI 面试"
+            }
+        },
+        {
+            value: "1,176",
+            label: {
+                en: "Names in the name bank (built): 14 surname groups × 7 spellings",
+                zh: "姓名库中的名字（已建成）：14 组姓 × 7 种写法"
+            }
+        },
+        {
+            value: "12",
+            label: {
+                en: "Australian roles planned: 6 job types × entry and manager level",
+                zh: "计划的澳洲岗位：6 类岗位 × 入门与管理两档"
+            }
+        },
+        {
+            value: "~30,600",
+            label: {
+                en: "Planned Study 1 calls per model",
+                zh: "研究一每个模型的计划调用量"
+            }
+        },
+        {
+            value: "8",
+            label: {
+                en: "Model developers, 4 Chinese and 4 US, plus local open models",
+                zh: "模型开发商：国内外各 4 家，另加本地开源模型"
+            }
+        },
+        {
+            value: "112",
+            label: {
+                en: "Papers in the literature database",
+                zh: "文献库中的文献"
+            }
+        }
+    ],
+
+    visuals: [
+        {
+            type: "process",
+
+            title: {
+                en: "Study Design: Two AI Stages Before a Human",
+                zh: "实验整体流程：见到真人之前的两个 AI 环节"
+            },
+
+            steps: {
+                en: [
+                    "Shared base: pipeline, name bank, model list, pre-registration",
+                    "Study 1: AI resume screening (A1–A4)",
+                    "Study 2: AI interview (B1–B3)",
+                    "Combine the two stages",
+                    "Analysis by model, developer country, role and level"
+                ],
+                zh: [
+                    "共用基础：调用流程、姓名库、模型清单、预注册",
+                    "研究一：AI 简历筛选（A1–A4）",
+                    "研究二：AI 面试（B1–B3）",
+                    "两个环节结合",
+                    "按模型、开发国家、岗位和层级分析"
+                ]
+            },
+
+            caption: {
+                en: "Combining the two pass rates estimates how often different applicant profiles (for example a Chinese name with a Mandarin accent, an anglicised surname with a Mandarin accent, or an English name with an Australian accent) reach a human interviewer.",
+                zh: "把两个环节的通过率组合起来，估计不同申请者画像（如中文名加普通话口音、英文化姓加普通话口音、英文名加澳洲口音）进入真人面试的比例。"
+            }
+        },
+
+        {
+            type: "table",
+            source: {
+                en: "Study 1 plan · calls per model",
+                zh: "研究一方案 · 每个模型的调用量"
+            },
+            title: {
+                en: "Study 1: AI Resume Screening Experiments",
+                zh: "研究一：AI 简历筛选的实验条件"
+            },
+            columns: {
+                en: ["Experiment", "What changes", "Calls per model"],
+                zh: ["实验", "改变的因素", "每个模型调用量"]
+            },
+            rows: [
+                [{ en: "A1 Name origin", zh: "A1 名字来源" }, { en: "48 resumes × 7 origins × 2 genders × 3 names × 3 prompt templates", zh: "48 份简历 × 7 种来源 × 2 个性别 × 3 个名字 × 3 个模板" }, "6,048"],
+                [{ en: "A2a Xiaohongshu spellings", zh: "A2a 小红书 14 组" }, { en: "Pinyin, Hong Kong and anglicised surnames, with English or pinyin first names", zh: "拼音、港式、英文化姓，配英文名或拼音名" }, "7,200"],
+                [{ en: "A2b Regional spellings", zh: "A2b 地区拼写" }, { en: "Mainland, Hong Kong, Taiwan, Malaysia/Singapore and Indonesia spellings of 7 common surnames", zh: "7 个常见姓的大陆、香港、台湾、马新、印尼写法" }, "2,880"],
+                [{ en: "A3 Work rights", zh: "A3 工作权利" }, { en: "Not stated / Australian citizen / needs employer sponsorship", zh: "不写 / 澳大利亚公民 / 需要雇主担保" }, "3,456"],
+                [{ en: "A4 Employer type", zh: "A4 雇主类型" }, { en: "Local firm, Shenzhen-HQ Sydney office, Chinese-run firm, firm with ~40% Asian staff; × “Mandarin speakers preferred”", zh: "本地公司、深圳总部的悉尼办公室、华人经营企业、约 40% 亚裔员工的公司；× 是否“优先考虑会普通话者”" }, "6,912"],
+                [{ en: "Name perception + list ranking", zh: "姓名感知 + 名单排序" }, { en: "~1,200 names × 3; 7-resume shortlists with rotated positions", zh: "约 1,200 个名字 × 3 次；7 份简历一组的排序，轮换位置" }, "~4,100"],
+                [{ en: "Total", zh: "合计" }, "", "~30,600"]
+            ],
+            highlightRow: 6,
+            caption: {
+                en: "12 roles cross stereotype-consistent jobs (software, data, accounting) with inconsistent ones (sales, HR, marketing) at entry and manager level, with 4 base resumes each (2 clearly qualified, 2 just qualified). The quality gap is a positive control, and “needs sponsorship” is a planted difference the method must detect.",
+                zh: "12 个岗位交叉了符合亚裔职业刻板印象的岗位（软件、数据、会计）和不符合的岗位（销售、人力、市场），各分入门和管理两档；每个岗位 4 份基础简历（2 份明显达标、2 份基本达标）。质量差距是正对照，“需要雇主担保”是方法必须能检测出来的植入差异。"
+            }
+        },
+
+        {
+            type: "table",
+            source: {
+                en: "Study 2 plan",
+                zh: "研究二方案"
+            },
+            title: {
+                en: "Study 2: AI Interview Experiments",
+                zh: "研究二：AI 面试的三个实验"
+            },
+            columns: {
+                en: ["Experiment", "Material", "Question it answers"],
+                zh: ["实验", "材料", "要回答的问题"]
+            },
+            rows: [
+                [{ en: "B1 Recognition vs evaluation", zh: "B1 识别还是评价" }, { en: "Real speech corpora (ALLSSTAR, speechocean762, L2-ARCTIC)", zh: "真人语料（ALLSSTAR、speechocean762、L2-ARCTIC）" }, { en: "Machine word error rate × human intelligibility (2 × 2): are speakers people understand still marked down?", zh: "机器词错误率 × 人类可懂度（2 × 2）：人听得懂的说话者是否仍被扣分？" }],
+                [{ en: "B2 Chinese-English word order", zh: "B2 中式语序" }, { en: "60 answers × 11 text versions (7 single features, all features, random-error control, grammar-corrected)", zh: "60 个回答 × 11 个文字版本（7 种单一特征、全部特征、随机错误对照、语法改正版）" }, { en: "Is “Chinese-style” English penalised beyond the same number of ordinary errors?", zh: "中式表达的扣分是否超过同样数量的普通错误？" }],
+                [{ en: "B3 Accent × name × pipeline", zh: "B3 口音 × 名字 × 流程" }, { en: "Synthetic voices in ~6 accents reading the same answers; 4 name labels", zh: "约 6 种口音的合成声音朗读相同回答；4 种名字标签" }, { en: "Do accent and name change scores under transcribe-then-score and direct speech-model scoring?", zh: "在“先转写再打分”和“语音模型直接打分”两种流程下，口音和名字会不会改变分数？" }]
+            ],
+            caption: {
+                en: "Transcription uses Whisper large-v3 and a commercial recogniser, scored by the same four text models as Study 1; direct scoring uses speech-capable models. Synthetic voices keep content identical and involve no human participants.",
+                zh: "转写用 Whisper large-v3 和一家商用识别服务，再由研究一中的 4 个文字模型打分；直接打分用支持音频的语音模型。合成声音保证内容完全相同，也不涉及真人参与者。"
+            }
+        }
+    ],
+
+    details: {
+        en: [
+            {
+                title: "Why an Algorithmic Audit",
+                bullets: [
+                    "Four ways to study name discrimination were compared: field audits, survey or lab experiments, observational data and algorithmic audits. This project is an algorithmic audit; surveys are used only to check how names are perceived.",
+                    "A review of 12 closely related studies found gaps the design addresses: some studies named a Chinese surname but only varied first names, some generated names without validation, most reported average score gaps rather than how many applicants would be screened out, and almost none separated different spellings within Chinese names."
+                ]
+            },
+            {
+                title: "Names",
+                bullets: [
+                    "Names come from official frequency data (ChineseNames for Chinese names, census and birth-registration data for English names) rather than model-generated lists, which tend to be concentrated and skewed.",
+                    "The name bank fixes each fictional identity's characters and only changes the spelling, so the effect of changing a surname and changing a first name can be separated. Spellings with extra meanings (Yale, Penn, Law, Day, Lynn, Von) are flagged for a sensitivity check.",
+                    "Every name is screened for famous namesakes, its token count is recorded for each model, and models plus two classification tools (Namsor, name2nat) judge its likely origin, visa need, English and Mandarin ability."
+                ]
+            },
+            {
+                title: "Models and Prompts",
+                bullets: [
+                    "About 16 API models from 8 developers (OpenAI, Anthropic, Google, xAI, DeepSeek, Qwen, Kimi, Zhipu; low-cost and mid tiers) plus local open models, so results can be compared by developer country. The model list and versions are fixed on the pilot day and the returned version is logged on every call.",
+                    "Three prompt templates enter the analysis as a random factor: a simple recruiter, a structured rubric and a realistic shortlist (about 500 applications, about 50 interview slots). The main runs ask only for a score and an interview decision; 10% also ask for a one-line reason."
+                ]
+            },
+            {
+                title: "Checks and Analysis",
+                bullets: [
+                    "Built-in checks: the qualified-vs-just-qualified gap must appear (positive control), “needs sponsorship” must lower scores (planted difference), gaps between origins must exceed the variation from swapping names within an origin, and refusals are analysed rather than dropped.",
+                    "The main estimate is the score gap against an English name for the same resume and template, per model, using mixed-effects models with Holm correction and ±2-point equivalence tests, so “no meaningful difference” is a possible finding.",
+                    "Pass rates and impact ratios (four-fifths rule) are reported alongside scores; mediation analysis uses the inferred visa, English and Mandarin judgements; 5% of conditions are re-run at the end and a fixed set every three months to track model drift."
+                ]
+            },
+            {
+                title: "Built So Far",
+                bullets: [
+                    "A Python name-bank generator: 14 surname groups × 2 genders × 6 identities × 7 spellings = 1,176 names.",
+                    "Scripts for name-perception checks, paired resumes, scoring (with repeats and a no-cost dry run) and analysis (paired gaps, resume-clustered intervals, fixed-effects and mediation tables), adapted from the group's multi-model pipeline.",
+                    "A literature and decision database (112 papers, 27 design decisions, 30 discussion questions, experimental conditions, models, roles and prompts) and a revised research plan."
+                ]
+            },
+            {
+                title: "Next Steps and Limits",
+                bullets: [
+                    "Next: confirm ethics requirements, fix known pipeline issues and verify that no condition labels reach the models, write the 12 job descriptions and 48 resumes, run a pilot with 4 models (about 500 calls each), then pre-register on OSF.",
+                    "Limits: the study tests models in a simulated pipeline, not a specific commercial product; closed models change over time; Hong Kong, Taiwan and Southeast Asian spellings lack human perception data; synthetic voices are not identical to real accents."
+                ]
+            }
+        ],
+
+        zh: [
+            {
+                title: "为什么用算法审计",
+                bullets: [
+                    "比较了研究姓名歧视的四种做法：田野审计、问卷或实验室实验、观察数据、算法审计。本课题属于算法审计，问卷只用来检验名字被怎么看。",
+                    "逐篇拆解 12 篇最相关的研究，找到设计要补的漏洞：有的研究标题用华人姓、实际只操纵了名；有的用工具生成名字却没有核验；多数只报告平均分差、不报告有多少人会因此被筛掉；几乎没有研究把华人内部的不同拼写分开。"
+                ]
+            },
+            {
+                title: "姓名",
+                bullets: [
+                    "名字以官方频率数据为主（中文名用 ChineseNames，英文名用普查和出生登记数据），不用模型生成，因为模型生成的名字高度集中且有偏向。",
+                    "姓名库在同一虚构身份内固定汉字和名，只换写法，所以改姓和改名的作用可以分开看；本身带有含义的写法（Yale、Penn、Law、Day、Lynn、Von）单独标记，做剔除后的敏感性检验。",
+                    "每个名字都做名人重名筛查、记录各模型的分词数，并让多个模型和两种分类工具（Namsor、name2nat）判断来源、签证需要、英语和普通话能力。"
+                ]
+            },
+            {
+                title: "模型与提示词",
+                bullets: [
+                    "约 16 个接口模型，来自 8 家开发商（OpenAI、Anthropic、Google、xAI、DeepSeek、通义千问、Kimi、智谱，分低价和中档），另加本地开源模型，以便按开发国家比较。预实验当天固定模型清单和版本，每次调用记录接口返回的实际版本。",
+                    "三种提示模板作为随机因素：简单招聘者、结构化评分、真实情境（约 500 份申请、约 50 个面试名额）。主实验只要分数和是否邀请面试，另取 10% 的调用要求写一句理由。"
+                ]
+            },
+            {
+                title: "检验与分析",
+                bullets: [
+                    "内置检验：明显达标和基本达标的简历必须拉开差距（正对照）；“需要雇主担保”必须降低分数（植入差异）；来源之间的差距要大于同来源内换名的波动；拒答作为结果分析，不直接删除。",
+                    "主要估计量是同一简历、同一模板下与英文名的平均分差，每个模型分别估计；用混合效应模型、Holm 校正和 ±2 分等价检验，所以“没有实质差异”也是可以得出的结论。",
+                    "除分数外还报告通过率和影响比（四分之五规则）；用模型推断的签证、英语和普通话能力做中介分析；正式实验结束时重跑 5% 的条件，另设固定样本每三个月重跑，追踪模型更新带来的漂移。"
+                ]
+            },
+            {
+                title: "已经完成",
+                bullets: [
+                    "Python 姓名库生成器：14 组姓 × 2 个性别 × 6 个身份 × 7 种写法，共 1,176 个名字。",
+                    "姓名感知检验、配对简历生成、打分（支持重复和不花钱的试运行）与分析（配对差、按简历聚类的置信区间、固定效应和中介表）脚本，在组里的多模型流程上改造。",
+                    "文献与决策数据库（112 篇文献、27 条设计决定、30 个讨论问题，以及实验条件、模型、岗位和提示词），以及修改后的研究计划。"
+                ]
+            },
+            {
+                title: "下一步与局限",
+                bullets: [
+                    "下一步：确认伦理要求；修复流程中的已知问题，并验证发给模型的内容里没有条件标签；写 12 个岗位描述和 48 份简历；用 4 个模型各约 500 次调用做预实验；之后在 OSF 预注册。",
+                    "局限：测的是模拟流程中的同类模型，不是某个具体的商业产品；闭源模型会更新；港式、台式和东南亚华人写法缺少人类感知数据；合成声音和真人口音不完全一样。"
+                ]
+            }
+        ]
+    }
+},
+
+    {
     id: "graphrag-esg",
     category: "ai-data",
 
@@ -1444,8 +3386,8 @@ projects: [
     organisationUrl: "https://raids-lab.com/",
 
     role: {
-        en: "Research Project Member",
-        zh: "研究项目成员"
+        en: "Research Project Member · assisting Lingjing Lan's experiments",
+        zh: "研究项目成员 · 协助 Lingjing Lan 开展实验"
     },
 
     status: {
@@ -1454,8 +3396,8 @@ projects: [
     },
 
     statusNote: {
-        en: "This project is actively being developed. Methods, experiments and findings shown here represent the current research stage and may be updated as the study progresses.",
-        zh: "该项目目前仍在持续研究与更新中。此页面展示的方法、实验与阶段性发现均基于当前研究进展，后续可能随项目推进继续更新。"
+        en: "This is Lingjing Lan's experiment, which I assist with. The figures are the team's current results from her thesis version and may change as the study progresses.",
+        zh: "这是 Lingjing Lan 学姐的实验，我参与协助。页面中的数字来自她论文版本的阶段性结果，后续可能随研究推进更新。"
     },
 
     location: {
@@ -1470,16 +3412,17 @@ projects: [
 
     sortDate: "2026-11",
 
-    logo: "",
+    logo: "assets/logos/projects/raids-lab.png",
+    logoFill: true,
 
     overviewBullets: {
         en: [
-            "Built section- and table-aware chunking that keeps page numbers, and a company–indicator–year knowledge graph, for an ESG benchmark of 30 corporate reports and 2,015 evidence-grounded questions; helped annotate reports and compare 5 retrieval architectures (standard RAG vs four GraphRAG variants).",
-            "The evidence-retrieval pipeline raised page-localisation accuracy from 77.4% to 88.3% (+14%) while reducing token use on all 30 reports; current results show graph retrieval helps on complex reasoning but not on every task. Ongoing."
+            "Assisting lab member Lingjing Lan with her GraphRAG × ESG experiment: on 30 corporate sustainability reports (about 1,974 pages, all 11 SASB sectors) and 2,015 evidence-grounded questions, it compares a production non-graph retriever with four GraphRAG systems. I help with report annotation, benchmark construction and retrieval comparisons.",
+            "In the experiments, all four graph methods beat the non-graph baseline on fact retrieval by 15–23 accuracy points, but none wins every task; HippoRAG 2 matched the baseline's token cost, while LightRAG and HyperGraphRAG used 5–6 times more context. Retrieved evidence also raised page-localisation accuracy from 77.4% to 88.3%. Ongoing."
         ],
         zh: [
-            "为包含 30 份企业 ESG 报告、2,015 道有证据支撑问题的基准，搭建按章节和表格切分并保留页码的分块流程，以及“公司—指标—年份”知识图谱；参与报告标注，并比较 5 种检索架构（标准 RAG 与四种 GraphRAG）。",
-            "证据检索流程把页码定位准确率从 77.4% 提高到 88.3%（提升 14%），并在全部 30 份报告上降低了 token 用量；目前结果显示图检索在复杂推理上更有优势，但并非所有任务都更好。研究持续进行中。"
+            "协助课题组成员 Lingjing Lan 开展 GraphRAG × ESG 实验：在 30 份企业可持续发展报告（约 1,974 页，覆盖 SASB 全部 11 个行业）和 2,015 道有证据支撑的题目上，比较不建图的生产检索流程和四种 GraphRAG 方法。我协助报告标注、评测集构建与检索方案对比。",
+            "实验中，四种图方法的事实检索准确率都比不建图的基线高 15–23 个点，但没有一种在所有题型上都最好；HippoRAG 2 的 token 成本与基线相当，LightRAG 和 HyperGraphRAG 的上下文约为 5–6 倍。加入检索证据后，页码定位准确率从 77.4% 提高到 88.3%。研究持续进行中。"
         ]
     },
 
@@ -1497,32 +3440,48 @@ projects: [
         {
             value: "30",
             label: {
-                en: "Corporate ESG reports in the benchmark corpus",
-                zh: "基准语料中的企业 ESG 报告"
+                en: "Corporate sustainability reports (about 1,974 pages, 11 SASB sectors)",
+                zh: "企业可持续发展报告（约 1,974 页，11 个 SASB 行业）"
             }
         },
 
         {
             value: "2,015",
             label: {
-                en: "Evidence-grounded benchmark questions",
-                zh: "基于证据构建的评测问题"
+                en: "Evidence-grounded questions in four task types",
+                zh: "四类任务中有证据支撑的题目"
             }
         },
 
         {
             value: "5",
             label: {
-                en: "Retrieval architectures compared",
-                zh: "对比的检索架构"
+                en: "Retrieval systems compared: a non-graph baseline and four GraphRAG methods",
+                zh: "对比的检索系统：不建图基线与四种 GraphRAG"
             }
         },
 
         {
-            value: "4",
+            value: "+15–23 pts",
             label: {
-                en: "Question and reasoning task levels",
-                zh: "问题与推理任务层级"
+                en: "Fact-retrieval accuracy of graph methods over the non-graph baseline",
+                zh: "图方法相对不建图基线的事实检索准确率提升"
+            }
+        },
+
+        {
+            value: "5–6×",
+            label: {
+                en: "Context tokens per question for LightRAG and HyperGraphRAG vs HippoRAG 2",
+                zh: "LightRAG 与 HyperGraphRAG 每题上下文 token 约为 HippoRAG 2 的倍数"
+            }
+        },
+
+        {
+            value: "77.4% → 88.3%",
+            label: {
+                en: "Page-localisation accuracy with retrieved evidence",
+                zh: "加入检索证据后的页码定位准确率"
             }
         }
     ],
@@ -1621,27 +3580,27 @@ projects: [
                 title: "Research Context",
                 bullets: [
                     "Corporate ESG reports are long, heterogeneous and frequently contain metrics distributed across narrative text, tables, figures and multiple reporting periods.",
-                    "The research asks when graph-based retrieval creates meaningful value over standard hybrid retrieval, rather than assuming GraphRAG is always superior.",
-                    "A key objective is to make generated ESG analysis traceable back to verifiable source evidence."
+                    "The experiment asks where graph structure helps compared with retrieval that builds no graph, and at what cost, rather than assuming GraphRAG is always superior.",
+                    "The team's current draft narrows the focus to indicator identity: retrieved evidence must match the exact indicator asked about, with the same disclosure code, reporting year, unit and scope. Many ESG indicators differ by a single digit or word (Scope 1 vs Scope 2, 2023 vs 2024, GRI 305-1 vs 305-2), which generic vector similarity struggles to separate."
                 ]
             },
 
             {
                 title: "ESG Corpus & Benchmark Construction",
                 bullets: [
-                    "The team built a shared corpus from ESG reporting standards and 30 corporate ESG reports spanning 11 SASB industries, with a manually annotated reference set.",
-                    "Structured indicators from SASB, GRI, TCFD and CDP into a common representation.",
-                    "The benchmark contains 2,015 questions across four difficulty levels: fact retrieval, complex reasoning, contextual summarisation and evidence-constrained generation.",
-                    "Ground-truth data includes disclosure status, reported values and source evidence locations."
+                    "One 2024 sustainability report from each of 30 companies, covering all 11 SASB sectors, about 1,974 pages in total.",
+                    "Layout parsing with PaddleOCR; tables turned into 17,930 rule-based statements that keep the page number; figure metrics added with Qwen-VL; 17 reports checked by hand against the PDFs.",
+                    "2,015 questions across four task types: fact retrieval (958), complex reasoning (616), contextual summarisation (368) and evidence-grounded creative generation (73). The team's current version has 2,034 questions with human ratings, and about 500 low-scoring questions were reviewed.",
+                    "Each question is bound to one report: a system may only retrieve from that report, and gold answers are used only for scoring."
                 ]
             },
 
             {
                 title: "Retrieval Systems Compared",
                 bullets: [
-                    "Compared a non-graph DualChannel baseline with HippoRAG v1, HippoRAG v2, LightRAG and HyperGraphRAG.",
-                    "Used the same ESG corpus, blind question set, embedding model and answer model to create a controlled comparison.",
-                    "Evaluated how different knowledge structures affect exact-value retrieval, multi-step reasoning, evidence coverage and faithful generation."
+                    "The non-graph baseline, DualChannel, reuses the retrieval flow of the EulerESG production system (BM25 and vector search fused with reciprocal rank fusion), so the experiment is in effect a production system against GraphRAG.",
+                    "It is compared with HippoRAG, HippoRAG 2, LightRAG and HyperGraphRAG, each through its native retrieval interface with one index per report.",
+                    "Answer model, prompts and scoring are identical across systems; only indexing and retrieval differ."
                 ]
             },
 
@@ -1658,20 +3617,21 @@ projects: [
             {
                 title: "Current Research Findings",
                 bullets: [
-                    "Current experiments suggest that GraphRAG performance is task-dependent rather than universally superior to standard retrieval.",
-                    "HyperGraphRAG currently shows particular strength on complex reasoning and evidence-grounded generation, while LightRAG provides broad evidence coverage for summarisation tasks.",
-                    "HippoRAG v2 currently offers a useful balance between factual performance and prompt cost.",
-                    "These findings remain part of an ongoing research programme and may change as additional experiments, robustness tests and multimodal evidence are incorporated."
+                    "Fact retrieval: all four graph methods score 15–23 accuracy points above the DualChannel baseline (0.419); LightRAG has the highest accuracy and HippoRAG 2 the highest ROUGE-L.",
+                    "Complex reasoning: HyperGraphRAG is best (0.521 against 0.409 for the baseline), while HippoRAG v1 falls slightly below the baseline, suggesting that noisy edges hurt multi-hop reasoning.",
+                    "Summarisation: LightRAG has the widest coverage (0.471); the other graph methods reach 0.23–0.33.",
+                    "Cost: HippoRAG 2 uses about 4,300 prompt tokens per question, close to the baseline's 4,500, while LightRAG and HyperGraphRAG use 5–6 times as much context.",
+                    "Swapping the graph-building model from GPT-4o-mini to GPT-5.4 raised fact accuracy by only about 2.6 points, so the gains come mainly from graph structure; a mid-size open model (Qwen3-32B) matched or beat gpt-4o-mini as the answer model.",
+                    "These results come from Lingjing Lan's thesis version (2,015 questions); whether they will be re-run on the new corpus and 2,034-question set is still open."
                 ]
             },
 
             {
-                title: "My Contribution",
+                title: "My Role",
                 bullets: [
-                    "Supervised by Dr. Zhengyi Yang (RAIDS Lab).",
-                    "Contributed to report annotation, benchmark construction and the comparison of retrieval approaches.",
-                    "Split long reports into chunks by section and table while preserving page numbers, and built a company–indicator–year knowledge graph.",
-                    "Helped define which steps of the pipeline require human review."
+                    "This is Lingjing Lan's experiment, and I assist her. Supervised by Dr. Zhengyi Yang (RAIDS Lab).",
+                    "Helped with report annotation, benchmark construction and the comparison of retrieval approaches.",
+                    "Also worked on section- and table-aware chunking that keeps page numbers, a company–indicator–year knowledge graph, and deciding which steps need human review."
                 ]
             },
 
@@ -1697,27 +3657,27 @@ projects: [
                 title: "研究背景",
                 bullets: [
                     "企业 ESG 报告通常篇幅较长、结构异质，关键指标可能分散在正文、表格、图表及不同报告周期中。",
-                    "本研究并不预设 GraphRAG 一定优于传统检索，而是重点研究在什么任务条件下图结构能够真正创造额外价值。",
-                    "核心目标之一是确保 AI 生成的 ESG 分析能够回溯至可验证的原始证据。"
+                    "实验要回答：与不建图的检索相比，图结构在哪类问题上有帮助、代价多大，而不是预设 GraphRAG 一定更好。",
+                    "团队新稿把重点收窄为“指标同一性”：检索到的证据必须对应问题所问的那个指标，即同一个披露编号、报告年份、计量单位和报告范围。ESG 报告里大量指标只差一个数字或修饰词（Scope 1 与 Scope 2、2023 与 2024、GRI 305-1 与 305-2），通用向量相似度很难区分。"
                 ]
             },
 
             {
                 title: "ESG 语料与评测集构建",
                 bullets: [
-                    "课题组以 ESG 报告标准与覆盖 SASB 11 个行业的 30 份企业 ESG 报告构建统一语料，并人工标注参考数据集。",
-                    "将 SASB、GRI、TCFD 与 CDP 等框架中的披露指标整理为统一结构。",
-                    "评测集共 2,015 道题，分四个难度层级：事实检索、复杂推理、上下文总结和证据约束生成。",
-                    "Ground Truth 包括披露状态、报告数值及对应原文证据位置。"
+                    "30 家公司各一份 2024 年可持续发展报告，覆盖 SASB 全部 11 个行业，共约 1,974 页。",
+                    "PaddleOCR 版面解析；表格用规则模板转为 17,930 条保留页码的陈述句；图片中的指标用 Qwen-VL 补充；17 份报告对照 PDF 人工核对。",
+                    "2,015 道题，分四类：事实检索 958、复杂推理 616、上下文总结 368、基于证据的创意生成 73。团队现行版本为 2,034 题，增加了人工打分，约 500 道低分题经人工复核。",
+                    "每道题绑定一份报告，系统只能在这份报告里检索和作答；标准答案只用于评分。"
                 ]
             },
 
             {
                 title: "检索系统对比",
                 bullets: [
-                    "比较非图结构 DualChannel 基线与 HippoRAG v1、HippoRAG v2、LightRAG 和 HyperGraphRAG。",
-                    "所有系统使用相同 ESG 语料、盲测问题、Embedding 模型与答案模型，从而进行受控比较。",
-                    "重点评估不同知识结构对精确数值检索、多步推理、证据覆盖与忠实生成的影响。"
+                    "不建图的基线 DualChannel 复用 EulerESG 线上系统的检索流程（BM25 与向量检索并行、RRF 融合），所以这个实验本质上是“生产系统 vs GraphRAG”。",
+                    "对比对象为 HippoRAG、HippoRAG 2、LightRAG 和 HyperGraphRAG，均使用各自的原生检索接口，每份报告单独建索引。",
+                    "所有系统的作答模型、提示词和评分方式相同，唯一的差别是怎么建索引和检索。"
                 ]
             },
 
@@ -1734,20 +3694,21 @@ projects: [
             {
                 title: "当前阶段性发现",
                 bullets: [
-                    "现阶段实验显示，GraphRAG 的优势高度依赖任务类型，并不能在所有任务中统一替代传统检索。",
-                    "目前 HyperGraphRAG 在复杂推理和基于证据的生成任务中表现出较强优势，而 LightRAG 在总结任务中的证据覆盖表现较好。",
-                    "HippoRAG v2 当前在事实型任务表现与 Prompt 成本之间呈现较好的平衡。",
-                    "这些均为持续研究中的阶段性发现，随着更多实验、稳健性测试和多模态证据加入，结果可能继续更新。"
+                    "事实检索：四种图方法的准确率都比 DualChannel 基线（0.419）高 15–23 个点；LightRAG 准确率最高，HippoRAG 2 的 ROUGE-L 最高。",
+                    "复杂推理：HyperGraphRAG 最好（0.521，基线为 0.409）；HippoRAG v1 反而略低于基线，说明噪声边会拖累多跳推理。",
+                    "总结：LightRAG 覆盖面最广（0.471），其他图方法只有 0.23–0.33。",
+                    "成本：HippoRAG 2 每题约 4,300 个 prompt token，与基线的 4,500 相当；LightRAG 和 HyperGraphRAG 的上下文约为其 5–6 倍。",
+                    "把建图模型从 GPT-4o-mini 换成 GPT-5.4，事实检索准确率只提高约 2.6 个点，说明优势主要来自图结构；作答模型换成中等规模的开源模型 Qwen3-32B，效果与 gpt-4o-mini 相当或更好。",
+                    "以上来自 Lingjing Lan 学姐论文版本（2,015 题）的结果；是否在新语料和 2,034 题上重跑还没有确定。"
                 ]
             },
 
             {
-                title: "本人工作",
+                title: "我的角色",
                 bullets: [
-                    "导师：Dr. Zhengyi Yang（RAIDS Lab）。",
-                    "参与报告标注、评测集构建与检索方案对比。",
-                    "将长报告按章节与表格分块并保留页码，构建“公司 — 指标 — 年份”知识图谱。",
-                    "参与界定流程中需要人工复核的环节。"
+                    "这是 Lingjing Lan 学姐的实验，我参与协助。导师：Dr. Zhengyi Yang（RAIDS Lab）。",
+                    "协助报告标注、评测集构建与检索方案对比。",
+                    "另参与按章节和表格切分并保留页码、构建“公司 — 指标 — 年份”知识图谱，以及界定需要人工复核的环节。"
                 ]
             },
 
@@ -1772,7 +3733,14 @@ projects: [
 
     {
         id: "next-gen-clubs-churn",
+        name: { en: "Next Gen Member Churn Analysis & Retention Strategy", zh: "Next Gen 会员流失分析与挽留策略" },
+        course: true, // university coursework: kept out of search engines
         category: "ai-data",
+
+        headline: {
+            en: "Before They Leave",
+            zh: "在会员离开之前"
+        },
 
         title: {
             en: "Next Gen Clubs — Member Churn Prediction & Family Retention Pilot",
@@ -1801,7 +3769,7 @@ projects: [
 
         sortDate: "2026-10",
 
-        logo: "",
+        logo: "assets/logos/projects/next-gen-clubs.png",
 
         background: {
             paragraphs: {
@@ -2474,6 +4442,10 @@ projects: [
                 }
             },
             {
+            type: "widget",
+            widget: "nextgen-retention"
+        },
+        {
                 type: "process",
 
                 title: {
@@ -2940,8 +4912,15 @@ def nnlr(Z, y, C=1.):
     },
 
     {
-    id: "buss6002-model-selection",
+    id: "signup-model-selection",
+    name: { en: "Contact Sweet Spot: Campaign Signup Model", zh: "触达黄金区间：营销签约预测模型" },
+    course: true, // university coursework: kept out of search engines
     category: "ai-data",
+
+    headline: {
+        en: "The Contact Sweet Spot",
+        zh: "触达的黄金区间"
+    },
 
     title: {
         en: "Campaign Signup Prediction — Finding the Contact-Intensity Sweet Spot with Polynomial Logistic Regression",
@@ -3575,7 +5554,14 @@ print(final.round(3))`
 },
 {
     id: "unicef",
+    name: { en: "UNICEF Lapsed-Donor Reactivation Model", zh: "UNICEF 流失捐赠者再激活模型" },
+    course: true, // university coursework: kept out of search engines
     category: "ai-data",
+
+    headline: {
+        en: "Bringing Donors Back",
+        zh: "把捐赠者找回来"
+    },
 
     title: {
         en: "Which Lapsed Donors Will Give Again? Six Models and a Targeted Reactivation Plan for UNICEF Australia",
@@ -3604,7 +5590,8 @@ print(final.round(3))`
 
     sortDate: "2025-05",
 
-    logo: "",
+    logo: "assets/logos/projects/unicef-australia.png",
+    logoFill: true,
 
     background: {
         paragraphs: {
@@ -4139,7 +6126,7 @@ search.fit(X_train, y_train)`
 
     sortDate: "2026-11",
 
-    logo: "",
+    logo: "assets/logos/projects/loreal.png",
 
     liveEmbed: {
         provider: "html",
@@ -4150,8 +6137,8 @@ search.fit(X_train, y_train)`
             zh: "美妆评论洞察工作台（可交互）"
         },
         caption: {
-            en: "Scroll inside the frame or open it in a new tab. Try the review tagger (the same rules used for the statistics), the compliance checker and the simulated live-room radar; everything runs in the browser.",
-            zh: "可在框内滚动，或在新窗口打开。可以试用评论打标器（就是统计用的那套规则）、合规词自查和直播弹幕预警模拟，全部在浏览器里运行。"
+            en: "Scroll inside the frame or open it in a new tab. Filter the whole page by ingredient track and price band, click any bar to read sample reviews, re-weight the opportunity index, and try the review tagger, compliance checker, live-room radar and batch-quality alerts; everything runs in the browser.",
+            zh: "可在框内滚动，或在新窗口打开。可以按成分赛道和价格带筛选整页数据，点任意横条查看评论原文，拖动滑块调整机会指数权重，并试用评论打标器、合规词自查、直播弹幕预警和品质异常预警，全部在浏览器里运行。"
         }
     },
 
@@ -4528,7 +6515,10 @@ search.fit(X_train, y_train)`
                 bullets: [
                     "Review tagger: paste an English review and choose a star rating to see the same rules used for the statistics, with matched words highlighted and negated words struck through.",
                     "Compliance checker: flags common risky claims in Chinese cosmetics copy under the Advertising Law and cosmetic claim rules, such as absolute terms, “zero irritation”, anti-allergy, medical terms, whitening and spot-removal claims and quick-result promises. For self-checks only, not legal advice.",
-                    "Live-room radar: a simulated stream of 50 chat messages classified by Chinese keyword rules into 6 question types; when 5 or more of the last 15 fall into one type, the host is prompted with a matching script."
+                    "Filters and review explorer: every figure on the page (star distribution, complaint and praise shares, recoverable complaints) recalculates for any of 8 ingredient tracks × 4 price bands, with a warning when fewer than 30 negative reviews remain; clicking a bar lists sample reviews with the matched words highlighted.",
+                    "Opportunity index: a slider re-weights demand against the reputation gap (w = 0.2–0.8) and re-ranks the tracks.",
+                    "Live-room radar: two simulated live rooms (barrier repair and vitamin C) whose chat messages are classified by Chinese keyword rules into 6 question types; when one type reaches the threshold within the observation window (both adjustable), the host is prompted with a matching script.",
+                    "Batch-quality alerts: 343 one-to-three-star reviews across 233 products mention reformulation, separation, spoilage, expiry or empty bottles; sliders set the time window (7–90 days) and trigger count (2–6) to see how many products would be flagged to the brand and supply chain."
                 ]
             },
             {
@@ -4580,7 +6570,10 @@ search.fit(X_train, y_train)`
                 bullets: [
                     "评论打标器：贴一条英文评论、选择星级，即可看到统计用的同一套规则如何打标，命中的词高亮，被否定词排除的词划线。",
                     "合规词自查：参考《广告法》和化妆品功效宣称相关规定，标出中文文案里的常见风险表述，如绝对化用语、“零刺激”、抗敏、医疗用语、美白祛斑类宣称和速效承诺。仅供运营自查，不替代法务审核。",
-                    "直播弹幕预警：50 条模拟弹幕按中文关键词规则归入 6 类问题；最近 15 条中某一类达到 5 条，就提示主播切换到对应话术。"
+                    "筛选与评论浏览：整页数据（星级分布、差评原因与好评占比、可挽回差评）可按 8 个成分赛道 × 4 个价格带重新计算，差评不足 30 条时给出提示；点任意横条可查看该类评论原文，命中的词高亮。",
+                    "机会指数：用滑块调整需求与口碑缺口的权重（w = 0.2—0.8），看各赛道排名如何变化。",
+                    "直播弹幕预警：两个模拟直播间（屏障修护、维C），弹幕按中文关键词规则归入 6 类问题；观察窗口内某一类达到阈值（窗口和阈值均可调），就提示主播切换到对应话术。",
+                    "品质异常预警：233 款产品的 343 条 1—3 星评论提到换配方、分层、变质、过期或空瓶；用滑块设置时间窗口（7—90 天）和触发条数（2—6 条），查看会有多少款产品被推送给品牌和供应链核查。"
                 ]
             },
             {
@@ -4607,9 +6600,14 @@ search.fit(X_train, y_train)`
     id: "cicc-investment-analysis",
     category: "finance-investment",
 
+    headline: {
+        en: "Cheap, Big and Fast",
+        zh: "低价、大量、高周转"
+    },
+
     title: {
-        en: "CICC Investment Analysis Project — Business Model, Industry and Financial Analysis to an Investment Report",
-        zh: "中金证券投资分析项目——从商业模式、行业与财务分析到投资分析报告"
+        en: "CICC Investment Analysis Project — Eastroc Beverage: Business Model, Revenue and Cost Structure",
+        zh: "中金证券投资分析项目——东鹏饮料：商业模式、收入结构与成本结构"
     },
 
     organisation: {
@@ -4618,13 +6616,13 @@ search.fit(X_train, y_train)`
     },
 
     role: {
-        en: "Investment analysis project · business model, industry and financial analysis",
-        zh: "投资分析项目 · 商业模式、行业与财务分析"
+        en: "Project member · business model, revenue and cost analysis of Eastroc Beverage (605499.SH / 09980.HK)",
+        zh: "项目组员 · 东鹏饮料（605499.SH / 09980.HK）商业模式、收入与成本分析"
     },
 
     status: {
-        en: "In progress",
-        zh: "进行中"
+        en: "In progress · week 1 delivered",
+        zh: "进行中 · 第 1 周已完成"
     },
 
     dates: {
@@ -4634,54 +6632,187 @@ search.fit(X_train, y_train)`
 
     sortDate: "2026-11",
 
-    logo: "",
+    logo: "assets/logos/projects/cicc.png",
+
+    background: {
+        title: {
+            en: "The Company and the Question",
+            zh: "公司与问题"
+        },
+        pointsTitle: {
+            en: "What the first module covers",
+            zh: "第一阶段回答的问题"
+        },
+        paragraphs: {
+            en: [
+                "The target company is Eastroc Beverage, China's leading energy-drink maker, listed on the Shanghai main board (2021) and in Hong Kong (February 2026). Founded in Shenzhen in 1994, it reported 2025 revenue of RMB 20.875bn (+31.8%) and net profit attributable to shareholders of RMB 4.415bn (+32.7%), with a 51.6% share of China's energy-drink volume.",
+                "The four-week project moves from business model to industry, financial analysis and an investment report. The first module, delivered as three slides built from the 2023–2025 annual reports and the 2026 interim and third-quarter reports, asks how the company makes money and what its advantages cost."
+            ],
+            zh: [
+                "目标公司是东鹏饮料：中国能量饮料龙头，2021 年在上交所主板上市，2026 年 2 月在港交所上市。公司 1994 年成立于深圳，2025 年营收 208.75 亿元（+31.8%），归母净利润 44.15 亿元（+32.7%），能量饮料销量份额 51.6%。",
+                "四周项目依次覆盖商业模式、行业、财务分析和投资报告。第一阶段用 2023–2025 年报、2026 年半年报和三季报做成 3 页分析，回答公司怎么赚钱、优势的代价是什么。"
+            ]
+        },
+        points: {
+            en: [
+                "Business model: who the customers are, what the value proposition is, and which parts of the value chain the company owns.",
+                "Revenue structure: products, channels and regions from 2023 to Q3 2026, and how operating activities turn into cash.",
+                "Cost structure: where the costs sit, what builds the moat and what could become a burden."
+            ],
+            zh: [
+                "商业模式：客户是谁、价值主张是什么、公司掌握价值链的哪些环节。",
+                "收入结构：2023 年至 2026 年三季度的产品、渠道和区域结构，以及经营活动如何转化为现金。",
+                "成本结构：成本花在哪里，哪些投入构成壁垒，哪些可能变成负担。"
+            ]
+        }
+    },
 
     overviewBullets: {
         en: [
-            "Four-week CICC project on one target company: breaking down its business model (revenue and cost structure, profit model, core resources and moat) and its industry (size, supply and demand, competition, growth drivers), with Excel waterfall and dual-axis charts and a forecasting model.",
-            "Analysing the financial statements for profitability, operating efficiency, solvency and growth with pivot tables, then helping restructure and polish the investment analysis deck into the final research report."
+            "Broke down Eastroc Beverage's value chain across customer positioning, R&D and production, channels and delivery: it owns the brand, recipes, 14 production bases (6.747m tonnes of design capacity in 2025) and 600k+ store fridges, and leaves delivery to 3,479 distributors (85.7% of revenue), a cost-advantage model unlike outsourced-production peers.",
+            "Built 2023–Q3 2026 revenue, cash-flow and cost tables: the flagship energy drink brings about 70% of revenue at a 50.8% gross margin, but growth slowed from +31.8% in 2025 to +10.4% in the first three quarters of 2026; distributor prepayments lifted 2023–2025 operating cash flow to 1.56× net profit, and direct materials make up about 80% of cost of sales."
         ],
         zh: [
-            "中金证券四周投资分析项目，围绕一家目标公司：拆解商业模式（收入结构、成本结构、盈利模式、核心资源与竞争壁垒）和行业（规模、供需、竞争格局、增长驱动），用 Excel 制作瀑布图、双坐标轴图并搭建预测模型。",
-            "梳理财务报表，分析盈利能力、营运能力、偿债能力与成长性，使用数据透视表等工具做数据分析，并协助优化和美化投资分析 PPT，输出最终版研究报告。"
+            "从用户定位、研发生产、渠道销售、产品交付四个环节拆解东鹏饮料的价值链：公司掌握品牌、配方、14 个生产基地（2025 年设计产能 674.7 万吨）和 60 万台以上终端冰柜，把配送交给 3,479 家经销商（经销收入占 85.7%），是一家靠自建工厂取得成本优势的大众消费品公司。",
+            "整理 2023 年至 2026 年三季度的收入、现金流与成本表：东鹏特饮贡献约七成收入、毛利率 50.8%，但营收增速由 2025 年的 +31.8% 降至 2026 年前三季度的 +10.4%；经销商预付货款使 2023–2025 年经营现金流达到同期净利润的 1.56 倍；直接材料约占主营业务成本八成。"
         ]
     },
 
     tags: [
         "Equity Research",
         "Business Model Analysis",
-        "Industry Analysis",
-        "Financial Statement Analysis",
-        "Forecasting Model",
+        "Revenue Structure",
+        "Cost Structure",
+        "Cash Flow Quality",
+        "Consumer Goods",
         "Excel",
         "PowerPoint"
     ],
 
     metrics: [
         {
-            value: "4",
+            value: { en: "RMB 20.9bn", zh: "208.75 亿元" },
             label: {
-                en: "Weekly modules, from business model to final report",
-                zh: "每周一个模块，从商业模式到最终报告"
+                en: "2025 revenue, +31.8% year on year",
+                zh: "2025 年营收，同比 +31.8%"
             }
         },
         {
-            value: "5",
+            value: "74.8%",
             label: {
-                en: "Business-model lenses: revenue, cost, profit model, core resources, moat",
-                zh: "商业模式拆解维度：收入、成本、盈利模式、核心资源、竞争壁垒"
+                en: "Share of 2025 revenue from energy drinks (50.8% gross margin)",
+                zh: "2025 年能量饮料收入占比（毛利率 50.8%）"
             }
         },
         {
-            value: "4",
+            value: "85.7%",
             label: {
-                en: "Financial angles: profitability, operating efficiency, solvency, growth",
-                zh: "财务分析角度：盈利、营运、偿债、成长"
+                en: "Revenue through distributors; top five customers only 4.9%",
+                zh: "经销渠道收入占比；前五大客户仅占 4.9%"
+            }
+        },
+        {
+            value: "1.56×",
+            label: {
+                en: "2023–2025 operating cash flow relative to net profit",
+                zh: "2023–2025 年经营现金流 / 同期净利润"
+            }
+        },
+        {
+            value: "+31.8% → +10.4%",
+            label: {
+                en: "Revenue growth: 2025 vs first three quarters of 2026",
+                zh: "营收增速：2025 年 vs 2026 年前三季度"
+            }
+        },
+        {
+            value: "79.6%",
+            label: {
+                en: "Direct materials in 2025 cost of sales; freight 7.3%",
+                zh: "2025 年直接材料占主营业务成本；运费 7.3%"
             }
         }
     ],
 
     visuals: [
+        {
+            type: "table",
+            source: {
+                en: "Slide 1 · business model",
+                zh: "第 1 页 · 商业模式"
+            },
+            title: {
+                en: "Value Chain: What Eastroc Owns",
+                zh: "价值链拆解：东鹏掌握什么"
+            },
+            columns: {
+                en: ["Link", "Question", "Eastroc's answer"],
+                zh: ["环节", "问题", "东鹏的做法"]
+            },
+            rows: [
+                [{ en: "Customer positioning", zh: "用户定位" }, { en: "Whose money?", zh: "挣谁的钱" }, { en: "Mass-market blue-collar workers and young people; large 500ml bottles at about half the per-100ml price of canned Red Bull", zh: "大众蓝领和年轻人，功能刚需且价格敏感；500ml 大瓶装，每 100ml 价格约为罐装红牛的一半" }],
+                [{ en: "R&D and production", zh: "研发生产" }, { en: "Original or follower?", zh: "原创还是跟随" }, { en: "Own recipes; 14 bases produce near demand, with only about 50k tonnes outsourced", zh: "配方自主研发；14 个基地就近生产，委托加工仅约 5 万吨" }],
+                [{ en: "Channels", zh: "渠道销售" }, { en: "Platform or own channel?", zh: "平台还是自营" }, { en: "Distributors 85.7%; key accounts such as petrol stations and highway service areas 11.3%; online 3.0%", zh: "经销占 85.7%；加油站、高速服务区等重客直营 11.3%；线上 3.0%" }],
+                [{ en: "Delivery", zh: "产品交付" }, { en: "Offline or online?", zh: "线下还是线上" }, { en: "Distributors deliver to small stores; the company places 600k+ fridges to control shelf display; freight is 7.25% of cost of sales", zh: "经销商配送到小店；公司自购 60 万台以上冰柜掌控终端陈列；运费占主营业务成本 7.25%" }]
+            ],
+            caption: {
+                en: "Unlike Three Squirrels, which outsources production, Eastroc owns the brand, recipes, factories and store fridges and leaves only delivery to distributors.",
+                zh: "与外包生产的三只松鼠不同，东鹏掌握品牌、配方、工厂和终端冰柜，只把配送交给经销商。"
+            }
+        },
+        {
+            type: "table",
+            source: {
+                en: "Slide 2 · revenue structure",
+                zh: "第 2 页 · 收入结构"
+            },
+            title: {
+                en: "Revenue, Net Profit and Operating Cash Flow (RMB bn)",
+                zh: "营收、归母净利润与经营现金流（亿元）"
+            },
+            columns: {
+                en: ["Period", "Core revenue", "Growth", "Operating cash flow", "Net profit", "Cash / profit"],
+                zh: ["期间", "主营收入", "营收同比", "经营现金流", "归母净利润", "倍数"]
+            },
+            rows: [
+                ["2023", "112.5", "+32.4%", "32.8", "20.4", "1.61"],
+                ["2024", "158.2", "+40.6%", "57.9", "33.3", "1.74"],
+                ["2025", "208.6", "+31.8%", "61.7", "44.2", "1.40"],
+                [{ en: "Q1–Q3 2026", zh: "2026 年前三季度" }, "185.7", "+10.4%", "35.4", "41.5", "0.85"]
+            ],
+            highlightRow: 3,
+            caption: {
+                en: "Figures in RMB 100m (亿元). Distributors pay in advance (contract liabilities of 5.97bn at end-2025, receivables of only 0.09bn), so cash flow ran ahead of profit until 2026, when operating cash flow fell below net profit and Q3 energy-drink revenue fell 8.6%.",
+                zh: "单位：亿元。经销商预付货款（2025 年末合同负债 59.7 亿元，应收账款仅 0.9 亿元），所以现金流一直好于利润；到 2026 年前三季度，经营现金流低于净利润，Q3 单季能量饮料收入 −8.6%。"
+            }
+        },
+        {
+            type: "table",
+            source: {
+                en: "Slide 3 · cost structure",
+                zh: "第 3 页 · 成本结构"
+            },
+            title: {
+                en: "Costs as a Share of Revenue",
+                zh: "成本费用占营业收入比例"
+            },
+            columns: {
+                en: ["Item", "2023", "2024", "2025", "Q1–Q3 2026"],
+                zh: ["项目", "2023", "2024", "2025", "2026 年前三季度"]
+            },
+            rows: [
+                [{ en: "Cost of sales", zh: "营业成本" }, "56.9%", "55.2%", "55.1%", "52.5%"],
+                [{ en: "Selling expenses", zh: "销售费用" }, "17.4%", "16.9%", "16.3%", "16.0%"],
+                [{ en: "Admin expenses", zh: "管理费用" }, "3.3%", "2.7%", "2.8%", "3.0%"],
+                [{ en: "R&D expenses", zh: "研发费用" }, "0.5%", "0.4%", "0.3%", "0.4%"],
+                [{ en: "Gross margin", zh: "毛利率" }, "43.1%", "44.8%", "44.9%", "47.5%"],
+                [{ en: "Net margin", zh: "归母净利率" }, "18.1%", "21.0%", "21.1%", "22.3%"]
+            ],
+            caption: {
+                en: "Direct materials (sugar, PET preforms, cartons) are about 80% of cost of sales. New products carry lower margins (electrolyte drinks 34.8% vs energy drinks 50.8%), so a rising new-product mix pulls the overall margin down; recent margin gains came mainly from cheaper raw materials.",
+                zh: "直接材料（白砂糖、PET 瓶坯、纸箱等）约占主营业务成本八成。新品毛利率低于能量饮料（电解质 34.8% vs 能量饮料 50.8%），新品占比越高，整体毛利率越受拖累；近期毛利率改善主要来自原料降价。"
+            }
+        },
         {
             type: "table",
             source: {
@@ -4693,18 +6824,18 @@ search.fit(X_train, y_train)`
                 zh: "四周安排"
             },
             columns: {
-                en: ["Week", "Topic", "Goal", "My work"],
-                zh: ["周次", "主题", "核心目标", "本人工作"]
+                en: ["Week", "Topic", "Status"],
+                zh: ["周次", "主题", "进度"]
             },
             rows: [
-                ["1", { en: "Business model", zh: "公司商业模式分析" }, { en: "Break down revenue structure, cost structure, profit model and moat", zh: "掌握商业模式拆解方法，梳理收入结构、成本结构、盈利模式与核心壁垒" }, { en: "Help break down the target company’s business model; Excel waterfall and dual-axis charts", zh: "协助拆解目标公司商业模式；用 Excel 完成瀑布图、双坐标轴图等可视化" }],
-                ["2", { en: "Industry analysis", zh: "行业分析" }, { en: "Industry size, supply and demand, competition and growth drivers", zh: "掌握行业规模、供需格局、竞争格局与增长驱动分析" }, { en: "Take part in the industry study, identify key variables and build a forecasting model", zh: "参与整体行业研究，梳理关键变量，搭建预测模型" }],
-                ["3", { en: "Operations and financials", zh: "公司经营状况、财务分析" }, { en: "Link the three statements, financial ratios, performance attribution and valuation basics", zh: "掌握三张表勾稽、财务比率、业绩归因与估值基础" }, { en: "Review reported results; analyse profitability, efficiency, solvency and growth with pivot tables", zh: "梳理财务报表业绩，分析盈利、营运、偿债能力与成长性；使用数据透视表分析" }],
-                ["4", { en: "Investment report", zh: "如何撰写金融投资分析报告" }, { en: "Connect the full framework into a presentable report", zh: "串联完整分析框架，形成可展示的报告 / 作品集" }, { en: "Help restructure and polish the investment analysis deck; produce the final research report", zh: "协助完成投资分析 PPT 结构优化与美化，输出最终版研究报告" }]
+                ["1", { en: "Business model: revenue, cost, profit model, moat", zh: "公司商业模式分析：收入、成本、盈利模式、壁垒" }, { en: "Delivered (3 slides)", zh: "已完成（3 页）" }],
+                ["2", { en: "Industry: size, supply and demand, competition, growth drivers; forecasting model", zh: "行业分析：规模、供需、竞争、增长驱动；预测模型" }, { en: "Next", zh: "待完成" }],
+                ["3", { en: "Operations and financials: three statements, ratios, attribution, valuation basics", zh: "经营与财务分析：三张表、财务比率、业绩归因、估值基础" }, { en: "Next", zh: "待完成" }],
+                ["4", { en: "Investment report", zh: "投资分析报告" }, { en: "Next", zh: "待完成" }]
             ],
             caption: {
-                en: "Outline only for now: the target company, model outputs and report will be added when the project is complete.",
-                zh: "目前只是大纲：目标公司、模型结果和报告内容将在项目结束后补充。"
+                en: "The page will be updated as each module is completed.",
+                zh: "每完成一个模块，本页会同步更新。"
             }
         }
     ],
@@ -4712,62 +6843,70 @@ search.fit(X_train, y_train)`
     details: {
         en: [
             {
-                title: "Week 1 · Business Model",
+                title: "Business Model",
                 bullets: [
-                    "Help break down the target company’s business model: revenue structure, cost structure, profit model, core resources and competitive moat.",
-                    "Visualise the breakdown in Excel with waterfall and dual-axis charts."
+                    "Customers: the direct customers are 3,479 distributors, with the top five at only 4.9% of sales; end consumers started with long-haul drivers and now include students, sports fans and gamers.",
+                    "Value proposition: an energy boost at a low price, in large bottles, chilled and within reach in small stores and petrol stations.",
+                    "Model: own factories at scale, distributors pay in advance and push stock into stores together with company-owned fridges; profit comes from low prices, high volume and fast turnover, and new products reuse the same channel."
                 ]
             },
             {
-                title: "Week 2 · Industry Analysis",
+                title: "Revenue Structure",
                 bullets: [
-                    "Take part in the overall industry study: market size, supply and demand, competitive landscape, growth drivers and key variables.",
-                    "Build a forecasting model from those drivers."
+                    "2025 revenue by product: energy drinks RMB 15.60bn (74.8%), electrolyte drinks 3.27bn (15.7%, +119%), other drinks 1.99bn (9.5%).",
+                    "In the first three quarters of 2026 revenue grew 10.4%; energy drinks fell 8.6% in Q3 alone and the two largest regions, South and Central China, declined, while tea drinks grew 183%.",
+                    "Each sale is one-off, but low unit prices and daily consumption make repeat purchases high, and dispersed distributors mean no reliance on any single customer."
                 ]
             },
             {
-                title: "Week 3 · Operations and Financials",
+                title: "Cost Structure and Moat",
                 bullets: [
-                    "Review the company’s reported results and how the three financial statements link together.",
-                    "Analyse profitability, operating efficiency, solvency and growth, using pivot tables and other Excel tools; cover performance attribution and the basics of valuation."
+                    "Asset-heavy in production (14 bases, RMB 6.36bn of fixed assets and construction in progress, 23.8% of total assets) and asset-light in distribution.",
+                    "Producing near demand keeps freight at about 7% of cost of sales, so large, low-priced bottles still earn a 50.8% gross margin; 3,479 distributors, 4.5m+ active stores and 600k+ fridges let new products reach shelves quickly.",
+                    "Possible burdens: rebates payable rose about 70% to RMB 3.45bn by Q1 2026; Nongfu Spring entered electrolyte drinks at under RMB 4; margin gains from cheaper raw materials will not last."
                 ]
             },
             {
-                title: "Week 4 · Investment Report",
+                title: "View So Far and Next Steps",
                 bullets: [
-                    "Connect the full analysis into one framework.",
-                    "Help restructure and polish the investment analysis PowerPoint and produce the final research report."
+                    "Eastroc's edge comes from the cost advantage of its own factories and a nationwide store network that rivals cannot copy quickly; as energy-drink growth slows, spending on fridges, rebates and new plants will weigh on profit and cash flow.",
+                    "The key question for future revenue is whether energy drinks stop declining and whether tea and other new categories can carry growth.",
+                    "Next: industry analysis and a forecasting model, financial statement and ratio analysis, then the investment report."
                 ]
             }
         ],
 
         zh: [
             {
-                title: "第 1 周 · 公司商业模式分析",
+                title: "商业模式",
                 bullets: [
-                    "协助拆解目标公司商业模式，分析收入结构、成本结构、盈利模式、核心资源与竞争壁垒。",
-                    "使用 Excel 完成瀑布图、双坐标轴图等可视化。"
+                    "客户：直接客户是 3,479 家经销商，前五大只占销售额 4.9%；最终消费者以长途司机等蓝领起家，现在覆盖学生、运动人群和游戏玩家。",
+                    "价值主张：满足提神、补能的功能刚需，大瓶平价，在小店、加油站随手可买，冷藏即饮。",
+                    "模式：自建工厂规模化生产，经销商预付货款提货，再由经销商和公司投放的冰柜铺到终端；利润来自低价、大量、高周转，新品复用同一套渠道。"
                 ]
             },
             {
-                title: "第 2 周 · 行业分析",
+                title: "收入结构",
                 bullets: [
-                    "参与整体行业研究，分析行业规模、供需格局、竞争格局、增长驱动与关键变量。",
-                    "基于这些驱动因素搭建预测模型。"
+                    "2025 年按产品：能量饮料 156.0 亿元（74.8%），电解质饮料 32.7 亿元（15.7%，+119%），其他饮料 19.9 亿元（9.5%）。",
+                    "2026 年前三季度营收 +10.4%；Q3 单季能量饮料 −8.6%，华南、华中两大区域收入下滑，茶饮料前三季度 +183%。",
+                    "每笔是一次性交易，但饮料单价低、天天消费，复购高；经销商分散，收入不依赖单一客户。"
                 ]
             },
             {
-                title: "第 3 周 · 公司经营状况与财务分析",
+                title: "成本结构与竞争优势",
                 bullets: [
-                    "梳理财务报表业绩，理解三张表之间的勾稽关系。",
-                    "分析盈利能力、营运能力、偿债能力与成长性，使用数据透视表等工具进行数据分析；涉及业绩归因与估值基础。"
+                    "生产端偏重（14 个基地，固定资产与在建工程 63.6 亿元，占总资产 23.8%），渠道端偏轻。",
+                    "就近建厂使运费只占主营业务成本 7% 左右，大瓶平价的能量饮料仍有 50.8% 毛利率；3,479 家经销商、450 万+ 活跃终端和 60 万台以上冰柜让新品能快速铺货。",
+                    "可能的负担：26Q1 末应付销售返利 34.5 亿元，同比约 +70%；农夫山泉以不到 4 元切入电解质赛道；原料降价带来的毛利率改善不会一直持续。"
                 ]
             },
             {
-                title: "第 4 周 · 投资分析报告",
+                title: "目前的判断与下一步",
                 bullets: [
-                    "串联完整的分析框架。",
-                    "协助完成投资分析 PPT 结构优化与美化，输出最终版研究报告。"
+                    "东鹏的竞争优势来自自建工厂的成本优势和覆盖全国的终端网络，对手很难短期复制；但能量饮料增长放缓后，冰柜、返利、新工厂等投入会压低利润和现金流。",
+                    "判断未来收入，关键看能量饮料能否止住下滑，以及茶饮料等新品能否接上增长。",
+                    "下一步：行业分析与预测模型、财务报表与比率分析，最后完成投资分析报告。"
                 ]
             }
         ]
@@ -4775,7 +6914,14 @@ search.fit(X_train, y_train)`
 },
 {
     id: "graduate-outcome-dashboard",
+    name: { en: "Graduate Outcome Dashboard", zh: "毕业生成果看板" },
+    course: true, // university coursework: kept out of search engines
     category: "analytics-systems",
+
+    headline: {
+        en: "ComparED, Reimagined",
+        zh: "重新设计 ComparED"
+    },
 
     title: {
         en: "Graduate Outcome Dashboard — Rebuilding QILT’s ComparED as One Interactive View",
@@ -4804,7 +6950,8 @@ search.fit(X_train, y_train)`
 
     sortDate: "2025-11",
 
-    logo: "",
+    logo: "assets/logos/projects/qs.png",
+    logoFill: true,
 
     liveEmbed: {
         provider: "html",
@@ -5220,7 +7367,14 @@ def update_majors_a(inst, disc):
 },
 {
     id: "smart-travel-dashboard",
+    name: { en: "Go-Out Index Dashboard", zh: "出门指数看板" },
+    course: true, // university coursework: kept out of search engines
     category: "analytics-systems",
+
+    headline: {
+        en: "The Go-Out Index",
+        zh: "出门指数"
+    },
 
     title: {
         en: "Smart Travel & Environment Dashboard — A Proposal to Answer “Is It Safe to Go Out Today?”",
@@ -5633,7 +7787,14 @@ def update_majors_a(inst, disc):
 },
 {
     id: "unicef-donor-eda",
+    name: { en: "UNICEF Supporter Data Pipeline & Direct-Mail Insights", zh: "UNICEF 支持者数据管道与直邮洞察" },
+    course: true, // university coursework: kept out of search engines
     category: "ai-data",
+
+    headline: {
+        en: "One Letter, 661,000 Supporters",
+        zh: "一封信，66 万名支持者"
+    },
 
     title: {
         en: "Who Gives Again After a Letter? Data Pipeline and EDA for 661,000 UNICEF Australia Supporters",
@@ -5662,7 +7823,8 @@ def update_majors_a(inst, disc):
 
     sortDate: "2025-04",
 
-    logo: "",
+    logo: "assets/logos/projects/unicef-australia.png",
+    logoFill: true,
 
     background: {
         paragraphs: {
@@ -6107,7 +8269,14 @@ print((supporter_dm["NumDonationsWithin3Months"] > 0).mean())   # 0.1585 (53,664
 },
     {
         id: "thailand-nomad-dashboard",
+        name: { en: "Thailand Nomad Dashboard", zh: "泰国数字游民看板" },
+        course: true, // university coursework: kept out of search engines
         category: "analytics-systems",
+
+        headline: {
+            en: "Where Nomads Linger",
+            zh: "数字游民久留之地"
+        },
 
         title: {
             en: "Thailand Digital Nomad Visa — Tableau Policy Dashboard",
@@ -6141,20 +8310,19 @@ print((supporter_dm["NumDonationsWithin3Months"] > 0).mean())   # 0.1585 (53,664
         // Show the dashboard visuals before the written details.
         visualsFirst: true,
 
-        // Live, clickable dashboard. Paste the Tableau Public link here once the
-        // workbook is published (e.g. https://public.tableau.com/views/<Workbook>/<Dashboard>).
-        // Nothing is shown while the url is empty.
+        // Live, clickable dashboard rebuilt in HTML from the group's Tableau workbook
+        // (same scopes and calculated fields; data aggregated from the raw Nomad List file).
         liveEmbed: {
-            provider: "tableau",
-            url: "",
-            height: 840,
+            provider: "html",
+            url: "dashboards/thailand-nomad.html",
+            height: 1650,
             title: {
                 en: "Thailand digital nomad trips, 2019–2023: where, when and for how long",
                 zh: "泰国数字游民出行（2019—2023）：去哪里、什么时候、待多久"
             },
             caption: {
-                en: "Click a destination to filter the monthly chart and highlight the heatmap; change the long-stay threshold to test 30-, 60- or 90-day stays.",
-                zh: "点击任一目的地可筛选月度趋势并高亮热力图；切换“长期停留阈值”可比较 30、60、90 天三种情形。"
+                en: "Works like the Tableau original: filter by start year, month and destination, click any bar or heatmap cell to cross-filter, compare Thailand's trend with a peer country, and change the long-stay threshold parameter (7–180 days).",
+                zh: "操作方式与 Tableau 原版一致：可按出发年份、月份与目的地筛选，点击任意柱形或热力图单元格联动筛选，将泰国趋势与竞争国家对比，并调整“长期停留阈值”参数（7—180 天）。"
             }
         },
 
@@ -6492,7 +8660,14 @@ print((supporter_dm["NumDonationsWithin3Months"] > 0).mean())   # 0.1585 (53,664
 
 {
     id: "disney-data-architecture",
+    name: { en: "MagicBand Data Platform Blueprint", zh: "迪士尼 MagicBand 数据平台蓝图" },
+    course: true, // university coursework: kept out of search engines
     category: "analytics-systems",
+
+    headline: {
+        en: "The Data Behind the Magic",
+        zh: "魔法背后的数据"
+    },
 
     title: {
         en: "Disney MagicBand — Data Architecture, Quality, Security & Governance",
@@ -6526,7 +8701,7 @@ print((supporter_dm["NumDonationsWithin3Months"] > 0).mean())   # 0.1585 (53,664
 
     sortDate: "2026-05",
 
-    logo: "",
+    logo: "assets/logos/projects/disney.png",
 
     background: {
         paragraphs: {
@@ -6959,7 +9134,7 @@ print((supporter_dm["NumDonationsWithin3Months"] > 0).mean())   # 0.1585 (53,664
 
         zh: [
             {
-                title: "问题：迪士尼为什么需要大规模数据管理",
+                title: "问题：迪士尼为什么需要管理海量数据",
                 bullets: [
                     "游客体验优化：游客数据分散在不同系统中，会导致档案割裂，行程、餐饮与个性化推荐的准确性下降。",
                     "运营决策支持：标准不一或更新滞后会让看板与预警系统失去可靠性，造成人员错配、拥堵加剧与等待时间变长。",
@@ -7046,9 +9221,15 @@ print((supporter_dm["NumDonationsWithin3Months"] > 0).mean())   # 0.1585 (53,664
     }
 },
 {
-    // FINC3600 Project 1 (internal marker; not shown on the site)
-    id: "finc3600-tpg",
+    id: "tpg-telecom-advisory",
+    name: { en: "TPG Telecom Capital Structure & WA 5G Expansion Advisory", zh: "TPG Telecom 资本结构与西澳 5G 扩张顾问方案" },
+    course: true, // university coursework: kept out of search engines
     category: "finance-investment",
+
+    headline: {
+        en: "Going West with 5G",
+        zh: "5G 西进"
+    },
 
     title: {
         en: "TPG Telecom Corporate Finance Advisory — Liquidity Review and a Western Australia 5G Expansion",
@@ -7653,9 +9834,15 @@ print((supporter_dm["NumDonationsWithin3Months"] > 0).mean())   # 0.1585 (53,664
     }
 },
 {
-    // FINC3600 Project 2 (internal marker; not shown on the site)
-    id: "finc3600-abercrombie",
+    id: "abercrombie-pension-allocation",
+    name: { en: "Abercrombie Super Asset Allocation Review", zh: "Abercrombie 养老基金资产配置复盘" },
+    course: true, // university coursework: kept out of search engines
     category: "finance-investment",
+
+    headline: {
+        en: "Rebalancing Through the Storm",
+        zh: "风暴中的再平衡"
+    },
 
     title: {
         en: "Abercrombie Super — Strategic Asset Allocation Review, Scenario Simulation and a COVID Tactical Tilt",
@@ -7684,7 +9871,7 @@ print((supporter_dm["NumDonationsWithin3Months"] > 0).mean())   # 0.1585 (53,664
 
     sortDate: "2025-05",
 
-    logo: "",
+    logo: "assets/logos/projects/apra.png",
 
     background: {
         paragraphs: {
@@ -8302,7 +10489,14 @@ else:
 
     {
     id: "early-childhood",
+    name: { en: "Targeting ECEC Service Gaps across Australia", zh: "锁定澳大利亚早教与托育服务缺口" },
+    course: true, // university coursework: kept out of search engines
     category: "analytics-systems",
+
+    headline: {
+        en: "Mapping the Childcare Gap",
+        zh: "托育缺口地图"
+    },
 
     title: {
         en: "Early Childhood Education & Care in Australia — Service Access, Quality and Child Development",
@@ -8331,7 +10525,7 @@ else:
 
     sortDate: "2026-05",
 
-    logo: "",
+    logo: "assets/logos/projects/ecec.png",
 
     background: {
         paragraphs: {
@@ -9538,7 +11732,14 @@ priority_table = p.sort_values(
 
 {
     id: "nsw-milk-distribution",
+    name: { en: "NSW Milk Distribution Network Design", zh: "新州牛奶配送网络选址设计" },
+    course: true, // university coursework: kept out of search engines
     category: "analytics-systems",
+
+    headline: {
+        en: "Three Sites, Twenty Years",
+        zh: "三个站点，二十年最优"
+    },
 
     title: {
         en: "NSW Milk Distribution Network — Siting Three Centres with Mixed-Integer Programming, 2001–2021",
@@ -10048,7 +12249,14 @@ sites = [name_LGA[i] for i in range(m) if x[i].X > 0.5]   # ['Blacktown', 'Camde
 
 {
     id: "milk-tanker-genai",
+    name: { en: "Milk Tanker Fleet Plan & ChatGPT Modelling Test", zh: "牛奶罐车车队规划与 ChatGPT 建模测试" },
+    course: true, // university coursework: kept out of search engines
     category: "analytics-systems",
+
+    headline: {
+        en: "Milk Run: Gurobi vs ChatGPT",
+        zh: "送奶路线：Gurobi 对决 ChatGPT"
+    },
 
     title: {
         en: "Milk Tanker Fleet Planning and a Critique of ChatGPT as an Optimisation Modeller",
@@ -10612,7 +12820,14 @@ mod.optimize()`
 
 {
     id: "house-price-regression",
+    name: { en: "House Price Drivers Model", zh: "房价驱动因素回归模型" },
+    course: true, // university coursework: kept out of search engines
     category: "ai-data",
+
+    headline: {
+        en: "Square Feet & Sea Views",
+        zh: "面积与海景"
+    },
 
     title: {
         en: "What Drives House Prices? Hypothesis Tests, OLS vs LAD and Multiple Regression on 1,000 Sales",
@@ -11054,11 +13269,18 @@ errors = {"size": rmse(ols_1, ["sqft"]),
 
 {
     id: "earnings-height-regression",
+    name: { en: "Height & Earnings Regression Model", zh: "身高与收入回归模型" },
+    course: true, // university coursework: kept out of search engines
     category: "ai-data",
 
+    headline: {
+        en: "Does Height Pay?",
+        zh: "身高能换来收入吗？"
+    },
+
     title: {
-        en: "Does Height Pay? Modelling Earnings for 14,000 US Workers with Multiple Regression",
-        zh: "身高会影响收入吗？用多元回归为 1.4 万名美国劳动者建模收入"
+        en: "Modelling Earnings for 14,293 US Workers with Multiple Regression",
+        zh: "用多元回归为 14,293 名美国劳动者建模收入"
     },
 
     organisation: {
@@ -11568,7 +13790,14 @@ print(rmse(model_3_cubic, val_df))             # about 21,187 on the validation 
 
 {
     id: "decision-trees-analysis",
+    name: { en: "Decisions Under Uncertainty: Three Decision-Tree Cases", zh: "不确定性下的决策：三个决策树案例" },
+    course: true, // university coursework: kept out of search engines
     category: "analytics-systems",
+
+    headline: {
+        en: "Deciding Before You Know",
+        zh: "在未知中做决定"
+    },
 
     title: {
         en: "Decision Trees Under Uncertainty — Athlete Drug Testing, a Sealed Tender Bid and Ranking Risky Investments",
@@ -12027,7 +14256,14 @@ print(rmse(model_3_cubic, val_df))             # about 21,187 on the validation 
 
 {
     id: "bubble-tea-simulation",
+    name: { en: "Bubble Tea Shop Feasibility Simulation", zh: "奶茶店开店可行性模拟" },
+    course: true, // university coursework: kept out of search engines
     category: "analytics-systems",
+
+    headline: {
+        en: "5,000 Futures for a Bubble Tea Shop",
+        zh: "一家奶茶店的 5,000 种未来"
+    },
 
     title: {
         en: "Should We Open a Bubble Tea Shop? Monte Carlo Simulation of Profit, Lockdown Risk and Free Delivery",
@@ -12476,7 +14712,14 @@ print(rmse(model_3_cubic, val_df))             # about 21,187 on the validation 
 
     {
         id: "amer-sports-ipo",
+        name: { en: "Amer Sports NYSE IPO & FX Risk Review", zh: "Amer Sports 纽交所 IPO 与外汇风险评估" },
+        course: true, // university coursework: kept out of search engines
         category: "finance-investment",
+
+        headline: {
+            en: "Priced Below the Range",
+            zh: "低于区间定价的上市"
+        },
 
         title: {
             en: "Amer Sports’ 2024 NYSE IPO — Offshore Financing, Currency Risk and Geopolitical Risk",
@@ -12505,7 +14748,7 @@ print(rmse(model_3_cubic, val_df))             # about 21,187 on the validation 
 
         sortDate: "2024-05",
 
-        logo: "",
+        logo: "assets/logos/projects/amer-sports.png",
 
         background: {
             paragraphs: {
@@ -13007,11 +15250,18 @@ print(rmse(model_3_cubic, val_df))             # about 21,187 on the validation 
 
     {
         id: "beneficial-ownership",
+        name: { en: "Closing Australia’s Beneficial Ownership Gap", zh: "补上澳大利亚受益所有权透明度缺口" },
+        course: true, // university coursework: kept out of search engines
         category: "esg-policy",
 
+        headline: {
+            en: "Who Really Owns It?",
+            zh: "谁才是真正的所有者？"
+        },
+
         title: {
-            en: "International Financial Crime — Beneficial Ownership Transparency and Australia’s AML Gap",
-            zh: "International Financial Crime：受益所有权透明度与澳大利亚反洗钱制度缺口"
+            en: "Beneficial Ownership Transparency and Australia’s AML Gap",
+            zh: "受益所有权透明度与澳大利亚反洗钱制度缺口"
         },
 
         organisation: {
@@ -13041,7 +15291,8 @@ print(rmse(model_3_cubic, val_df))             # about 21,187 on the validation 
 
         sortDate: "2025-10",
 
-        logo: "",
+        logo: "assets/logos/projects/aml-ctf.jpg",
+        logoFill: true,
 
         background: {
             paragraphs: {
@@ -13528,7 +15779,7 @@ print(rmse(model_3_cubic, val_df))             # about 21,187 on the validation 
 
         sortDate: "2024-06",
 
-        logo: "",
+        logo: "assets/logos/projects/ey.png",
 
         overviewBullets: {
             en: [

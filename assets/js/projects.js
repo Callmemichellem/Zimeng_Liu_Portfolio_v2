@@ -52,7 +52,7 @@ function renderProjectTree(container, language) {
             button.type = "button";
 
             button.textContent =
-                project.title[language];
+                (project.name || project.headline || project.title)[language];
 
 
             button.addEventListener("click", () => {
@@ -140,7 +140,7 @@ function renderProjectTimeline(container, language) {
             project.logo
                 ? `
                     <img
-                        class="experience-logo"
+                        class="experience-logo${project.logoFill ? " is-fill" : ""}"
                         src="${project.logo}"
                         alt="${project.organisation[language]} logo"
                     >
@@ -191,8 +191,14 @@ function renderProjectTimeline(container, language) {
                     <div>
 
                         <h2>
-                            ${project.title[language]}
+                            ${(project.name || project.headline || project.title)[language]}
                         </h2>
+
+                        ${project.name && project.headline ? `<p class="project-tagline">“${project.headline[language]}”</p>` : ""}
+
+                        ${project.name || project.headline ? `<p class="project-subtitle">
+                            ${project.title[language]}
+                        </p>` : ""}
 
                         <p class="experience-role">
                             ${project.organisation[language]}

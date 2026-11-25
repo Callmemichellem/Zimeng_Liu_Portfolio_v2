@@ -1,1 +1,143 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Research interests and GraphRAG work by Zimeng Liu."><title>Research | Zimeng Liu</title><link rel="stylesheet" href="assets/css/styles.css"></head><body><header class="nav"><div class="container nav-inner"><a class="brand" href="index.html">zimengliu<span>.com</span></a><button class="menu-btn" aria-label="Open menu">☰</button><ul class="nav-links"><li><a class="" href="index.html">Home</a></li><li><a class="" href="experience.html">Experience</a></li><li><a class="" href="projects.html">Projects</a></li><li><a class="active" href="research.html">Research</a></li><li><a class="" href="journey.html">Journey</a></li><li><a class="" href="cv.html">CV</a></li><li><a class="nav-cta" href="index.html#contact">Contact</a></li></ul></div></header><main><section class="page-hero"><div class="container"><div class="breadcrumb">Home / Research</div><span class="eyebrow">Research</span><h1>Reliable retrieval for evidence-heavy decisions.</h1><p class="lead">My current research interests centre on RAG/GraphRAG, trustworthy evidence retrieval, ESG document intelligence, data governance and task-aware AI systems.</p></div></section><section class="section-tight"><div class="container grid-3"><article class="card reveal"><div class="card-index">01 · Retrieval</div><h3>RAG & GraphRAG</h3><p>Understanding when graph structure improves evidence retrieval, multi-step reasoning and supported generation—and when simpler retrieval is the better engineering choice.</p></article><article class="card reveal"><div class="card-index">02 · Responsible data</div><h3>Traceability & Governance</h3><p>Designing systems where evidence provenance, data quality, model routing, review and auditability are built into the decision pipeline.</p></article><article class="card reveal"><div class="card-index">03 · Applied domain</div><h3>ESG & Public-interest Analytics</h3><p>Applying data and AI to sustainability disclosure, green technology, educational equity and other evidence-intensive policy and business problems.</p></article></div></section><section class="section"><div class="container"><article class="card reveal"><div class="card-index">Current research · RAIDS Lab · University of Sydney</div><h2>GraphRAG for Evidence-Based ESG Analysis</h2><p class="lead">The project develops an end-to-end ESG report analysis system and benchmark to compare standard retrieval with multiple graph-based approaches under controlled conditions.</p><div class="stats" style="margin-top:26px"><div class="stat"><strong>30</strong><span>real corporate ESG reports</span></div><div class="stat"><strong>2,015</strong><span>questions across four task levels</span></div><div class="stat"><strong>4</strong><span>graph-based retrieval methods</span></div><div class="stat"><strong>4</strong><span>major ESG frameworks organised</span></div></div><p style="margin-top:24px"><strong>Methods:</strong> PaddleOCR, LLM-based normalisation, embeddings, hybrid retrieval, reranking, DualChannel, HippoRAG v1/v2, LightRAG and HyperGraphRAG. The evaluation considers factual retrieval, multi-step reasoning, summarisation, evidence-grounded generation, prompt token cost and graph size.</p><p><strong>Main interpretation:</strong> GraphRAG should not replace standard RAG for every query. A practical architecture routes simple fact questions to lower-cost retrieval and sends complex, cross-evidence or high-risk questions to graph-based methods suited to the task.</p></article></div></section></main><footer class="footer"><div class="container footer-inner"><span>© <span data-year></span> Zimeng Liu</span><span>Personal portfolio · Sydney, Australia</span></div><div class="container privacy-note">Personal website. Not an official University of Sydney website.</div></footer><script src="assets/js/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-zh="研究 | Zimeng Liu">Research | Zimeng Liu</title>
+<meta name="description" content="Research by Zimeng (Michelle) Liu 刘子萌: ethnic cues in AI hiring, and GraphRAG for evidence-based ESG analysis.">
+<link rel="canonical" href="https://zimengliu.com/research">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zimeng Liu">
+<meta property="og:title" content="Research | Zimeng Liu">
+<meta property="og:description" content="Research by Zimeng (Michelle) Liu 刘子萌: ethnic cues in AI hiring, and GraphRAG for evidence-based ESG analysis.">
+<meta property="og:url" content="https://zimengliu.com/research">
+<meta property="og:image" content="https://zimengliu.com/assets/img/zimeng-liu.jpg">
+<meta property="og:locale" content="en_AU">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/icons/favicon-96.png" type="image/png" sizes="96x96"><link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"><meta name="theme-color" content="#1f6fb5">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="nav">
+    <div class="container nav-inner">
+        <a class="brand" href="index.html">zimengliu<span>.com</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="lab.html">Lab</a></li>
+            <li><a class="active" href="research.html">Research</a></li>
+            <li><a href="journey.html">Journey</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a class="nav-cta" href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="nav-tools">
+            <div class="language-switcher" aria-label="Language">
+                <button type="button" data-lang-choice="en">EN</button>
+                <span>/</span>
+                <button type="button" data-lang-choice="zh">中文</button>
+            </div>
+            <button class="menu-btn" type="button" aria-label="Open menu">☰</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb" data-zh="首页 / 研究">Home / Research</div>
+            <span class="eyebrow" data-zh="研究">Research</span>
+            <h1 data-zh="让高风险决策中的 AI 更公平、更可靠。">Fair and reliable AI for high-stakes decisions.</h1>
+            <p class="lead" data-zh="我的研究兴趣集中在 AI 招聘的公平性、RAG/GraphRAG 与可信证据检索，以及 ESG 文档智能分析。目前我在主导自己的课题“族裔线索与 AI 招聘”，同时协助实验室的 GraphRAG × ESG 实验。下面两段小动画分别讲清它们是怎么做的。">My research interests centre on fairness in AI hiring, RAG/GraphRAG and trustworthy evidence retrieval, and ESG document intelligence. I am leading my own study on ethnic cues in AI hiring and assisting a lab experiment on GraphRAG for ESG reports. Two short animations below explain how each one works.</p>
+        </div>
+    </section>
+
+    <section class="section-tight">
+        <div class="container grid-3">
+            <article class="card reveal">
+                <div class="card-index" data-zh="01 · 公平性">01 · Fairness</div>
+                <h3 data-zh="AI 招聘中的公平性">Fairness in AI Hiring</h3>
+                <p data-zh="检验姓名、拼写和口音会不会改变大模型简历筛选和 AI 面试对求职者的判断，并用对照设计把偏差和合理信号分开。">Testing whether names, spellings and accents change how LLM-based resume screening and AI interviews judge applicants, with controls that separate bias from legitimate signals.</p>
+            </article>
+            <article class="card reveal">
+                <div class="card-index" data-zh="02 · 检索">02 · Retrieval</div>
+                <h3 data-zh="RAG 与 GraphRAG">RAG &amp; GraphRAG</h3>
+                <p data-zh="研究图结构在什么时候能改善证据检索、多步推理和有依据的生成，什么时候更简单的检索才是更好的工程选择。">Understanding when graph structure improves evidence retrieval, multi-step reasoning and supported generation, and when simpler retrieval is the better engineering choice.</p>
+            </article>
+            <article class="card reveal">
+                <div class="card-index" data-zh="03 · 应用领域">03 · Applied domain</div>
+                <h3 data-zh="ESG 与公共利益分析">ESG &amp; Public-interest Analytics</h3>
+                <p data-zh="把数据和 AI 用在可持续发展披露、绿色技术、教育公平等需要大量证据的政策与商业问题上。">Applying data and AI to sustainability disclosure, green technology, educational equity and other evidence-intensive policy and business problems.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <article class="card reveal">
+                <div class="card-index" data-zh="个人研究 · 实验设计阶段">Own research · experiment design</div>
+                <h2 data-zh="族裔线索与 AI 招聘">Ethnic Cues in AI Hiring</h2>
+                <p class="lead" data-zh="姓名和口音会不会改变大模型筛选简历和给 AI 面试打分的结果？这项研究审计真人面试之前的两个 AI 环节，以华人求职者为主要案例。">Do names and accents change how large language models screen resumes and score AI interviews? The study audits both AI stages that now sit before a human interviewer, with Chinese applicants as the main case.</p>
+                <div class="stats" style="margin-top:26px">
+                    <div class="stat"><strong>2</strong><span data-zh="研究的 AI 招聘环节">AI hiring stages studied</span></div>
+                    <div class="stat"><strong>1,176</strong><span data-zh="姓名库中的名字（已建成）">names in the name bank (built)</span></div>
+                    <div class="stat"><strong>12</strong><span data-zh="计划的澳洲岗位">Australian roles planned</span></div>
+                    <div class="stat"><strong>~30,600</strong><span data-zh="研究一每个模型的计划调用量">planned Study 1 calls per model</span></div>
+                </div>
+                <p style="margin-top:24px"><strong data-zh="设计：">Design:</strong> <span data-zh="研究一让国内外 8 家开发商的模型给只改名字来源、姓的拼写、工作权利或雇主类型的相同简历打分。研究二让同一段面试回答用不同口音读出、配不同名字，分别经过“先转写再打分”和“语音模型直接打分”两种流程，并用文字版本区分中式语序和普通语法错误。">Study 1 has models from 8 Chinese and US developers score identical resumes that differ only in name origin, surname spelling, work rights or employer type. Study 2 has the same interview answer read in different accents with different names, scored by transcribe-then-score and direct speech pipelines, plus text versions that separate Chinese-English word order from ordinary errors.</span></p>
+                <p><strong data-zh="进展：">Status:</strong> <span data-zh="姓名库、打分与分析脚本、文献库已经完成，接下来是预实验和预注册。所有假设为双向，并配 ±2 分的等价检验，所以“没有差异”也是一个有效结论。">The name bank, scoring and analysis scripts and literature base are built; the pilot and pre-registration come next. Hypotheses are two-sided with ±2-point equivalence tests, so “no difference” is a valid result.</span></p>
+                <a class="project-link" href="project-detail.html?id=ai-hiring-ethnicity" data-zh="查看完整实验设计 →">Read the full study design →</a>
+            </article>
+        </div>
+    </section>
+
+    <section class="section-tight" id="audit-explainer">
+        <div class="container">
+            <div class="explainer" data-explainer="audit"></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <article class="card reveal">
+                <div class="card-index" data-zh="协助 · RAIDS Lab · 悉尼大学">Assisting · RAIDS Lab · University of Sydney</div>
+                <h2 data-zh="GraphRAG × ESG 证据分析">GraphRAG for Evidence-Based ESG Analysis</h2>
+                <p class="lead" data-zh="这是 Lingjing Lan 学姐的实验：在真实企业可持续发展报告上，比较不建图的生产检索流程和四种 GraphRAG 方法。我协助报告标注、评测集构建与检索方案对比。">Lingjing Lan's experiment compares a production non-graph retriever with four GraphRAG systems on real corporate sustainability reports. I assist with report annotation, benchmark construction and retrieval comparisons.</p>
+                <div class="stats" style="margin-top:26px">
+                    <div class="stat"><strong>30</strong><span data-zh="份企业报告（约 1,974 页）">corporate reports (about 1,974 pages)</span></div>
+                    <div class="stat"><strong>2,015</strong><span data-zh="道四类任务的评测题">questions across four task types</span></div>
+                    <div class="stat"><strong>+15–23</strong><span data-zh="图方法事实检索准确率提升（百分点）">points of fact-retrieval accuracy for graph methods</span></div>
+                    <div class="stat"><strong>5–6×</strong><span data-zh="LightRAG 与 HyperGraphRAG 的上下文 token 倍数">context tokens for LightRAG and HyperGraphRAG</span></div>
+                </div>
+                <p style="margin-top:24px"><strong data-zh="方法：">Methods:</strong> <span data-zh="PaddleOCR 版面解析、规则模板把表格转为陈述句；不建图基线 DualChannel 复用 EulerESG 线上系统的 BM25 + 向量混合检索，对比 HippoRAG、HippoRAG 2、LightRAG 和 HyperGraphRAG，作答模型、提示词和评分方式完全相同。">PaddleOCR layout parsing and rule-based table statements; the non-graph DualChannel baseline reuses the BM25 + vector retrieval of the EulerESG production system and is compared with HippoRAG, HippoRAG 2, LightRAG and HyperGraphRAG under the same answer model, prompts and scoring.</span></p>
+                <p><strong data-zh="主要发现：">Main findings:</strong> <span data-zh="图方法明显改善事实检索，但没有一种在所有题型上都最好：HyperGraphRAG 擅长复杂推理，LightRAG 总结覆盖面最广，HippoRAG 2 在质量和成本之间最均衡。团队目前聚焦“指标同一性”：证据必须对上同一个披露编号、年份、单位和范围。">Graph methods clearly help fact retrieval, but no single method wins every task: HyperGraphRAG leads on complex reasoning, LightRAG on summary coverage, and HippoRAG 2 offers the best balance of quality and cost. The team's current focus is indicator identity: evidence must match the same disclosure code, year, unit and scope.</span></p>
+                <p><strong data-zh="我的角色：">My role:</strong> <span data-zh="协助 Lingjing Lan 学姐的实验。导师 Dr. Zhengyi Yang。">Assisting Lingjing Lan with her experiment. Supervised by Dr. Zhengyi Yang.</span></p>
+                <a class="project-link" href="project-detail.html?id=graphrag-esg" data-zh="查看实验详情 →">See the experiment in detail →</a>
+            </article>
+        </div>
+    </section>
+
+    <section class="section-tight" id="graphrag-explainer">
+        <div class="container">
+            <div class="explainer" data-explainer="graphrag"></div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <span>© <span data-year></span> Zimeng Liu</span>
+        <span>Personal portfolio · Sydney, Australia</span>
+    </div>
+    <div class="container privacy-note">Personal website. Not an official University of Sydney website.</div>
+</footer>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/explainers.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/site-extras.js"></script>
+</body>
+</html>

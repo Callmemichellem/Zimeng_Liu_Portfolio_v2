@@ -203,12 +203,16 @@ function renderExperienceDetail(language = getPortfolioLanguage()) {
 
                     </div>
 
+                    ${renderDetailToc(experience, language)}
+
                 </aside>
 
 
                 <div class="detail-content">
 
-                    ${renderBackground(experience, language)}
+                    <div id="context" class="detail-anchor">
+                        ${renderBackground(experience, language)}
+                    </div>
 
                     <section class="detail-summary">
 
@@ -226,8 +230,18 @@ function renderExperienceDetail(language = getPortfolioLanguage()) {
 
                     </section>
 
+                    ${renderMetrics(experience, language, {
+                        id: "results",
+                        eyebrow: language === "zh" ? "成果" : "Results",
+                        title: language === "zh" ? "成果一览" : "Results at a glance"
+                    })}
 
-                    <div class="detail-section-heading">
+                    ${renderApproach(experience, language)}
+
+                    ${renderTools(experience, language)}
+
+
+                    <div id="details" class="detail-section-heading detail-anchor">
 
                         <span class="eyebrow">
                             Deep Dive
@@ -242,10 +256,9 @@ function renderExperienceDetail(language = getPortfolioLanguage()) {
 
                     ${detailSections}
 
-
-                    ${renderMetrics(experience, language)}
-
-                    ${renderVisuals(experience, language)}
+                    <div id="visuals" class="detail-anchor">
+                        ${renderVisuals(experience, language)}
+                    </div>
 
                     ${renderCodeSamples(experience, language)}
 
@@ -258,21 +271,34 @@ function renderExperienceDetail(language = getPortfolioLanguage()) {
 }
 
 
-function renderMetrics(experience, language) {
+function renderMetrics(experience, language, options = {}) {
     if (!experience.metrics || experience.metrics.length === 0) {
         return "";
     }
 
-    const title =
+    const title = options.title || (
         language === "zh"
             ? "关键数据"
-            : "Selected Evidence";
+            : "Selected Evidence"
+    );
+
+    const idAttr = options.id
+        ? ` id="${options.id}"`
+        : "";
+
+    const eyebrow = options.eyebrow
+        ? `<span class="eyebrow">${options.eyebrow}</span>`
+        : "";
 
     const cards = experience.metrics
         .map(metric => `
             <div class="detail-metric">
                 <strong>
-                    ${metric.value}
+                    ${
+                        typeof metric.value === "object"
+                            ? metric.value[language]
+                            : metric.value
+                    }
                 </strong>
 
                 <span>
@@ -287,7 +313,9 @@ function renderMetrics(experience, language) {
         .join("");
 
     return `
-        <section class="detail-section">
+        <section class="detail-section detail-anchor${options.id ? " detail-results" : ""}"${idAttr}>
+
+            ${eyebrow}
 
             <h2>
                 ${title}
@@ -455,6 +483,13 @@ function renderVisuals(experience, language) {
             }
 
 
+            // Interactive widgets, e.g. { type: "widget", widget: "coal-sensitivity" } (assets/js/coal-model.js)
+            if (visual.type === "widget") {
+                const attr = { "coal-sensitivity": "data-coal-model", "roi-calculator": "data-roi-model", "nextgen-retention": "data-nextgen-model" }[visual.widget];
+                return attr ? `<section class="detail-visual detail-visual-widget"><div ${attr}></div></section>` : "";
+            }
+
+
             if (visual.type === "image") {
 
                 const sourceLabel = visual.source
@@ -575,6 +610,132 @@ function renderBackground(item, language) {
             ${pointsMarkup}
 
         </section>
+    `;
+}
+
+
+/* =========================================================
+   THINKING PROCESS, TOOLS & IN-PAGE NAVIGATION
+   approach: { en: [{ title, question, action, result? }], zh: [...] }
+   tools: [{ name, kind?: {en, zh}, use: {en, zh} }]
+   ========================================================= */
+
+function renderApproach(item, language) {
+    const steps = item.approach?.[language] || [];
+
+    if (!steps.length) {
+        return "";
+    }
+
+    const labels = language === "zh"
+        ? { question: "要回答的问题", action: "我的做法", result: "得出的结论" }
+        : { question: "The question", action: "What I did", result: "What it showed" };
+
+    const row = (key, text, extraClass = "") => text
+        ? `
+            <div class="approach-row ${extraClass}">
+                <dt>${labels[key]}</dt>
+                <dd>${text}</dd>
+            </div>
+        `
+        : "";
+
+    const stepsMarkup = steps
+        .map((step, index) => `
+            <li class="approach-step">
+                <span class="approach-num">${String(index + 1).padStart(2, "0")}</span>
+                <div class="approach-body">
+                    <h3>${step.title}</h3>
+                    <dl>
+                        ${row("question", step.question)}
+                        ${row("action", step.action)}
+                        ${row("result", step.result, "is-result")}
+                    </dl>
+                </div>
+            </li>
+        `)
+        .join("");
+
+    return `
+        <section id="approach" class="detail-block detail-anchor">
+
+            <span class="eyebrow">
+                ${language === "zh" ? "思考过程" : "Thinking process"}
+            </span>
+
+            <h2>
+                ${language === "zh" ? "我是怎么思考和推进的" : "How I approached it"}
+            </h2>
+
+            <ol class="approach-list">
+                ${stepsMarkup}
+            </ol>
+
+        </section>
+    `;
+}
+
+
+function renderTools(item, language) {
+    const tools = item.tools || [];
+
+    if (!tools.length) {
+        return "";
+    }
+
+    const cards = tools
+        .map(tool => `
+            <div class="tool-card">
+                <div class="tool-card-head">
+                    <strong>${typeof tool.name === "string" ? tool.name : tool.name[language]}</strong>
+                    ${tool.kind ? `<span class="tool-kind">${tool.kind[language]}</span>` : ""}
+                </div>
+                <p>${tool.use[language]}</p>
+            </div>
+        `)
+        .join("");
+
+    return `
+        <section id="tools" class="detail-block detail-anchor">
+
+            <span class="eyebrow">
+                ${language === "zh" ? "工具" : "Toolkit"}
+            </span>
+
+            <h2>
+                ${language === "zh" ? "用到的工具与方法" : "Tools & methods, and how I used them"}
+            </h2>
+
+            <div class="tools-grid">
+                ${cards}
+            </div>
+
+        </section>
+    `;
+}
+
+
+function renderDetailToc(item, language) {
+    const zh = language === "zh";
+
+    const links = [
+        item.background && ["context", zh ? "背景与分工" : "Context & my role"],
+        item.metrics?.length && ["results", zh ? "成果一览" : "Results"],
+        item.approach?.[language]?.length && ["approach", zh ? "思考过程" : "How I approached it"],
+        item.tools?.length && ["tools", zh ? "工具与方法" : "Tools & methods"],
+        item.details?.[language]?.length && ["details", zh ? "详细经历" : "Details"],
+        item.visuals?.length && ["visuals", zh ? "图表" : "Visuals"]
+    ].filter(Boolean);
+
+    if (links.length < 3) {
+        return "";
+    }
+
+    return `
+        <nav class="detail-toc" aria-label="${zh ? "本页内容" : "On this page"}">
+            <span class="eyebrow">${zh ? "本页内容" : "On this page"}</span>
+            ${links.map(([id, label]) => `<a href="#${id}">${label}</a>`).join("")}
+        </nav>
     `;
 }
 
@@ -813,13 +974,15 @@ function renderTableVisual(visual, language) {
 }
 
 
-function getEmbedSource(embed) {
+function getEmbedSource(embed, language) {
+    const separator = embed.url.includes("?") ? "&" : "?";
+
     if (embed.provider === "tableau") {
-        const separator = embed.url.includes("?") ? "&" : "?";
         return `${embed.url}${separator}:showVizHome=no&:embed=y&:toolbar=yes&:tabs=yes`;
     }
 
-    return embed.url;
+    // Self-hosted dashboards read ?lang= so they follow the site language.
+    return language ? `${embed.url}${separator}lang=${language}` : embed.url;
 }
 
 
@@ -853,7 +1016,7 @@ function renderLiveEmbed(item, language) {
                     </div>
                     <a
                         class="live-embed-open"
-                        href="${embed.url}"
+                        href="${getEmbedSource(embed, language)}"
                         target="_blank"
                         rel="noopener"
                     >
@@ -863,7 +1026,7 @@ function renderLiveEmbed(item, language) {
 
                 <div class="live-embed-frame${embed.provider === "html" ? " is-responsive" : ""}">
                     <iframe
-                        src="${getEmbedSource(embed)}"
+                        src="${getEmbedSource(embed, language)}"
                         title="${embed.title[language]}"
                         loading="lazy"
                         style="height: ${embed.height || 840}px"
@@ -983,13 +1146,13 @@ function renderProjectDetail(language = getPortfolioLanguage()) {
     }
 
     document.title =
-        `${project.title[language]} | Project | Zimeng Liu`;
+        `${(project.name || project.headline || project.title)[language]} | Project | Zimeng Liu`;
 
 
     const logoMarkup = project.logo
         ? `
             <img
-                class="detail-company-logo"
+                class="detail-company-logo${project.logoFill ? " is-fill" : ""}"
                 src="${project.logo}"
                 alt="${project.organisation[language]} logo"
             >
@@ -1095,8 +1258,14 @@ function renderProjectDetail(language = getPortfolioLanguage()) {
                         </span>
 
                         <h1>
-                            ${project.title[language]}
+                            ${(project.name || project.headline || project.title)[language]}
                         </h1>
+
+                        ${project.name && project.headline ? `<p class="detail-tagline">“${project.headline[language]}”</p>` : ""}
+
+                        ${project.name || project.headline ? `<p class="detail-subtitle">
+                            ${project.title[language]}
+                        </p>` : ""}
 
                         <p class="detail-role">
                             ${organisationMarkup}
@@ -1160,7 +1329,7 @@ function renderProjectDetail(language = getPortfolioLanguage()) {
                         </span>
 
                         <h3>
-                            ${project.title[language]}
+                            ${(project.name || project.headline || project.title)[language]}
                         </h3>
 
 
